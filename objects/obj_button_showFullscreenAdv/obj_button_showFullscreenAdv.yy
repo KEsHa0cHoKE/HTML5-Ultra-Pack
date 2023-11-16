@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "ADS BUTTONS",
-    "path": "folders/Objects/ADS BUTTONS.yy",
+    "name": "YaGames Buttons",
+    "path": "folders/Objects/YaGames Buttons.yy",
   },
   "parentObjectId": null,
   "persistent": false,

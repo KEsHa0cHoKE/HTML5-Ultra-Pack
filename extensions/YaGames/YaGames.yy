@@ -109,11 +109,17 @@
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"YaGames_Player_GetStats","argCount":0,"args":[
             1,
           ],"documentation":"","externalName":"YaGamesGML_Player_GetStats","help":"YaGames_Player_GetStats(keys)","hidden":false,"kind":5,"returnType":2,},
-        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"YaGames_Player_IncrementStats","argCount":0,"args":[
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"YaGames_Player_IncrementStats","argCount":1,"args":[
             1,
           ],"documentation":"","externalName":"YaGamesGML_Player_IncrementStats","help":"YaGames_Player_IncrementStats(increments)","hidden":false,"kind":5,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"YaGames_Player_GetAllData","argCount":0,"args":[],"documentation":"","externalName":"YaGamesGML_Player_GetData","help":"YaGames_Player_GetAllData()","hidden":false,"kind":5,"returnType":2,},
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"YaGames_Player_GetAllStats","argCount":0,"args":[],"documentation":"","externalName":"YaGamesGML_Player_GetStats","help":"YaGames_Player_GetAllStats()","hidden":false,"kind":5,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"YaGames_stickyGetStatus","argCount":0,"args":[],"documentation":"","externalName":"YaGamesGML_stickyGetStatus","help":"YaGamesGML_stickyGetStatus()","hidden":false,"kind":5,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"YaGames_stickyShow","argCount":0,"args":[],"documentation":"","externalName":"YaGamesGML_stickyShow","help":"YaGamesGML_stickyShow()","hidden":false,"kind":5,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"YaGames_stickyHide","argCount":0,"args":[],"documentation":"","externalName":"YaGamesGML_stickyHide","help":"YaGamesGML_stickyHide()","hidden":false,"kind":5,"returnType":2,},
+        {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"YaGames_MobileVibro","argCount":0,"args":[
+            2,
+          ],"documentation":"","externalName":"YaGamesGML_MobileVibro","help":"YaGamesGML_MobileVibro(ms)","hidden":false,"kind":5,"returnType":2,},
       ],"init":"","kind":5,"order":[
         {"name":"YaGames_getInitStatus","path":"extensions/YaGames/YaGames.yy",},
         {"name":"YaGames_setDebugMode","path":"extensions/YaGames/YaGames.yy",},

@@ -378,6 +378,126 @@ function YaGamesGML_DeviceInfo_getType() {
 }
 
 /**
+ * Get the banner status
+ * @returns {Number} Request_id
+ */
+ function YaGamesGML_stickyGetStatus() {
+	let self = YaGamesGMS;
+	let req_id = self.newRequest();
+	setTimeout(function run() {
+		self.browserConsoleLog( "Banner status request", req_id);
+		if (!self.getInitStatus()) {
+			self.sendSdkNotInitStatus(req_id);
+		}
+		else {
+			try {
+				self._ysdk
+				.adv.getBannerAdvStatus()
+				.then(({ result }) => {
+					if (result) {
+						self.browserConsoleLog( "Banner is showing.", req_id);
+						self.send(req_id, "bannerShowing");
+					} else {
+						self.browserConsoleLog( "Banner is hidden.", req_id);
+						self.send(req_id, "bannerHidden");
+					}
+				})
+                .catch((err) => {
+					self.browserConsoleLog( "Get Banner status error", req_id, err);
+					self.sendError(req_id, "getBannerStatusError", err);
+                });;
+
+			} catch (err) {
+				self.browserConsoleLog( "Runtime error", req_id, err);
+				self.sendError(req_id, "RuntimeError", err)
+			}
+		}
+	}, 0);
+	return req_id;
+}
+
+/**
+ * Show sticky banner
+ * @returns {Number} Request_id
+ */
+function YaGamesGML_stickyShow() {
+	let self = YaGamesGMS;
+	let req_id = self.newRequest();
+	setTimeout(function run() {
+		self.browserConsoleLog( "Banner show request", req_id);
+		if (!self.getInitStatus()) {
+			self.sendSdkNotInitStatus(req_id);
+		}
+		else {
+			try {
+				self._ysdk
+				.adv.showBannerAdv()
+				.then(({ result , reason }) => {
+					if (result) {
+						self.browserConsoleLog( "Banner shown.", req_id);
+						self.send(req_id, "bannerShown");
+					} else {
+						self.browserConsoleLog( "Banner not shown.", req_id, reason);
+						self.send(req_id, "bannerNotShown", reason);
+					}
+				})
+                .catch((err) => {
+					self.browserConsoleLog( "Banner show error", req_id, err);
+					self.sendError(req_id, "bannerShowError", err);
+                });;
+
+			} catch (err) {
+				self.browserConsoleLog( "Runtime error", req_id, err);
+				self.sendError(req_id, "RuntimeError", err)
+			}
+		}
+	}, 0);
+	return req_id;
+}
+
+/**
+ * Hide sticky banner
+ * @returns {Number} Request_id
+ */
+function YaGamesGML_stickyHide() {
+	let self = YaGamesGMS;
+	let req_id = self.newRequest();
+	setTimeout(function run() {
+		self.browserConsoleLog( "Banner hide request", req_id);
+		if (!self.getInitStatus()) {
+			self.sendSdkNotInitStatus(req_id);
+		}
+		else {
+			try {
+				self._ysdk
+                .adv.hideBannerAdv()
+                .then((result) => {
+					self.browserConsoleLog( "Banner hidden", req_id, result);
+					self.send(req_id, "bannerHidden", result);
+                })
+                .catch((err) => {
+					self.browserConsoleLog( "Banner hide error", req_id, err);
+					self.sendError(req_id, "bannerHideError", err);
+                });
+
+			} catch (err) {
+				self.browserConsoleLog( "Runtime error", req_id, err);
+				self.sendError(req_id, "RuntimeError", err)
+			}
+		}
+	}, 0);
+	return req_id;
+}
+
+/***
+ * Вибрация мобильного устройства в течении N миллисекунд
+ * @param {Number} ms
+ */
+function YaGamesGML_MobileVibro(ms = 200) {
+	window.navigator.vibrate(Number(ms));
+}
+
+/**
  * Yandex.Game Environment
  * @returns {Number} Request_id
  */
