@@ -1,4 +1,4 @@
 if (YaGames_getInitStatus() = true)
 {
-	room_goto(r_menu)
+	room_goto(first_room)
 }

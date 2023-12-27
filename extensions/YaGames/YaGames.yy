@@ -18,7 +18,7 @@
   "exportToGame": true,
   "extensionVersion": "1.0.2",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"YaGames.js","constants":[
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"YaGames_DeviceMobile","hidden":false,"value":"\"mobile\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"YaGames_DeviceTablet","hidden":false,"value":"\"tablet\"",},
         {"resourceType":"GMExtensionConstant","resourceVersion":"1.0","name":"YaGames_DeviceDesktop","hidden":false,"value":"\"desktop\"",},

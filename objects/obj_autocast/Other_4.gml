@@ -1,6 +1,6 @@
 if (room != r_init)
 {
-	instance_create_depth(500, 500, -11111, obj_blackStart)
+	black_start_alpha = 1
 }
 
 display_refresh(1)

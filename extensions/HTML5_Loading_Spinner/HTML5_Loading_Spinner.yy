@@ -18,7 +18,7 @@
   "exportToGame": true,
   "extensionVersion": "1.0.0",
   "files": [
-    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"","constants":[],"copyToTargets":9223372036854775807,"filename":"SpinnerLoading.js","final":"","functions":[
+    {"resourceType":"GMExtensionFile","resourceVersion":"1.0","name":"SpinnerLoading.js","constants":[],"copyToTargets":9223372036854775807,"filename":"SpinnerLoading.js","final":"","functions":[
         {"resourceType":"GMExtensionFunction","resourceVersion":"1.0","name":"CustomLoadingSpinner","argCount":6,"args":[
             2,
             2,

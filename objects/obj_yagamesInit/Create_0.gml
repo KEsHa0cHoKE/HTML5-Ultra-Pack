@@ -1,3 +1,5 @@
+first_room = r_ok
+
 var _fnt = fnt_YaGamesInit
 
 draw_set_font(_fnt)
@@ -11,3 +13,5 @@ alarm[0] = 20
 
 var _lang = os_get_language()
 text = (_lang == "ru" ? "Загрузка" : "Loading")
+
+global.lang = _lang
