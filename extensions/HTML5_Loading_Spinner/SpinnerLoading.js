@@ -40,7 +40,7 @@ var g_pSpinnerObject = null
 ///			<param name="_loadingscreen">The loading screen "image" handle</param>
 ///				
 // #############################################################################################
-function CustomLoadingSpinner(_graphics, _width,_height, _total, _current, _loadingscreen) {
+function CustomLoadingSpinner(_graphics, _width, _height, _total, _current, _loadingscreen) {
 
 	// If we have a loading screen, draw that instead of clearing the screen
 	if (_loadingscreen){
@@ -57,8 +57,8 @@ function CustomLoadingSpinner(_graphics, _width,_height, _total, _current, _load
 	var opts = {
 		lines: 8, // The number of lines to draw
 		length: 0, // The length of each line
-		width: 15, // The line thickness
-		radius: 20, // The radius of the inner circle
+		width: 25, // The line thickness
+		radius: 40, // The radius of the inner circle
 		scale: 1, // Scales overall size of the spinner
 		corners: 1, // Corner roundness (0..1)
 		speed: 1, // Rounds per second
@@ -85,5 +85,15 @@ function CustomLoadingSpinner(_graphics, _width,_height, _total, _current, _load
 	if( _total==_current ){
 		g_pSpinnerObject.stop();
 	}
+	
+	var _x = window.innerWidth/2
+	var _y = window.innerHeight/2
+	
+	_graphics.textAlign    = "center";
+    _graphics.textBaseline = "center";
+	_graphics.fillStyle    = "#ffffff";
+    _graphics.strokeStyle  = "#ffffff";
+    _graphics.font = " 22pt lobster";
+    _graphics.fillText(Math.round((_current / _total ) * 100)+'%', _x , _y + 10);
 }
 
