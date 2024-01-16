@@ -35,7 +35,7 @@
     {"id":{"name":"browser_hdpi","path":"extensions/browser_hdpi/browser_hdpi.yy",},},
     {"id":{"name":"data_save","path":"scripts/data_save/data_save.yy",},},
     {"id":{"name":"obj_yagamesInit","path":"objects/obj_yagamesInit/obj_yagamesInit.yy",},},
-    {"id":{"name":"Шаблон асинка реварда","path":"notes/Шаблон асинка реварда/Шаблон асинка реварда.yy",},},
+    {"id":{"name":"rewards_template","path":"notes/rewards_template/rewards_template.yy",},},
     {"id":{"name":"struct_get_from_file","path":"scripts/struct_get_from_file/struct_get_from_file.yy",},},
     {"id":{"name":"fnt_YaGamesInit","path":"fonts/fnt_YaGamesInit/fnt_YaGamesInit.yy",},},
     {"id":{"name":"init","path":"scripts/init/init.yy",},},

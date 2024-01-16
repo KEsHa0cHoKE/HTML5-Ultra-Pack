@@ -14,7 +14,7 @@
     {"name":"obj_fullscreenADV","order":3,"path":"objects/obj_fullscreenADV/obj_fullscreenADV.yy",},
     {"name":"data_save","order":2,"path":"scripts/data_save/data_save.yy",},
     {"name":"obj_yagamesInit","order":2,"path":"objects/obj_yagamesInit/obj_yagamesInit.yy",},
-    {"name":"Шаблон асинка реварда","order":5,"path":"notes/Шаблон асинка реварда/Шаблон асинка реварда.yy",},
+    {"name":"rewards_template","order":5,"path":"notes/rewards_template/rewards_template.yy",},
     {"name":"struct_get_from_file","order":5,"path":"scripts/struct_get_from_file/struct_get_from_file.yy",},
     {"name":"init","order":1,"path":"scripts/init/init.yy",},
     {"name":"YaGames","order":3,"path":"extensions/YaGames/YaGames.yy",},
