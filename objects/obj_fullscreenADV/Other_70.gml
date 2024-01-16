@@ -3,12 +3,13 @@ if ((async_load[? "type"] == "YaGames") and (async_load[? "request_id"] == req_i
 	switch (async_load[? "event"]) 
 	{
         case "adClosed":
-			alarm[0] = 105*game_speed
+			adv_state = ADV_STATE.CANNOT_SHOW
+			alarm[0] = adv_periodicity_in_sec*game_speed
 			audio_resume_all()
         break;
 		
         case "adOpened":
-			can_show = false
+			adv_state = ADV_STATE.SHOWING_ADV
 			audio_pause_all()
         break;
 

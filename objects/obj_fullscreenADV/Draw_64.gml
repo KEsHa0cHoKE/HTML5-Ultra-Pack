@@ -1,8 +1,11 @@
-if (can_show)
+if (adv_state == ADV_STATE.SHOWING_WARNING)
 {
 	draw_set_color(c_black)
 	draw_set_alpha(0.8)
-	draw_rectangle(0, 0, room_width, room_height, false)
+	
+	var _dw = display_get_gui_width()
+	var _dh = display_get_gui_height()
+	draw_rectangle(0, 0, _dw, _dh, false)
 	
 	draw_set_alpha(1)
 	draw_set_color(c_white)
@@ -12,5 +15,10 @@ if (can_show)
 	var _text = (global.lang == "ru" ?
 	"Сейчас будет показана реклама" :
 	"An advertisement will be shown now")
-	draw_text(room_width/2, room_height/2, _text)
+	
+	var _x = _dw/2
+	var _y = _dh/2
+	var _fntSize = font_get_size(fnt)
+	var _sep = _fntSize+(_fntSize/2)
+	draw_text_ext(_x, _y, _text, _sep, _dw)
 }

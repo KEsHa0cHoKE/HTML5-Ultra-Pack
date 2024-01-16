@@ -1,4 +1,2 @@
-///@desc Показать плашку
-can_show = true
-
-alarm[1] = 3*game_speed
+///@desc Можно показать
+adv_state = ADV_STATE.CAN_SHOW

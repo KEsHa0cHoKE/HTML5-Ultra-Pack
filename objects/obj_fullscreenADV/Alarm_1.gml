@@ -1,2 +1,2 @@
-///@desc Запрос на рекламу
+///@desc Запуск рекламы
 req_id = YaGames_showFullscreenAdv()
