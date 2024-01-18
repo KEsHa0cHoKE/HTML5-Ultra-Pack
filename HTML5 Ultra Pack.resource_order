@@ -4,10 +4,10 @@
     {"name":"Fonts","order":1,"path":"folders/Fonts.yy",},
     {"name":"Objects","order":2,"path":"folders/Objects.yy",},
     {"name":"Rooms","order":3,"path":"folders/Rooms.yy",},
+    {"name":"Controllers","order":4,"path":"folders/Objects/Controllers.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"HTML5_Loading_Spinner","order":2,"path":"extensions/HTML5_Loading_Spinner/HTML5_Loading_Spinner.yy",},
-    {"name":"obj_autocast","order":1,"path":"objects/obj_autocast/obj_autocast.yy",},
     {"name":"HTML5_inputlag_fix","order":1,"path":"extensions/HTML5_inputlag_fix/HTML5_inputlag_fix.yy",},
     {"name":"data_load","order":3,"path":"scripts/data_load/data_load.yy",},
     {"name":"animation_handle","order":4,"path":"scripts/animation_handle/animation_handle.yy",},
