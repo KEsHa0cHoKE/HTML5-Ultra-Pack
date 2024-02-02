@@ -16,7 +16,7 @@
 
 
 var g_SpinnerTarget = null;
-var g_pSpinnerObject = null
+var g_pSpinnerObject = null;
 
 
 // Be sure to look at this page to EASILY customize your spinner
@@ -86,14 +86,14 @@ function CustomLoadingSpinner(_graphics, _width, _height, _total, _current, _loa
 		g_pSpinnerObject.stop();
 	}
 	
-	var _x = window.innerWidth/2
-	var _y = window.innerHeight/2
+	var _x = _width/2;
+	var _y = _height/2;
 	
 	_graphics.textAlign    = "center";
     _graphics.textBaseline = "center";
 	_graphics.fillStyle    = "#ffffff";
     _graphics.strokeStyle  = "#ffffff";
-    _graphics.font = " 22pt lobster";
+    _graphics.font = "22pt lobster";
     _graphics.fillText(Math.round((_current / _total ) * 100)+'%', _x , _y + 10);
 }
 

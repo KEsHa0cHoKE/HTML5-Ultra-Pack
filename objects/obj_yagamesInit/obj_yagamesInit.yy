@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "HTML5",
+    "path": "folders/Objects/HTML5.yy",
   },
   "parentObjectId": null,
   "persistent": false,
