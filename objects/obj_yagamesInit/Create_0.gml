@@ -1,4 +1,4 @@
-first_room = r_ok
+first_room = r_menu
 
 var _fnt = fnt_YaGamesInit
 
@@ -15,3 +15,9 @@ var _lang = os_get_language()
 text = (_lang == "ru" ? "Загрузка" : "Loading")
 
 global.lang = _lang
+
+var _isWindows = (os_browser == browser_not_a_browser)
+if (_isWindows)
+{
+	room_goto(first_room)
+}

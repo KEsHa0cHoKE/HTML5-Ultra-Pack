@@ -7,7 +7,12 @@
 function animation_handle(_varAnimStateString, _varToAnimateString, _firstValue, _secondValue, _spd/*, _lerpMultiplier = 1*/)
 {
 	var _animState	= variable_instance_get(id, _varAnimStateString)
-	var _valueOfAnimatedVar = variable_instance_get(id, _varToAnimateString)
+	
+	var _valueOfAnimatedVar = (
+	is_array(_varToAnimateString) ? 
+	variable_instance_get(id, _varToAnimateString[0]) : 
+	variable_instance_get(id, _varToAnimateString)
+	)
 	
 	if (_animState != 0)
 	{
@@ -31,8 +36,6 @@ function animation_handle(_varAnimStateString, _varToAnimateString, _firstValue,
 				}
 				else
 				{
-					variable_instance_set(id, _varAnimStateString, 2)
-					
 					if (!is_array(_varToAnimateString))
 					{
 						variable_instance_set(id, _varToAnimateString, _firstValue)
@@ -44,6 +47,8 @@ function animation_handle(_varAnimStateString, _varToAnimateString, _firstValue,
 							variable_instance_set(id, _varToAnimateString[i], _firstValue)
 						}
 					}
+					
+					variable_instance_set(id, _varAnimStateString, 2)
 				}
 			}
 			else if (_firstValue > _secondValue)
@@ -64,8 +69,6 @@ function animation_handle(_varAnimStateString, _varToAnimateString, _firstValue,
 				}
 				else
 				{
-					variable_instance_set(id, _varAnimStateString, 2)
-					
 					if (!is_array(_varToAnimateString))
 					{
 						variable_instance_set(id, _varToAnimateString, _firstValue)
@@ -77,6 +80,8 @@ function animation_handle(_varAnimStateString, _varToAnimateString, _firstValue,
 							variable_instance_set(id, _varToAnimateString[i], _firstValue)
 						}
 					}
+					
+					variable_instance_set(id, _varAnimStateString, 2)
 				}
 			}
 		}
@@ -100,8 +105,6 @@ function animation_handle(_varAnimStateString, _varToAnimateString, _firstValue,
 				}
 				else
 				{
-					variable_instance_set(id, _varAnimStateString, 0)
-					
 					if (!is_array(_varToAnimateString))
 					{
 						variable_instance_set(id, _varToAnimateString, _secondValue)
@@ -113,6 +116,8 @@ function animation_handle(_varAnimStateString, _varToAnimateString, _firstValue,
 							variable_instance_set(id, _varToAnimateString[i], _secondValue)
 						}
 					}
+					
+					variable_instance_set(id, _varAnimStateString, 0)
 				}
 			}
 			else if (_secondValue > _firstValue)
@@ -133,8 +138,6 @@ function animation_handle(_varAnimStateString, _varToAnimateString, _firstValue,
 				}
 				else
 				{
-					variable_instance_set(id, _varAnimStateString, 0)
-					
 					if (!is_array(_varToAnimateString))
 					{
 						variable_instance_set(id, _varToAnimateString, _secondValue)
@@ -146,12 +149,9 @@ function animation_handle(_varAnimStateString, _varToAnimateString, _firstValue,
 							variable_instance_set(id, _varToAnimateString[i], _secondValue)
 						}
 					}
+					
+					variable_instance_set(id, _varAnimStateString, 0)
 				}
-			}
-			else // Если второе значение равно первому
-			{
-				variable_instance_set(id, _varToAnimateString, _secondValue)
-				variable_instance_set(id, _varAnimStateString, 0)
 			}
 		}
 	}
