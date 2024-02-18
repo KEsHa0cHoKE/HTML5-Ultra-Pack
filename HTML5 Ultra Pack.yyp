@@ -40,6 +40,7 @@
     {"id":{"name":"obj_yagamesInit","path":"objects/obj_yagamesInit/obj_yagamesInit.yy",},},
     {"id":{"name":"obj_autocast","path":"objects/obj_autocast/obj_autocast.yy",},},
     {"id":{"name":"struct_get_from_file","path":"scripts/struct_get_from_file/struct_get_from_file.yy",},},
+    {"id":{"name":"animation_handle_class","path":"scripts/animation_handle_class/animation_handle_class.yy",},},
     {"id":{"name":"obj_language","path":"objects/obj_language/obj_language.yy",},},
     {"id":{"name":"fnt_YaGamesInit","path":"fonts/fnt_YaGamesInit/fnt_YaGamesInit.yy",},},
     {"id":{"name":"init","path":"scripts/init/init.yy",},},
