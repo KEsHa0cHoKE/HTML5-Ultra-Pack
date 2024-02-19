@@ -123,7 +123,7 @@ function class_animation() constructor
 		
 			if (array_length(var_names_to_anim) < 1)
 			{
-				show_error("Ошибка. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
+				show_error("Ошибка в met_anim_*. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
 			}
 		
 			var _updateVarsValues = function(_value)
@@ -201,7 +201,7 @@ function class_animation() constructor
 		
 			if (array_length(var_names_to_anim) < 1)
 			{
-				show_error("Ошибка. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
+				show_error("Ошибка в met_anim_*. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
 			}
 		
 			var _updateVarsValues = function(_value)
@@ -287,7 +287,7 @@ function class_animation() constructor
 		
 			if (array_length(var_names_to_anim) < 1)
 			{
-				show_error("Ошибка. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
+				show_error("Ошибка в met_anim_*. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
 			}
 		
 			var _updateVarsValues = function(_value)
@@ -373,7 +373,7 @@ function class_animation() constructor
 		
 			if (array_length(var_names_to_anim) < 1)
 			{
-				show_error("Ошибка. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
+				show_error("Ошибка в met_anim_*. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
 			}
 		
 			var _updateVarsValues = function(_value)
@@ -459,7 +459,7 @@ function class_animation() constructor
 		
 			if (array_length(var_names_to_anim) < 1)
 			{
-				show_error("Ошибка. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
+				show_error("Ошибка в met_anim_*. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
 			}
 		
 			var _updateVarsValues = function(_value)
@@ -546,7 +546,7 @@ function class_animation() constructor
 		
 			if (array_length(var_names_to_anim) < 1)
 			{
-				show_error("Ошибка. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
+				show_error("Ошибка в met_anim_*. Не заданы переменные для анимации в экземпляре конструктора. Воспользуйтесь методом met_vars_add для их добавления", true)
 			}
 		
 			var _updateVarsValues = function(_value)
