@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "animation_handle_class",
+  "name": "ini_operations",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
     "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "path": "folders/HTML5/Scripts.yy",
   },
 }

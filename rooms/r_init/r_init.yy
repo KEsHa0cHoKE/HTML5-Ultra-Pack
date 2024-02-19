@@ -20,7 +20,7 @@
   ],
   "parent": {
     "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "path": "folders/HTML5/Rooms.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

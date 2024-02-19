@@ -53,7 +53,7 @@
   "packageId": "com.ogregames.html5loadingspinner",
   "parent": {
     "name": "Extensions",
-    "path": "folders/Extensions.yy",
+    "path": "folders/HTML5/Extensions.yy",
   },
   "productId": "7BA9556F531DB40A2085135D77628277",
   "sourcedir": "",

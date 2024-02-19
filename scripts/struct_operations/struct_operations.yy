@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "struct_get_from_file",
+  "name": "struct_operations",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
     "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "path": "folders/HTML5/Scripts.yy",
   },
 }

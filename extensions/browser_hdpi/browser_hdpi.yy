@@ -64,7 +64,7 @@
   "packageId": "",
   "parent": {
     "name": "Extensions",
-    "path": "folders/Extensions.yy",
+    "path": "folders/HTML5/Extensions.yy",
   },
   "productId": "",
   "sourcedir": "",

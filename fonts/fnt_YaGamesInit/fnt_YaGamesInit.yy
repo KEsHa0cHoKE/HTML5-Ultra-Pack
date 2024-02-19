@@ -184,7 +184,7 @@
   "maintainGms1Font": false,
   "parent": {
     "name": "Fonts",
-    "path": "folders/Fonts.yy",
+    "path": "folders/HTML5/Fonts.yy",
   },
   "pointRounding": 0,
   "ranges": [

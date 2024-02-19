@@ -4,6 +4,6 @@
   "name": "rewards_template",
   "parent": {
     "name": "HTML5",
-    "path": "folders/Objects/HTML5.yy",
+    "path": "folders/HTML5.yy",
   },
 }
