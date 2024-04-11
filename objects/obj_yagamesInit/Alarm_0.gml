@@ -1,4 +1,4 @@
-alarm[0] = 20
+alarm[0] = anim_update_time
 
 if (target_point != array_length(points_array)-1)
 {

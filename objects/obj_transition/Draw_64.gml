@@ -1,7 +1,9 @@
-if (black_start_alpha > 0)
+if (!fullscreen) then exit;
+
+if (alpha > 0)
 {
-	draw_set_alpha(black_start_alpha)
-	draw_set_color(c_black)
+	draw_set_alpha(alpha)
+	draw_set_color(color)
 
 	var _dw = display_get_gui_width()
 	var _dh = display_get_gui_height()

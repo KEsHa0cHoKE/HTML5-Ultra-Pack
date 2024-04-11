@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "ini_operations",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Scripts",
-    "path": "folders/HTML5/Scripts.yy",
+  "$GMScript":"",
+  "%Name":"ini_operations",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ini_operations",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/HTML5/Scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

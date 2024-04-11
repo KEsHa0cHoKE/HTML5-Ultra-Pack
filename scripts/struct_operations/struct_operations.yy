@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "struct_operations",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Scripts",
-    "path": "folders/HTML5/Scripts.yy",
+  "$GMScript":"",
+  "%Name":"struct_operations",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"struct_operations",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/HTML5/Scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
