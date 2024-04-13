@@ -4,7 +4,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 {
 	switch (async_load[? "event"]) 
 	{	
-        case YaGames_CallPlayerGetData:
+        case YaGames_CallPlayerGetStats:
 			// Успех
 			
 			var _data = json_parse(async_load[? "data"])
@@ -14,7 +14,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 				met_statsGetted(_data)
 			}
         break;
-        case YaGames_CallPlayerGetDataError:
+        case YaGames_CallPlayerGetStatsError:
 			show_message("Data request error")
         break;
 			
@@ -41,7 +41,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 {
 	switch (async_load[? "event"]) 
 	{	
-        case YaGames_CallPlayerGetStats:
+        case YaGames_CallPlayerGetData:
             // Успех
 			
 			var _data = json_parse(async_load[? "data"])
@@ -51,7 +51,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 				met_dataGetted(_data)
 			}
         break;
-        case YaGames_CallPlayerGetStatsError:
+        case YaGames_CallPlayerGetDataError:
 			show_message("Data request error")
         break;
 			
