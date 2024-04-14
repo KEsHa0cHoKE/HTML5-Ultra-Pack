@@ -1,4 +1,4 @@
-if (adv_state == ADV_STATE.SHOWING_WARNING)
+if (adv_state == E_ADV_STATE.SHOWING_WARNING)
 {
 	draw_set_color(c_black)
 	draw_set_alpha(0.8)

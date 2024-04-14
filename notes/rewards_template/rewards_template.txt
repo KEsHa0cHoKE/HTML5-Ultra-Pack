@@ -1,29 +1,29 @@
-if ((async_load[? "type"] == "YaGames") and (async_load[? "request_id"] == req_id)) 
-{
-    switch (async_load[? "event"]) 
+	if ((async_load[? "type"] == "YaGames") and (async_load[? "request_id"] == req_id)) 
 	{
-        case "rewardOpened":
+	    switch (async_load[? "event"]) 
+		{
+	        case "rewardOpened":
 			
-        break;
+	        break;
 		
-        case "rewardReceived":
+	        case "rewardReceived":
 			
-        break;
+	        break;
 		
-        case "rewardClosed":
+	        case "rewardClosed":
 			
-        break;
+	        break;
 		
-        case "rewardError":		
+	        case "rewardError":		
 			
-        break;
+	        break;
 			
-        case "notInitSDK":
+	        case "notInitSDK":
 			
-        break;
+	        break;
 		
-        case "RuntimeError":
+	        case "RuntimeError":
 			
-        break;
-    }
-}
+	        break;
+	    }
+	}

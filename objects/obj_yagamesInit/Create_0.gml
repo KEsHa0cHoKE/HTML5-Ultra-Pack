@@ -1,14 +1,15 @@
 enum E_INIT_STATE
 {
 	SDK_NOT_INIT,
-	SDK_INIT,
-	PLAYER_INIT,
+	SDK_INITED,
+	ENVIRONMENT_GETTED,
+	PLAYER_INITED,
 	STATS_GETTED,
 	DATA_GETTED
 }
 
 state = E_INIT_STATE.SDK_NOT_INIT
-first_room = r_menu
+first_room = r_mainMenu
 
 #region Прелоад
 
@@ -18,6 +19,7 @@ waiting_answer = false
 reqId_getStats = undefined
 reqId_getData = undefined
 reqId_playerInit = undefined
+environment = {}
 global.lang = undefined
 
 ///@desc Метод, который выполняется при получении data с сервера

@@ -1,3 +1,30 @@
+#region ENVIRONMENT
+
+if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] == reqId_environment))
+{
+	switch (async_load[? "event"]) 
+	{
+		case YaGames_CallEnvironment:
+			// Успех
+			
+			var _data = json_parse(async_load[? "data"])
+			environment = _data
+		break;
+		
+		case YaGames_CallNotInitSDK:
+			show_message("SDK not initialized")
+		break;
+		case YaGames_CallRuntimeError:
+			show_message("SDK runtime error")
+		break;
+	}
+	
+	state++
+	waiting_answer = false
+}
+
+#endregion
+
 #region STATS
 
 if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_getStats))
@@ -15,7 +42,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 			}
         break;
         case YaGames_CallPlayerGetStatsError:
-			show_message("Data request error")
+			show_message("Stats request error")
         break;
 			
         case YaGames_CallNotPlayerInitSDK:

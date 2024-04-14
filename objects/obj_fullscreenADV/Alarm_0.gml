@@ -1,2 +1,2 @@
 ///@desc Можно показать
-adv_state = ADV_STATE.CAN_SHOW
+adv_state = E_ADV_STATE.CAN_SHOW
