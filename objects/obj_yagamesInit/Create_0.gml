@@ -52,9 +52,32 @@ alarm[0] = anim_update_time
 
 #endregion
 
+#region Девайс
+
+enum E_DEVICE_TYPE
+{
+	PC,
+	MOBILE
+}
+
+switch (os_type)
+{
+	case os_windows:
+	case os_linux:
+	case os_macosx:
+		global.device_type = E_DEVICE_TYPE.PC
+	break;
+	
+	default:
+		global.device_type = E_DEVICE_TYPE.MOBILE
+	break;
+}
+
 var _isWindows = (os_browser == browser_not_a_browser)
 if (_isWindows)
 {
 	global.lang = "ru"
 	room_goto(first_room)
 }
+
+#endregion
