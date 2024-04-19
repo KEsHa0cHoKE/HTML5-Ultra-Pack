@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"animation_handle",
+  "%Name":"class_animation",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"animation_handle",
+  "name":"class_animation",
   "parent":{
     "name":"Scripts",
     "path":"folders/HTML5/Scripts.yy",
