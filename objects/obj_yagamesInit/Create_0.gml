@@ -11,9 +11,9 @@ enum E_INIT_STATE
 
 globalvar YG_INIT;
 YG_INIT = {
-	flags : undefined,
-	lang : undefined,
-	device_type : undefined
+	flags : {},
+	lang : "ru",
+	device_type : E_DEVICE_TYPE.PC
 }
 
 state = E_INIT_STATE.SDK_NOT_INIT
