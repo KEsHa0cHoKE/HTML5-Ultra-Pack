@@ -36,7 +36,7 @@
     {"id":{"name":"rewards_template","path":"notes/rewards_template/rewards_template.yy",},},
     {"id":{"name":"obj_autocast","path":"objects/obj_autocast/obj_autocast.yy",},},
     {"id":{"name":"obj_cam","path":"objects/obj_cam/obj_cam.yy",},},
-    {"id":{"name":"obj_fullscreenADV","path":"objects/obj_fullscreenADV/obj_fullscreenADV.yy",},},
+    {"id":{"name":"obj_adv","path":"objects/obj_adv/obj_adv.yy",},},
     {"id":{"name":"obj_language","path":"objects/obj_language/obj_language.yy",},},
     {"id":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},},
     {"id":{"name":"obj_yagamesInit","path":"objects/obj_yagamesInit/obj_yagamesInit.yy",},},
