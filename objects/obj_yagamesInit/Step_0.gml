@@ -34,6 +34,7 @@ switch (state)
 	break;
 	
 	case E_INIT_STATE.FLAGS_GETTED :
+		instance_create_depth(0,0, -10000, obj_adv)
 		room_goto(first_room)
 	break;
 }

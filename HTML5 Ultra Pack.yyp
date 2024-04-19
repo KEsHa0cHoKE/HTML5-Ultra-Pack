@@ -37,7 +37,6 @@
     {"id":{"name":"obj_autocast","path":"objects/obj_autocast/obj_autocast.yy",},},
     {"id":{"name":"obj_cam","path":"objects/obj_cam/obj_cam.yy",},},
     {"id":{"name":"obj_adv","path":"objects/obj_adv/obj_adv.yy",},},
-    {"id":{"name":"obj_language","path":"objects/obj_language/obj_language.yy",},},
     {"id":{"name":"obj_transition","path":"objects/obj_transition/obj_transition.yy",},},
     {"id":{"name":"obj_yagamesInit","path":"objects/obj_yagamesInit/obj_yagamesInit.yy",},},
     {"id":{"name":"r_init","path":"rooms/r_init/r_init.yy",},},

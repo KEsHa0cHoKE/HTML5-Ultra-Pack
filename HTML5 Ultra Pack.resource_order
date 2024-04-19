@@ -14,7 +14,6 @@
     {"name":"rewards_template","order":1,"path":"notes/rewards_template/rewards_template.yy",},
     {"name":"obj_autocast","order":4,"path":"objects/obj_autocast/obj_autocast.yy",},
     {"name":"obj_cam","order":3,"path":"objects/obj_cam/obj_cam.yy",},
-    {"name":"obj_language","order":1,"path":"objects/obj_language/obj_language.yy",},
     {"name":"obj_transition","order":5,"path":"objects/obj_transition/obj_transition.yy",},
     {"name":"obj_yagamesInit","order":6,"path":"objects/obj_yagamesInit/obj_yagamesInit.yy",},
     {"name":"animation_handle","order":7,"path":"scripts/animation_handle/animation_handle.yy",},
