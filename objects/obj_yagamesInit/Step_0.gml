@@ -29,6 +29,11 @@ switch (state)
 	break;
 		
 	case E_INIT_STATE.DATA_GETTED :
+		reqId_flags = YaGames_GetFlags(flags_default)
+		waiting_answer = true
+	break;
+	
+	case E_INIT_STATE.FLAGS_GETTED :
 		room_goto(first_room)
 	break;
 }

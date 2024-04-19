@@ -5,7 +5,15 @@ enum E_INIT_STATE
 	ENVIRONMENT_GETTED,
 	PLAYER_INITED,
 	STATS_GETTED,
-	DATA_GETTED
+	DATA_GETTED,
+	FLAGS_GETTED
+}
+
+globalvar YG_INIT;
+YG_INIT = {
+	flags : undefined,
+	lang : undefined,
+	device_type : undefined
 }
 
 state = E_INIT_STATE.SDK_NOT_INIT
@@ -19,8 +27,9 @@ waiting_answer = false
 reqId_getStats = undefined
 reqId_getData = undefined
 reqId_playerInit = undefined
+reqId_flags = undefined
+flags_default = json_stringify({})
 environment = {}
-global.lang = undefined
 
 ///@desc Метод, который выполняется при получении data с сервера
 met_dataGetted = function(_struct)
@@ -32,6 +41,14 @@ met_dataGetted = function(_struct)
 met_statsGetted = function(_struct)
 {
 	// place here some code
+}
+
+///@desc Метод, который выполняется при получении flags с сервера
+met_flagsGetted = function(_struct)
+{
+	// place here some code
+	
+	YG_INIT.flags = _struct
 }
 
 #endregion
@@ -65,18 +82,19 @@ switch (os_type)
 	case os_windows:
 	case os_linux:
 	case os_macosx:
-		global.device_type = E_DEVICE_TYPE.PC
+		YG_INIT.device_type = E_DEVICE_TYPE.PC
 	break;
 	
 	default:
-		global.device_type = E_DEVICE_TYPE.MOBILE
+		YG_INIT.device_type = E_DEVICE_TYPE.MOBILE
 	break;
 }
 
 var _isWindows = (os_browser == browser_not_a_browser)
 if (_isWindows)
 {
-	global.lang = "ru"
+	YG_INIT.lang = "ru"
+	YG_INIT.flags = json_parse(flags_default)
 	room_goto(first_room)
 }
 

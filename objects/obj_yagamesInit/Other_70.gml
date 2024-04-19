@@ -125,3 +125,35 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
 }
 
 #endregion
+
+#region FLAGS
+
+if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] == reqId_flags)) 
+{
+    switch (async_load[? "event"]) 
+	{
+        case YaGames_CallGetFlags:
+			// Успех
+			
+			var _data = json_parse(async_load[? "data"])
+			// Если флаги не пустые
+			if (struct_names_count(_data) > 0)
+			{
+				met_flagsGetted(_data)
+			}
+        break;
+        case YaGames_CallGetFlagsError:	
+			show_message("Flags request error")
+        break;
+			
+        case YaGames_CallNotInitSDK:
+			show_message("player SDK not initialized")
+        break;
+        case YaGames_CallRuntimeError:
+			show_message("player SDK runtime error")
+        break;
+    }
+	
+	state++
+	waiting_answer = false
+}
