@@ -1,3 +1,5 @@
+image_angle--
+
 if (waiting_answer) then exit;
 
 switch (state)
@@ -13,7 +15,7 @@ switch (state)
 	break;
 		
 	case E_INIT_STATE.ENVIRONMENT_GETTED :
-		global.lang = environment.i18n.lang
+		YG_INIT.lang = environment.i18n.lang
 		reqId_playerInit = YaGames_Player_Init()
 		waiting_answer = true
 	break;

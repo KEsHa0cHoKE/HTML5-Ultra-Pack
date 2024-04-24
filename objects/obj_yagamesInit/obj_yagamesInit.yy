@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_preloader",
+    "path":"sprites/spr_preloader/spr_preloader.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
