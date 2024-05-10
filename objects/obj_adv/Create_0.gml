@@ -1,3 +1,4 @@
+fullscreen = true
 req_id = YaGames_showFullscreenAdv()
 req_idReward = undefined
 

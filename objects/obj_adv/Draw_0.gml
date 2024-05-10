@@ -1,12 +1,12 @@
-if (!fullscreen) then exit;
+if (fullscreen) then exit;
 
 if (adv_state == E_ADV_STATE.SHOWING_WARNING)
 {
 	draw_set_color(c_black)
 	draw_set_alpha(0.8)
 	
-	var _dw = display_get_gui_width()
-	var _dh = display_get_gui_height()
+	var _dw = room_width
+	var _dh = room_height
 	draw_rectangle(0, 0, _dw, _dh, false)
 	
 	draw_set_alpha(1)
