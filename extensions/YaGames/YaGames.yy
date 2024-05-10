@@ -225,9 +225,7 @@
   "maclinkerflags":"",
   "macsourcedir":"",
   "name":"YaGames",
-  "options":[
-    {"$GMExtensionOption":"","%Name":"send_game_start","defaultValue":"True","description":"Automatically send a notification about the start of the game.","displayName":"Auto send  GameStart","exportToINI":false,"extensionId":null,"guid":"376ef55b-6b11-4791-9168-21492300d362","hidden":false,"listItems":[],"name":"send_game_start","optType":0,"resourceType":"GMExtensionOption","resourceVersion":"2.0",},
-  ],
+  "options":[],
   "optionsFile":"options.json",
   "packageId":"",
   "parent":{
