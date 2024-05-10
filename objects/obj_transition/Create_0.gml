@@ -6,7 +6,12 @@ anim_time = 0.5
 
 anim_transition = new class_animation(id, nameof(alpha))
 
-met_transition_set = function(_time, _startAlpha, _targetAlpha, _color)
+///@desc Запускает анимацию перехода
+met_transition_set = function(
+_startAlpha = 1,
+_time = anim_time,
+_color = color,
+_targetAlpha = anim_target_alpha)
 {
 	alpha = _startAlpha
 	anim_target_alpha = _targetAlpha
