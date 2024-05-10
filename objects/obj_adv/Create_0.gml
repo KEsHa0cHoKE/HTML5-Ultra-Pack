@@ -30,7 +30,7 @@ met_is_inter_showable = function()
 ///@desc Запускает предупреждение о скором показе рекламы, а через 3 секунды саму рекламу
 met_show_inter = function()
 {
-	if (met_is_adv_showable())
+	if (met_is_inter_showable())
 	{
 		adv_state = E_ADV_STATE.SHOWING_WARNING
 		alarm[1] = 3*game_speed

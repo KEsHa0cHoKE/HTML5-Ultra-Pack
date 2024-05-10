@@ -95,6 +95,7 @@ if (_isWindows)
 {
 	YG_INIT.lang = "ru"
 	YG_INIT.flags = json_parse(flags_default)
+	instance_create_depth(0,0, -10000, obj_adv)
 	room_goto(first_room)
 }
 
