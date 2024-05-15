@@ -1,6 +1,11 @@
 function struct_get_from_file(_fileName)
 {
 	var _buff = buffer_load(_fileName);
+	if (buffer_get_size(_buff) <= 0)
+	{
+		buffer_delete(_buff);
+		return {}
+	}
 	var _json = buffer_read(_buff, buffer_text);
 	buffer_delete(_buff);
 	var _struct = json_parse(_json);
