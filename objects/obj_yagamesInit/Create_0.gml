@@ -53,22 +53,6 @@ met_flagsGetted = function(_struct)
 
 #endregion
 
-#region Отрисовка
-
-var _fnt = fnt_YaGamesInit
-
-draw_set_font(_fnt)
-draw_set_color(c_white)
-draw_set_valign(fa_middle)
-draw_set_halign(fa_center)
-
-anim_update_time = 20
-points_array = ["",".","..","..."]
-target_point = 0
-alarm[0] = anim_update_time
-
-#endregion
-
 #region Девайс
 
 enum E_DEVICE_TYPE
