@@ -1,3 +1,5 @@
+if (!obj_autocast.active_camera_on) then exit;
+
 if (targ_inst == noone)
 {
 	target_x = 0
@@ -34,4 +36,3 @@ x = _x
 y = _y
 
 #endregion
-

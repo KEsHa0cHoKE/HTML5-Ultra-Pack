@@ -42,7 +42,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 			}
         break;
         case YaGames_CallPlayerGetStatsError:
-			show_message("Stats request error")
+			//show_message("Stats request error")
         break;
 			
         case YaGames_CallNotPlayerInitSDK:
@@ -79,7 +79,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 			}
         break;
         case YaGames_CallPlayerGetDataError:
-			show_message("Data request error")
+			//show_message("Data request error")
         break;
 			
         case YaGames_CallNotPlayerInitSDK:
@@ -109,7 +109,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
 			// Успех
         break;
         case YaGames_CallPlayerInitError:	
-			show_message("player Leaderboard initialization error")
+			//show_message("player Leaderboard initialization error")
         break;
 			
         case YaGames_CallNotInitSDK:
@@ -140,17 +140,21 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
 			if (struct_names_count(_data) > 0)
 			{
 				met_flagsGetted(_data)
+				YG_INIT.flags = _data
 			}
         break;
         case YaGames_CallGetFlagsError:	
-			show_message("Flags request error")
+			//show_message("Flags request error")
+			YG_INIT.flags = json_parse(flags_default)
         break;
 			
         case YaGames_CallNotInitSDK:
 			show_message("player SDK not initialized")
+			YG_INIT.flags = json_parse(flags_default)
         break;
         case YaGames_CallRuntimeError:
 			show_message("player SDK runtime error")
+			YG_INIT.flags = json_parse(flags_default)
         break;
     }
 	

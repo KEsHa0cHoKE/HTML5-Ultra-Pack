@@ -1,17 +1,15 @@
-active_camera_on = true
-transition_active = true
+#region Настройки
+
+	active_camera_on = true
+	transition_active = true
+
+#endregion
 
 #region Камера
 
 if (active_camera_on)
 {
-	var _camWidth = view_wport[0]
-	var _camHeight = view_hport[0]
-
-	instance_create_depth(0,0, -10000, obj_cam, {
-		cam_width  : _camWidth,
-		cam_height : _camHeight
-	})
+	instance_create_depth(0,0, -10000, obj_cam)
 }
 
 #endregion
