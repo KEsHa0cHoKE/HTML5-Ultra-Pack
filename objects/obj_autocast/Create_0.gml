@@ -25,6 +25,9 @@ if (transition_active)
 
 #region Автокаст
 
+b_w = browser_width
+b_h = browser_height
+
 var _width = (active_camera_on ? obj_cam.cam_width : room_width)
 var _height = (active_camera_on ? obj_cam.cam_height : room_height)
 
