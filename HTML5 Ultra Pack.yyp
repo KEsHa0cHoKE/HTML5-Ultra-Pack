@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"HTML5","folderPath":"folders/HTML5.yy","name":"HTML5","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/HTML5/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/HTML5/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/HTML5/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/HTML5/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/HTML5/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -29,6 +30,7 @@
     {"id":{"name":"HTML5_Loading_Spinner","path":"extensions/HTML5_Loading_Spinner/HTML5_Loading_Spinner.yy",},},
     {"id":{"name":"YaGames","path":"extensions/YaGames/YaGames.yy",},},
     {"id":{"name":"YMetricaWeb","path":"extensions/YMetricaWeb/YMetricaWeb.yy",},},
+    {"id":{"name":"fnt_YaGamesInit","path":"fonts/fnt_YaGamesInit/fnt_YaGamesInit.yy",},},
     {"id":{"name":"obj_adv","path":"objects/obj_adv/obj_adv.yy",},},
     {"id":{"name":"obj_autocast","path":"objects/obj_autocast/obj_autocast.yy",},},
     {"id":{"name":"obj_cam","path":"objects/obj_cam/obj_cam.yy",},},

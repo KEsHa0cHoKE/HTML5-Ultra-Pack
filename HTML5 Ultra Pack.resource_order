@@ -2,6 +2,7 @@
   "FolderOrderSettings":[
     {"name":"HTML5","order":6,"path":"folders/HTML5.yy",},
     {"name":"Extensions","order":2,"path":"folders/HTML5/Extensions.yy",},
+    {"name":"Fonts","order":6,"path":"folders/HTML5/Fonts.yy",},
     {"name":"Rooms","order":4,"path":"folders/HTML5/Rooms.yy",},
     {"name":"Scripts","order":5,"path":"folders/HTML5/Scripts.yy",},
   ],
