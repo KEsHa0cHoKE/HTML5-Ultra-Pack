@@ -74,6 +74,12 @@ function class_animation(_id, _varsStringToAnimate) constructor
 		{
 			array_resize(var_names_to_anim, 0)
 		}
+		
+		///@desc Возвращает, воспроизводится ли анимация
+		static met_vars_is_anim_active = function()
+		{
+			return (var_state > 0)
+		}
 	
 		#endregion
 		
