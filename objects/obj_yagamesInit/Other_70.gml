@@ -12,10 +12,10 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
 		break;
 		
 		case YaGames_CallNotInitSDK:
-			show_message("SDK not initialized")
+			//show_message("SDK not initialized")
 		break;
 		case YaGames_CallRuntimeError:
-			show_message("SDK runtime error")
+			//show_message("SDK runtime error")
 		break;
 	}
 	
@@ -46,13 +46,13 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
         break;
 			
         case YaGames_CallNotPlayerInitSDK:
-			show_message("Player in SDK not initialized")
+			//show_message("Player in SDK not initialized")
         break;
         case YaGames_CallNotInitSDK:
-			show_message("SDK not initialized")
+			//show_message("SDK not initialized")
         break;
         case YaGames_CallRuntimeError:
-			show_message("SDK runtime error")
+			//show_message("SDK runtime error")
         break;
     }
 	
@@ -83,13 +83,13 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
         break;
 			
         case YaGames_CallNotPlayerInitSDK:
-			show_message("Player in SDK not initialized")
+			//show_message("Player in SDK not initialized")
         break;
         case YaGames_CallNotInitSDK:
-			show_message("SDK not initialized")
+			//show_message("SDK not initialized")
         break;
         case YaGames_CallRuntimeError:
-			show_message("SDK runtime error")
+			//show_message("SDK runtime error")
         break;
     }
 	
@@ -113,10 +113,10 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
         break;
 			
         case YaGames_CallNotInitSDK:
-			show_message("player SDK not initialized")
+			//show_message("player SDK not initialized")
         break;
         case YaGames_CallRuntimeError:
-			show_message("player SDK runtime error")
+			//show_message("player SDK runtime error")
         break;
     }
 	
@@ -149,11 +149,11 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
         break;
 			
         case YaGames_CallNotInitSDK:
-			show_message("player SDK not initialized")
+			//show_message("player SDK not initialized")
 			YG_INIT.flags = json_parse(flags_default)
         break;
         case YaGames_CallRuntimeError:
-			show_message("player SDK runtime error")
+			//show_message("player SDK runtime error")
 			YG_INIT.flags = json_parse(flags_default)
         break;
     }

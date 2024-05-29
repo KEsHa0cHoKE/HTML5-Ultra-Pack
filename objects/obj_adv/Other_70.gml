@@ -29,11 +29,11 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) and (async_load[? "request_id"]
 			_setUpNewTimer()
 		break;
         case YaGames_CallNotInitSDK:
-			show_message("Fullscreen ADV error: not Init SDK")
+			//show_message("Fullscreen ADV error: not Init SDK")
 			_setUpNewTimer()
         break;
         case YaGames_CallRuntimeError:
-			show_message("Fullscreen ADV error: Runtime Error")
+			//show_message("Fullscreen ADV error: Runtime Error")
 			_setUpNewTimer()
         break;
     }
@@ -70,10 +70,10 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) and (async_load[? "request_id"]
 	    break;
 			
 	    case YaGames_CallNotInitSDK:
-			show_message("Reward error: Not init SDK")
+			//show_message("Reward error: Not init SDK")
 	    break;
 	    case YaGames_CallRuntimeError:
-			show_message("Reward error: Runtime Error")
+			//show_message("Reward error: Runtime Error")
 	    break;
 	}
 }
