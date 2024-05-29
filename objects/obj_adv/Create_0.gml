@@ -1,4 +1,10 @@
+#region Настройки
+
 fullscreen = true
+adv_periodicity_in_sec = 105
+
+#endregion
+
 req_id = YaGames_showFullscreenAdv()
 req_idReward = undefined
 
@@ -18,7 +24,6 @@ enum E_REWARD_STATE
 adv_state = E_ADV_STATE.CANNOT_SHOW
 reward_state = E_REWARD_STATE.NOT_SHOW
 
-adv_periodicity_in_sec = 105
 game_speed = game_get_speed(gamespeed_fps)
 fnt = fnt_YaGamesInit
 
