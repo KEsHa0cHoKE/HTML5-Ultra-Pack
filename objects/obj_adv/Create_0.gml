@@ -1,7 +1,7 @@
 #region Настройки
 
 fullscreen = true
-adv_periodicity_in_sec = 105
+adv_periodicity_in_sec = 91
 
 #endregion
 
@@ -27,12 +27,14 @@ reward_state = E_REWARD_STATE.NOT_SHOW
 game_speed = game_get_speed(gamespeed_fps)
 fnt = fnt_YaGamesInit
 
+///@func met_is_inter_showable()
 ///@desc Возвращает, прошло ли достаточно времени, чтобы можно было показать рекламу
 met_is_inter_showable = function()
 {
 	return (adv_state == E_ADV_STATE.CAN_SHOW)
 }
 
+///@func met_show_inter()
 ///@desc Запускает предупреждение о скором показе рекламы, а через 3 секунды саму рекламу
 met_show_inter = function()
 {
@@ -43,6 +45,7 @@ met_show_inter = function()
 	}
 }
 
+///@func met_is_adv_active()
 ///@desc Возвращает, показывается ли сейчас реклама или предупреждение о скором показе рекламы или ревард
 met_is_adv_active = function()
 {
@@ -51,6 +54,7 @@ met_is_adv_active = function()
 
 
 reward_callback = undefined
+///@func met_show_reward(_callBack)
 ///@desc Запускает ревард. В аргументе указывается метод/функция, которая выполнится при успешном просмотре реварда
 met_show_reward = function(_callBack)
 {

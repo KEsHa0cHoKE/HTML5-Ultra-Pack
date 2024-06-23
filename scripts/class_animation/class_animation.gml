@@ -1,6 +1,4 @@
 ///@desc Конструктор, отвечающий за анимацию.
-///Переменные для анимации необходимо добавлять в 
-///экземпляр конструктора через метод met_vars_add.
 ///Состояния анимации (var_state): 0/false -> не анимируется | >=1/true -> анимируется.
 function class_animation(_id, _varsStringToAnimate) constructor
 {
@@ -36,7 +34,8 @@ function class_animation(_id, _varsStringToAnimate) constructor
 	#region Методы
 	
 		#region Массив переменных для анимации
-	
+		
+		///@func met_vars_add(_id, _varsString)
 		///@desc Добавляет переменную/массив переменных для их последующей анимации
 		///@arg {Id.Instance} _id id экземпляра объекта
 		///@arg {Any} _varsString имя/массив имен переменных для добавления
@@ -68,13 +67,15 @@ function class_animation(_id, _varsStringToAnimate) constructor
 				}
 			}
 		}
-	
+		
+		///@func met_vars_clear()
 		///@desc Очищает массив анимируемых переменных
 		static met_vars_clear = function()
 		{
 			array_resize(var_names_to_anim, 0)
 		}
 		
+		///@func met_vars_is_anim_active()
 		///@desc Возвращает, воспроизводится ли анимация
 		static met_vars_is_anim_active = function()
 		{
@@ -85,11 +86,14 @@ function class_animation(_id, _varsStringToAnimate) constructor
 		
 		
 		#region Callback
-	
+		
+		///@func met_callback_set(_keyframe, _methodOrFunc)
 		///@desc Устанавливает функцию/метод, который будет выполнен на предоставленном в первом аргументе
 		///ключевом кадре анимации. Индексация начинается с 0.
 		///Если необходимо связать метод с концом анимации, в аргументе _keyframe можно использовать
 		///макрос ANIM_END или просто значение -1
+		///@arg {Real} _keyframe Ключевой кадр. Если конец анимации то ANIM_END или -1
+		///@arg {Function} _methodOrFunc Функция/метод
 		static met_callback_set = function(_keyframe, _methodOrFunc)
 		{
 			if (!is_callable(_methodOrFunc))
@@ -106,6 +110,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			var_callback_methods[_keyframe] = method(undefined, _methodOrFunc)
 		}
 		
+		///@func met_callback_delete(_keyframe)
 		///@desc Удаляет функцию/метод, привязанный к кадру анимации
 		static met_callback_delete = function(_keyframe)
 		{
@@ -122,7 +127,8 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			
 			var_callback_methods[_keyframe] = undefined
 		}
-	
+		
+		///@func met_callback_clear()
 		///@desc Сбрасывает ВСЕ установленные функции/методы
 		static met_callback_clear = function()
 		{
@@ -135,13 +141,15 @@ function class_animation(_id, _varsStringToAnimate) constructor
 		
 		
 		#region Контроль анимации
-	
+		
+		///@func met_control_start()
 		///@desc Запускает анимацию
 		static met_control_start = function()
 		{
 			var_state = 1
 		}
-	
+		
+		///@func met_control_end()
 		///@desc Принудительно завершает анимацию. 
 		///Анимируемые переменные остаются в состоянии на момент принудительного завершения
 		static met_control_end = function()
@@ -149,6 +157,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			var_state = 0
 		}
 		
+		///@func met_control_speed_reset()
 		///@desc Сбрасывает установленную скорость для ее перерасчета
 		///с текущего значения анимируемой переменной
 		static met_control_speed_reset = function()
@@ -202,6 +211,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			
 			#endregion
 		
+		///@func anim_speed(_valuesArray, _spd)
 		///@desc Анимирует переменные, используя скорость анимации. 
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		static anim_speed = function(_valuesArray, _spd)
@@ -248,6 +258,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			}
 		}
 		
+		///@func anim_frames(_valuesArray, _frames)
 		///@desc Анимирует переменные, используя кол-во кадров, за которое должно достигаться одно значение. 
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		static anim_frames = function(_valuesArray, _frames)
@@ -299,6 +310,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			}
 		}
 		
+		///@func anim_frames_overall(_valuesArray, _frames)
 		///@desc Анимирует переменные, используя кол-во кадров, за которое должна проиграться вся анимация. 
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		static anim_frames_overall = function(_valuesArray, _frames)
@@ -350,6 +362,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			}
 		}
 		
+		///@func anim_time(_valuesArray, _seconds)
 		///@desc Анимирует переменные, используя время в секундах, за которое должно достигаться одно значение. 
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		static anim_time = function(_valuesArray, _seconds)
@@ -401,6 +414,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			}
 		}
 		
+		///@func anim_time_overall(_valuesArray, _seconds)
 		///@desc Анимирует переменные, используя время в секундах, за которое должна проиграться вся анимация. 
 		///Первый аргумент принимает массив значений для анимации.
 		static anim_time_overall = function(_valuesArray, _seconds)
@@ -452,6 +466,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			}
 		}
 		
+		///@func anim_lerp(_valuesArray, _lerp, [_maxDifference = 0.01])
 		///@desc Анимирует переменные, используя множитель интерполяции. 
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		///Третий - максимальную разницу в значениях при достижении которой значение сразу меняется на целевое,
@@ -498,7 +513,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 
 
 
-
+///@func animation_handle(_varAnimStateString, _varToAnimateString, _firstValue, _secondValue, _spd)
 ///@deprecated
 ///@desc УСТАРЕЛО!!!
 ///Анимирует переменную объекта, используя для контроля анимации его переменную-состояние анимации, 

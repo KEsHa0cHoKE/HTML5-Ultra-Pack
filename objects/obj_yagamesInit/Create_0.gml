@@ -8,19 +8,22 @@
 	flags_default = json_stringify({/*Вставить сюда, структура*/})
 	// Язык, который используется для теста на windows
 	windows_lang = "ru"
-
+	
+	///@func met_dataGetted(_struct)
 	///@desc Метод, который выполняется при получении data с сервера
 	met_dataGetted = function(_struct)
 	{
 		// place here some code
 	}
-
+	
+	///@func met_statsGetted(_struct)
 	///@desc Метод, который выполняется при получении stats с сервера
 	met_statsGetted = function(_struct)
 	{
 		// place here some code
 	}
-
+	
+	///@func met_flagsGetted(_struct)
 	///@desc Метод, который выполняется при получении flags с сервера
 	met_flagsGetted = function(_struct)
 	{

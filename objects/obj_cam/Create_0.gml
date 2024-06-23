@@ -40,6 +40,7 @@ else if (instance_exists(targ_inst))
 	target_y = targ_inst.y
 }
 
+///@func met_set_pos(_x, _y)
 ///@desc Устанавливает камеру в указанное положение
 met_set_pos = function(_x, _y)
 {
@@ -51,6 +52,7 @@ met_set_pos = function(_x, _y)
 	camera_set_view_pos(view_camera[0], x, y)
 }
 
+///@func met_set_offset(_offsetX, _offsetY)
 ///@desc Изменить отступ камеры до отслеживаемого объекта
 met_set_offset = function(_offsetX, _offsetY)
 {
@@ -58,6 +60,7 @@ met_set_offset = function(_offsetX, _offsetY)
 	offset_y = _offsetY
 }
 
+///@func met_set_targetInst(_instId)
 ///@desc Изменить отслеживаемый объект
 met_set_targetInst = function(_instId)
 {
