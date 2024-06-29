@@ -36,5 +36,5 @@ display_center(_width, _height)
 
 #endregion
 
-surface_depth_disable(true)
+//surface_depth_disable(true)
 device_mouse_dbclick_enable(false)
