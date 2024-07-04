@@ -1,16 +1,16 @@
 {
   "FolderOrderSettings":[
     {"name":"HTML5","order":6,"path":"folders/HTML5.yy",},
-    {"name":"Extensions","order":2,"path":"folders/HTML5/Extensions.yy",},
-    {"name":"Fonts","order":6,"path":"folders/HTML5/Fonts.yy",},
-    {"name":"Rooms","order":4,"path":"folders/HTML5/Rooms.yy",},
-    {"name":"Scripts","order":5,"path":"folders/HTML5/Scripts.yy",},
+    {"name":"Extensions","order":1,"path":"folders/HTML5/Extensions.yy",},
+    {"name":"Fonts","order":4,"path":"folders/HTML5/Fonts.yy",},
+    {"name":"Rooms","order":2,"path":"folders/HTML5/Rooms.yy",},
+    {"name":"Scripts","order":3,"path":"folders/HTML5/Scripts.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"HTML5_inputlag_fix","order":1,"path":"extensions/HTML5_inputlag_fix/HTML5_inputlag_fix.yy",},
     {"name":"HTML5_Loading_Spinner","order":2,"path":"extensions/HTML5_Loading_Spinner/HTML5_Loading_Spinner.yy",},
-    {"name":"YaGames","order":4,"path":"extensions/YaGames/YaGames.yy",},
-    {"name":"YMetricaWeb","order":3,"path":"extensions/YMetricaWeb/YMetricaWeb.yy",},
+    {"name":"YaGames","order":3,"path":"extensions/YaGames/YaGames.yy",},
+    {"name":"YaMetricaWeb","order":4,"path":"extensions/YaMetricaWeb/YaMetricaWeb.yy",},
     {"name":"obj_autocast","order":2,"path":"objects/obj_autocast/obj_autocast.yy",},
     {"name":"obj_cam","order":1,"path":"objects/obj_cam/obj_cam.yy",},
     {"name":"obj_transition","order":3,"path":"objects/obj_transition/obj_transition.yy",},

@@ -1,7 +1,7 @@
 #region Настройки
 
 fullscreen = true
-adv_periodicity_in_sec = 91
+adv_periodicity_in_sec = 95
 
 #endregion
 

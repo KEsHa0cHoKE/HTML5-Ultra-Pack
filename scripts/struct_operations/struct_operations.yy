@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"struct_operations",
   "isCompatibility":false,
   "isDnD":false,
