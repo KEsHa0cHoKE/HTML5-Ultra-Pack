@@ -1,9 +1,6 @@
 ///@desc Запуск рекламы
 req_id = YaGames_showFullscreenAdv()
 
-///@desc Запуск рекламы
-req_id = YaGames_showFullscreenAdv()
-
 if (os_browser == browser_not_a_browser)
 {
 	adv_state = E_ADV_STATE.CANNOT_SHOW
