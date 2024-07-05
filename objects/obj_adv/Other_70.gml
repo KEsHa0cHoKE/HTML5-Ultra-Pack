@@ -65,14 +65,17 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) and (async_load[? "request_id"]
 			audio_resume_all()
 			reward_state = E_REWARD_STATE.NOT_SHOW
 	    break;
-	    case YaGames_CallRewardError:		
+	    case YaGames_CallRewardError:
+			reward_state = E_REWARD_STATE.NOT_SHOW
 			//show_message("Reward error")
 	    break;
 			
 	    case YaGames_CallNotInitSDK:
+			reward_state = E_REWARD_STATE.NOT_SHOW
 			//show_message("Reward error: Not init SDK")
 	    break;
 	    case YaGames_CallRuntimeError:
+			reward_state = E_REWARD_STATE.NOT_SHOW
 			//show_message("Reward error: Runtime Error")
 	    break;
 	}
