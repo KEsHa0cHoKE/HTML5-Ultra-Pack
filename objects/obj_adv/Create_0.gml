@@ -21,7 +21,7 @@ enum E_REWARD_STATE
 	SENDED_REQUEST,
 	SHOWING
 }
-adv_state = E_ADV_STATE.CANNOT_SHOW
+adv_state = E_ADV_STATE.SHOWING_ADV
 reward_state = E_REWARD_STATE.NOT_SHOW
 
 game_speed = game_get_speed(gamespeed_fps)
