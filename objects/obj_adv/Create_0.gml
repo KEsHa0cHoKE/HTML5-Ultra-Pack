@@ -41,7 +41,7 @@ met_show_inter = function()
 	if (met_is_inter_showable())
 	{
 		adv_state = E_ADV_STATE.SHOWING_WARNING
-		alarm[1] = 3*game_speed
+		alarm[1] = 2*game_speed
 	}
 }
 
