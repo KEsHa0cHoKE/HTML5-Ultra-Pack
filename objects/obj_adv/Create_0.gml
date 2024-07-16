@@ -34,14 +34,23 @@ met_is_inter_showable = function()
 	return (adv_state == E_ADV_STATE.CAN_SHOW)
 }
 
-///@func met_show_inter()
-///@desc Запускает предупреждение о скором показе рекламы, а через 3 секунды саму рекламу
-met_show_inter = function()
+///@func met_show_inter([_showWarning])
+///@desc Если true в аргументе то запускает предупреждение о скором показе рекламы, а через 3 секунды саму рекламу.
+///Если указать в аргументе false, то запускает рекламу без предупреждения
+met_show_inter = function(_showWarning = true)
 {
 	if (met_is_inter_showable())
 	{
-		adv_state = E_ADV_STATE.SHOWING_WARNING
-		alarm[1] = 2*game_speed
+		if (_showWarning)
+		{
+			adv_state = E_ADV_STATE.SHOWING_WARNING
+			alarm[1] = 2*game_speed
+		}
+		else
+		{
+			adv_state = E_ADV_STATE.SHOWING_ADV
+			alarm[1] = 1
+		}
 	}
 }
 
