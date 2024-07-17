@@ -1,6 +1,6 @@
 #region Настройки
 
-	active_camera_on = true
+	active_camera_on = false
 	transition_active = true
 
 #endregion
