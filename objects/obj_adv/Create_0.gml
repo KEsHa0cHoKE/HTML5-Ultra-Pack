@@ -21,7 +21,8 @@ enum E_REWARD_STATE
 	SENDED_REQUEST,
 	SHOWING
 }
-adv_state = E_ADV_STATE.SHOWING_ADV
+var _isWindows = (os_browser == browser_not_a_browser)
+adv_state = (_isWindows ? E_ADV_STATE.CANNOT_SHOW : E_ADV_STATE.SHOWING_ADV)
 reward_state = E_REWARD_STATE.NOT_SHOW
 
 game_speed = game_get_speed(gamespeed_fps)
@@ -41,6 +42,13 @@ met_show_inter = function(_showWarning = true)
 {
 	if (met_is_inter_showable())
 	{
+		if (os_browser == browser_not_a_browser)
+		{
+			adv_state = E_ADV_STATE.CANNOT_SHOW
+			alarm[0] = adv_periodicity_in_sec*game_speed
+			exit;
+		}
+		
 		if (_showWarning)
 		{
 			adv_state = E_ADV_STATE.SHOWING_WARNING
