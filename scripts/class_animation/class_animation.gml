@@ -212,7 +212,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 			#endregion
 		
 		///@func anim_speed(_valuesArray, _spd)
-		///@desc Анимирует переменные, используя скорость анимации. 
+		///@desc Анимирует переменные, используя скорость анимации.
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		static anim_speed = function(_valuesArray, _spd)
 		{
@@ -259,7 +259,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 		}
 		
 		///@func anim_frames(_valuesArray, _frames)
-		///@desc Анимирует переменные, используя кол-во кадров, за которое должно достигаться одно значение. 
+		///@desc Анимирует переменные, используя кол-во кадров, за которое должно достигаться одно значение.
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		static anim_frames = function(_valuesArray, _frames)
 		{
@@ -305,13 +305,13 @@ function class_animation(_id, _varsStringToAnimate) constructor
 				__met_update_vars_values(_value)
 			}
 			else if (_value == _targetValue)
-			{	
+			{
 				__met_next_state(_valuesArray)
 			}
 		}
 		
 		///@func anim_frames_overall(_valuesArray, _frames)
-		///@desc Анимирует переменные, используя кол-во кадров, за которое должна проиграться вся анимация. 
+		///@desc Анимирует переменные, используя кол-во кадров, за которое должна проиграться вся анимация.
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		static anim_frames_overall = function(_valuesArray, _frames)
 		{
@@ -363,7 +363,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 		}
 		
 		///@func anim_time(_valuesArray, _seconds)
-		///@desc Анимирует переменные, используя время в секундах, за которое должно достигаться одно значение. 
+		///@desc Анимирует переменные, используя время в секундах, за которое должно достигаться одно значение.
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		static anim_time = function(_valuesArray, _seconds)
 		{
@@ -415,7 +415,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 		}
 		
 		///@func anim_time_overall(_valuesArray, _seconds)
-		///@desc Анимирует переменные, используя время в секундах, за которое должна проиграться вся анимация. 
+		///@desc Анимирует переменные, используя время в секундах, за которое должна проиграться вся анимация.
 		///Первый аргумент принимает массив значений для анимации.
 		static anim_time_overall = function(_valuesArray, _seconds)
 		{
@@ -467,7 +467,7 @@ function class_animation(_id, _varsStringToAnimate) constructor
 		}
 		
 		///@func anim_lerp(_valuesArray, _lerp, [_maxDifference = 0.01])
-		///@desc Анимирует переменные, используя множитель интерполяции. 
+		///@desc Анимирует переменные, используя множитель интерполяции.
 		///Первый аргумент принимает массив ключевых значений для анимации.
 		///Третий - максимальную разницу в значениях при достижении которой значение сразу меняется на целевое,
 		///чтобы избежать длительного "простаивания" анимации на одном значении (по умолчанию - 0.01)

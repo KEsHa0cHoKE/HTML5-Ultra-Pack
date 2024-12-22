@@ -4,7 +4,7 @@ if (waiting_answer) then exit;
 
 switch (state)
 {
-	case E_INIT_STATE.SDK_NOT_INIT : 
+	case E_INIT_STATE.SDK_NOT_INIT :
 		sdk_is_ready = YaGames_getInitStatus()
 		if (sdk_is_ready) then state++
 	break;
@@ -15,7 +15,6 @@ switch (state)
 	break;
 		
 	case E_INIT_STATE.ENVIRONMENT_GETTED :
-		YG_INIT.lang = environment.i18n.lang
 		reqId_playerInit = YaGames_Player_Init()
 		waiting_answer = true
 	break;
@@ -36,7 +35,11 @@ switch (state)
 	break;
 	
 	case E_INIT_STATE.FLAGS_GETTED :
-		instance_create_depth(0,0, -10000, obj_adv)
+		call_later(0.1, time_source_units_seconds, function(){
+			YaGames_GameReadyOn()
+		})
+		
+		instance_create_depth(0,0, -10000, obj_adv) 
 		room_goto(first_room)
 	break;
 }

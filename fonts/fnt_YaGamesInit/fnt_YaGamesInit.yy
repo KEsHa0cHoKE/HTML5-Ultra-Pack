@@ -59,7 +59,7 @@
   "name":"fnt_YaGamesInit",
   "parent":{
     "name":"Fonts",
-    "path":"folders/HTML5/Fonts.yy",
+    "path":"folders/Extensions/HTML5/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[

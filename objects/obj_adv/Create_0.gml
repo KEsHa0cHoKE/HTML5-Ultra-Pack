@@ -1,7 +1,7 @@
 #region Настройки
 
 fullscreen = true
-adv_periodicity_in_sec = 95
+adv_periodicity_in_sec = 91
 
 #endregion
 
@@ -35,10 +35,11 @@ met_is_inter_showable = function()
 	return (adv_state == E_ADV_STATE.CAN_SHOW)
 }
 
-///@func met_show_inter([_showWarning])
+///@func met_show_inter([_showWarning], [_callback])
 ///@desc Если true в аргументе то запускает предупреждение о скором показе рекламы, а через 3 секунды саму рекламу.
 ///Если указать в аргументе false, то запускает рекламу без предупреждения
-met_show_inter = function(_showWarning = true)
+inter_callback = undefined
+met_show_inter = function(_showWarning = true, _callback = undefined)
 {
 	if (met_is_inter_showable())
 	{
@@ -58,6 +59,11 @@ met_show_inter = function(_showWarning = true)
 		{
 			adv_state = E_ADV_STATE.SHOWING_ADV
 			alarm[1] = 1
+		}
+		
+		if (is_callable(_callback))
+		{
+			inter_callback = _callback
 		}
 	}
 }

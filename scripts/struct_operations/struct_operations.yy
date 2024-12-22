@@ -6,7 +6,7 @@
   "name":"struct_operations",
   "parent":{
     "name":"Scripts",
-    "path":"folders/HTML5/Scripts.yy",
+    "path":"folders/Extensions/HTML5/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

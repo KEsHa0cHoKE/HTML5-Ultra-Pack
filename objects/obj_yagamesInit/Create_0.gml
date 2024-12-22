@@ -1,11 +1,21 @@
 ///@desc
 
+met_loading_failed = function(_failedInfoString = "undefined_reason")
+{
+	room_goto(r_loadingFailed)
+	
+	//YMW_reachGoal("dataLoading_failed")
+	//YMW_params(json_stringify({loading_failed : _failedInfoString}))
+}
+
+#endregion
+
 #region Настройки
 
-	// Первая комната, куда надо перейти после загрузки игры
-	first_room = r_init
+	// Первая комната, куда надо перейти после загрузки игры	
+	first_room = rm_game // Вставьте название комнаты
 	// Флаги, используемые если не получили флаги с сервера, или на windows
-	flags_default = json_stringify({/*Вставить сюда, структура*/})
+	flags_default = json_stringify({})
 	// Язык, который используется для теста на windows
 	windows_lang = "ru"
 	
@@ -32,6 +42,7 @@
 
 #endregion
 
+
 enum E_INIT_STATE
 {
 	SDK_NOT_INIT,
@@ -40,7 +51,7 @@ enum E_INIT_STATE
 	PLAYER_INITED,
 	STATS_GETTED,
 	DATA_GETTED,
-	FLAGS_GETTED
+	FLAGS_GETTED,
 }
 
 globalvar YG_INIT;
@@ -51,6 +62,7 @@ YG_INIT = {
 }
 
 state = E_INIT_STATE.SDK_NOT_INIT
+
 
 #region Прелоад
 
@@ -64,6 +76,7 @@ reqId_flags = undefined
 environment = {}
 
 #endregion
+
 
 #region Девайс
 
@@ -91,8 +104,8 @@ if (_isWindows)
 {
 	YG_INIT.lang = windows_lang
 	YG_INIT.flags = json_parse(flags_default)
-	instance_create_depth(0,0, -10000, obj_adv)
-	room_goto(first_room)
+	
+	state = E_INIT_STATE.FLAGS_GETTED
 }
 
 #endregion

@@ -4,15 +4,22 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) and (async_load[? "request_id"]
 {
 	var _setUpNewTimer = function()
 	{
+		audio_resume_all()
+		
 		adv_state = E_ADV_STATE.CANNOT_SHOW
 		alarm[0] = adv_periodicity_in_sec*game_speed
+			
+		if (is_callable(inter_callback))
+		{
+			inter_callback()
+		}
+		inter_callback = undefined
 	}
 	
 	switch (async_load[? "event"]) 
 	{
         case YaGames_CallAdClosed:
 			_setUpNewTimer()
-			audio_resume_all()
         break;
 		
         case YaGames_CallAdOpened:
@@ -67,15 +74,18 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) and (async_load[? "request_id"]
 	    break;
 	    case YaGames_CallRewardError:
 			reward_state = E_REWARD_STATE.NOT_SHOW
+			audio_resume_all()
 			//show_message("Reward error")
 	    break;
 			
 	    case YaGames_CallNotInitSDK:
 			reward_state = E_REWARD_STATE.NOT_SHOW
+			audio_resume_all()
 			//show_message("Reward error: Not init SDK")
 	    break;
 	    case YaGames_CallRuntimeError:
 			reward_state = E_REWARD_STATE.NOT_SHOW
+			audio_resume_all()
 			//show_message("Reward error: Runtime Error")
 	    break;
 	}

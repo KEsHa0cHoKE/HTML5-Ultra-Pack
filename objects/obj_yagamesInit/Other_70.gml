@@ -1,6 +1,6 @@
 #region ENVIRONMENT
 
-if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] == reqId_environment))
+if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_environment))
 {
 	switch (async_load[? "event"]) 
 	{
@@ -8,14 +8,20 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
 			// Успех
 			
 			var _data = json_parse(async_load[? "data"])
-			environment = _data
+			YG_INIT.lang = _data.i18n.lang
+			show_debug_message($"-- environment language getted: {_data.i18n.lang}")
 		break;
 		
 		case YaGames_CallNotInitSDK:
-			//show_message("SDK not initialized")
+			show_debug_message("-- environment SDK not initialized")
+			
+			YG_INIT.lang = "ru"
 		break;
+		
 		case YaGames_CallRuntimeError:
-			//show_message("SDK runtime error")
+			show_debug_message("-- environment SDK runtime error")
+			
+			YG_INIT.lang = "ru"
 		break;
 	}
 	
@@ -27,10 +33,10 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
 
 #region STATS
 
-if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_getStats))
+if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_getStats))
 {
 	switch (async_load[? "event"]) 
-	{	
+	{
         case YaGames_CallPlayerGetStats:
 			// Успех
 			
@@ -42,17 +48,21 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 			}
         break;
         case YaGames_CallPlayerGetStatsError:
-			//show_message("Stats request error")
+			show_debug_message("-- Stats request error")
+			met_loading_failed("stats request error")
         break;
 			
         case YaGames_CallNotPlayerInitSDK:
-			//show_message("Player in SDK not initialized")
+			show_debug_message("-- Stats Player in SDK not initialized")
+			met_loading_failed("stats PLAYER not inited")
         break;
         case YaGames_CallNotInitSDK:
-			//show_message("SDK not initialized")
+			show_debug_message("-- Stats SDK not initialized")
+			met_loading_failed("stats SDK not inited")
         break;
         case YaGames_CallRuntimeError:
-			//show_message("SDK runtime error")
+			show_debug_message("-- Stats SDK runtime error")
+			met_loading_failed("stats SDK runtime error")
         break;
     }
 	
@@ -64,7 +74,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 
 #region DATA
 
-if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_getData))
+if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_getData))
 {
 	switch (async_load[? "event"]) 
 	{	
@@ -79,17 +89,21 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 			}
         break;
         case YaGames_CallPlayerGetDataError:
-			//show_message("Data request error")
+			show_debug_message("-- Data request error")
+			met_loading_failed("data request error")
         break;
 			
         case YaGames_CallNotPlayerInitSDK:
-			//show_message("Player in SDK not initialized")
+			show_debug_message("-- Data Player in SDK not initialized")
+			met_loading_failed("data PLAYER not inited")
         break;
         case YaGames_CallNotInitSDK:
-			//show_message("SDK not initialized")
+			show_debug_message("-- Data SDK not initialized")
+			met_loading_failed("data SDK not inited")
         break;
         case YaGames_CallRuntimeError:
-			//show_message("SDK runtime error")
+			show_debug_message("-- Data SDK runtime error")
+			met_loading_failed("data SDK runtime error")
         break;
     }
 	
@@ -101,7 +115,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) && (async_load[? "request_id"] =
 
 #region PLAYER INIT
 
-if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] == reqId_playerInit)) 
+if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_playerInit)) 
 {
     switch (async_load[? "event"]) 
 	{
@@ -109,14 +123,17 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
 			// Успех
         break;
         case YaGames_CallPlayerInitError:	
-			//show_message("player Leaderboard initialization error")
+			show_debug_message("-- player initialization error")
+			met_loading_failed("player initialization error")
         break;
 			
         case YaGames_CallNotInitSDK:
-			//show_message("player SDK not initialized")
+			show_debug_message("-- player SDK not initialized")
+			met_loading_failed("player SDK not initialized")
         break;
         case YaGames_CallRuntimeError:
-			//show_message("player SDK runtime error")
+			show_debug_message("-- player SDK runtime error")
+			met_loading_failed("player SDK runtime error")
         break;
     }
 	
@@ -128,7 +145,7 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
 
 #region FLAGS
 
-if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] == reqId_flags)) 
+if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_flags)) 
 {
     switch (async_load[? "event"]) 
 	{
@@ -144,17 +161,20 @@ if ((async_load[? "type"]== YaGames_AsyncEvent) and (async_load[? "request_id"] 
 			}
         break;
         case YaGames_CallGetFlagsError:	
-			//show_message("Flags request error")
+			show_debug_message("-- Flags request error")
 			YG_INIT.flags = json_parse(flags_default)
+			
         break;
 			
         case YaGames_CallNotInitSDK:
-			//show_message("player SDK not initialized")
+			show_debug_message("-- Flags SDK not initialized")
 			YG_INIT.flags = json_parse(flags_default)
+			
         break;
         case YaGames_CallRuntimeError:
-			//show_message("player SDK runtime error")
+			show_debug_message("-- Flags SDK runtime error")
 			YG_INIT.flags = json_parse(flags_default)
+			
         break;
     }
 	

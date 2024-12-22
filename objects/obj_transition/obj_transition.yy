@@ -13,7 +13,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
-    "path":"folders/HTML5/Objects.yy",
+    "path":"folders/Extensions/HTML5/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":true,

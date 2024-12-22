@@ -23,7 +23,7 @@
   "gradleinject":"",
   "hasConvertedCodeInjection":true,
   "helpfile":"",
-  "HTML5CodeInjection":"<GM_HTML5_PostStyle>\r\n<style>\r\n    body\r\n    {\r\n        background-color:rgb(21,21,21);\r\n        \r\n        overflow:hidden;\r\n    }\r\n</style>\r\n</GM_HTML5_PostStyle>",
+  "HTML5CodeInjection":"",
   "html5Props":true,
   "IncludedResources":[],
   "installdir":"",
@@ -45,7 +45,7 @@
   "packageId":"com.ogregames.html5loadingspinner",
   "parent":{
     "name":"Extensions",
-    "path":"folders/HTML5/Extensions.yy",
+    "path":"folders/Extensions/HTML5/Extensions.yy",
   },
   "productId":"7BA9556F531DB40A2085135D77628277",
   "resourceType":"GMExtension",

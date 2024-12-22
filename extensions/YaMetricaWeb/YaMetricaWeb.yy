@@ -66,7 +66,7 @@
   "packageId":"",
   "parent":{
     "name":"Extensions",
-    "path":"folders/HTML5/Extensions.yy",
+    "path":"folders/Extensions/HTML5/Extensions.yy",
   },
   "productId":"",
   "resourceType":"GMExtension",

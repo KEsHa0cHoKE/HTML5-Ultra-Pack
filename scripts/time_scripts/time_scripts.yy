@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"ini_operations",
+  "%Name":"time_scripts",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ini_operations",
+  "name":"time_scripts",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Extensions/HTML5/Scripts.yy",
+    "name":"Time Scripts",
+    "path":"folders/Extensions/HTML5/Time Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
