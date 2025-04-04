@@ -1,3 +1,6 @@
+// Автор : Game Maker Boost
+// boosty автора : https://boosty.to/gamemakerboost
+
 function display_set(_center = true,_width = room_width,_height = room_height)
 {
 	//var _first = instance_find(obj_resize,0);
@@ -138,13 +141,13 @@ function display_center(_width = room_width,_height = room_height)
 {
 	var _camPosX = (_width - camera_get_view_width(view_camera[0])) / 2
 	var _camPosY = (_height - camera_get_view_height(view_camera[0])) / 2
-	if (!obj_autocast.active_camera_on)
+	if (!yg_autocast.active_camera_on)
 	{
 		camera_set_view_pos(view_camera[0], _camPosX, _camPosY)
 	}
-	else if (instance_exists(obj_cam))
+	else if (instance_exists(yg_cam))
 	{
-		obj_cam.autocast_base_x = _camPosX
-		obj_cam.autocast_base_y = _camPosY
+		yg_cam.autocast_base_x = _camPosX
+		yg_cam.autocast_base_y = _camPosY
 	}
 }

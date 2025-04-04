@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"time_scripts",
   "parent":{
-    "name":"Time Scripts",
-    "path":"folders/Extensions/HTML5/Time Scripts.yy",
+    "name":"Scripts",
+    "path":"folders/Extensions/HTML5/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
