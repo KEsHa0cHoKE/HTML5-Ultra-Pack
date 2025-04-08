@@ -1,0 +1,27 @@
+{
+  "$GMExtensionConfigSet": "GMExtensionConfigSet",
+  "configurables": {
+    "a9643f3b-a726-4e01-90ac-82fe3bc8087d": {
+      "Default": {
+        "value": "False"
+      }
+    },
+    "48a65c99-e602-42de-9692-71a2015114c6": {
+      "Default": {
+        "value": "Lossy WEBP"
+      }
+    },
+    "af100c81-b414-40a9-b9e9-c37219d04fc4": null,
+    "07fc2aae-8982-4a02-bb75-d42bc817444c": null,
+    "f57c847a-e40b-4e48-b476-1502829a0cf4": null,
+    "c7418499-1225-4329-b550-363d60e86543": null,
+    "372167d4-1c02-4118-9f23-e170e5695b69": null,
+    "9f85c68b-8511-4ebd-8800-bc26b7b1a328": null,
+    "e5959387-fdf6-43fe-80cd-b8eb39d75264": null,
+    "c3dd78d3-fb79-49f3-b0aa-df9bb8ea942c": null,
+    "3c60e6e0-995b-4570-bde2-23be58c05d0e": null,
+    "161598f1-7e4b-4206-9900-744b868548f4": null,
+    "d71f014c-f730-435d-a41e-f0bc4ffa631b": null,
+    "8980adb3-d5d1-447f-800c-93d37fa91688": null
+  }
+}

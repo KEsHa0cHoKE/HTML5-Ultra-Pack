@@ -30,7 +30,7 @@ switch (state)
 	break;
 		
 	case E_INIT_STATE.DATA_GETTED :
-		reqId_flags = YaGames_GetFlags(flags_default)
+		reqId_flags = YaGames_GetFlags(json_stringify(YG.flags))
 		waiting_answer = true
 	break;
 	
@@ -39,7 +39,7 @@ switch (state)
 			YaGames_GameReadyOn()
 		})
 		
-		instance_create_depth(0,0, -10000, yg_adv) 
-		room_goto(first_room)
+		instance_create_depth(0,0, -10000, yg_adv)
+		room_goto(YG_FIRST_ROOM)
 	break;
 }

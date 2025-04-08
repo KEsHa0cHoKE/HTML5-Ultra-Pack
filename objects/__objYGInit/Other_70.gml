@@ -8,20 +8,21 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 			// Успех
 			
 			var _data = json_parse(async_load[? "data"])
-			YG_INIT.lang = _data.i18n.lang
-			show_debug_message($"-- environment language getted: {_data.i18n.lang}")
+			YG.lang = _data.i18n.lang
 		break;
 		
 		case YaGames_CallNotInitSDK:
 			show_debug_message("-- environment SDK not initialized")
+			YMW_params(json_stringify({loading_failed : "environment SDK not initialized"}))
 			
-			YG_INIT.lang = "ru"
+			YG.lang = "ru"
 		break;
 		
 		case YaGames_CallRuntimeError:
 			show_debug_message("-- environment SDK runtime error")
+			YMW_params(json_stringify({loading_failed : "environment SDK runtime error"}))
 			
-			YG_INIT.lang = "ru"
+			YG.lang = "ru"
 		break;
 	}
 	
@@ -157,27 +158,25 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 			if (struct_names_count(_data) > 0)
 			{
 				met_flagsGetted(_data)
-				YG_INIT.flags = _data
 			}
         break;
         case YaGames_CallGetFlagsError:	
 			show_debug_message("-- Flags request error")
-			YG_INIT.flags = json_parse(flags_default)
-			
+			YMW_params(json_stringify({loading_failed : "Flags request error"}))
         break;
 			
         case YaGames_CallNotInitSDK:
 			show_debug_message("-- Flags SDK not initialized")
-			YG_INIT.flags = json_parse(flags_default)
-			
+			YMW_params(json_stringify({loading_failed : "Flags SDK not initialized"}))
         break;
         case YaGames_CallRuntimeError:
 			show_debug_message("-- Flags SDK runtime error")
-			YG_INIT.flags = json_parse(flags_default)
-			
+			YMW_params(json_stringify({loading_failed : "Flags SDK runtime error"}))
         break;
     }
 	
 	state++
 	waiting_answer = false
 }
+
+#endregion

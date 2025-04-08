@@ -150,4 +150,8 @@ function display_center(_width = room_width,_height = room_height)
 		yg_cam.autocast_base_x = _camPosX
 		yg_cam.autocast_base_y = _camPosY
 	}
+	else
+	{
+		show_error("Активная камера включена, но объект камеры не существует", true)
+	}
 }

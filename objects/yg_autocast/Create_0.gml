@@ -1,6 +1,6 @@
 #region Настройки
 
-	active_camera_on = false
+	active_camera_on = YG_ACTIVE_CAMERA_ON
 	
 #endregion
 

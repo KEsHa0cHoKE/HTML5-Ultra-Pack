@@ -1,28 +1,15 @@
 ///@desc
 
-met_loading_failed = function(_failedInfoString = "undefined_reason")
-{
-	room_goto(__rmLoadingFailed)
-	
-	YMW_reachGoal("dataLoading_failed")
-	YMW_params(json_stringify({loading_failed : _failedInfoString}))
-}
-
-#endregion
+__settings()
 
 #region Настройки
 
-	// Первая комната, куда надо перейти после загрузки игры	
-	first_room = rm_game // Вставьте название комнаты
-	// Флаги, используемые если не получили флаги с сервера, или на windows
-	flags_default = json_stringify({/* place here some data */})
-	// Язык, который используется для теста на windows и в вебе
-	debug_lang = "ru"
-	
 	///@func met_dataGetted(_struct)
 	///@desc Метод, который выполняется при получении data с сервера
 	met_dataGetted = function(_struct)
 	{
+		YG.data = _struct
+		
 		// place here some code
 	}
 	
@@ -30,6 +17,8 @@ met_loading_failed = function(_failedInfoString = "undefined_reason")
 	///@desc Метод, который выполняется при получении stats с сервера
 	met_statsGetted = function(_struct)
 	{
+		YG.stats = _struct
+		
 		// place here some code
 	}
 	
@@ -37,10 +26,13 @@ met_loading_failed = function(_failedInfoString = "undefined_reason")
 	///@desc Метод, который выполняется при получении flags с сервера
 	met_flagsGetted = function(_struct)
 	{
+		YG.flags = _struct
+		
 		// place here some code
 	}
 
 #endregion
+
 
 
 enum E_INIT_STATE
@@ -53,14 +45,6 @@ enum E_INIT_STATE
 	DATA_GETTED,
 	FLAGS_GETTED,
 }
-
-globalvar YG_INIT;
-YG_INIT = {
-	flags : {},
-	lang : "ru",
-	device_type : E_DEVICE_TYPE.PC
-}
-
 state = E_INIT_STATE.SDK_NOT_INIT
 
 
@@ -74,39 +58,45 @@ reqId_getStats = undefined
 reqId_getData = undefined
 reqId_playerInit = undefined
 reqId_flags = undefined
-environment = {}
 
 #endregion
 
 
-#region Девайс
 
-enum E_DEVICE_TYPE
-{
-	PC,
-	MOBILE
-}
+#region Девайс
 
 switch (os_type)
 {
 	case os_windows:
 	case os_linux:
 	case os_macosx:
-		YG_INIT.device_type = E_DEVICE_TYPE.PC
+		YG.device_type = E_DEVICE_TYPE.PC
 	break;
 	
 	default:
-		YG_INIT.device_type = E_DEVICE_TYPE.MOBILE
+		YG.device_type = E_DEVICE_TYPE.MOBILE
 	break;
 }
 
-var _isWindows = (os_browser == browser_not_a_browser)
-if (_isWindows)
+#endregion
+
+
+#region Переход в дебаг мод для виндовс и тестового билда
+
+if (!YG.is_release_build)
 {
-	YG_INIT.lang = debug_lang
-	YG_INIT.flags = json_parse(flags_default)
+	YG.lang = YG_DEBUG_LANGUAGE
 	
 	state = E_INIT_STATE.FLAGS_GETTED
 }
 
 #endregion
+
+
+met_loading_failed = function(_failedInfoString = "undefined_reason")
+{
+	room_goto(__rmLoadingFailed)
+	
+	YMW_reachGoal("dataLoading_failed")
+	YMW_params(json_stringify({loading_failed : _failedInfoString}))
+}

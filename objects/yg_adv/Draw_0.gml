@@ -14,7 +14,7 @@ if (adv_state == E_ADV_STATE.SHOWING_WARNING)
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_middle)
 	draw_set_font(fnt)
-	var _text = (YG_INIT.lang == "ru" ?
+	var _text = (YG.lang == "ru" ?
 	"Сейчас будет показана реклама" :
 	"An advertisement will be shown now")
 	
