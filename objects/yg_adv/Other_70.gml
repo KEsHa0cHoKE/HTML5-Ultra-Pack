@@ -7,7 +7,7 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) and (async_load[? "request_id"]
 		audio_master_gain(1)
 		
 		adv_state = E_ADV_STATE.CANNOT_SHOW
-		alarm[0] = adv_periodicity_in_sec*game_get_speed(gamespeed_fps)
+		alarm[0] = (YG.is_release_build ? adv_periodicity_in_sec*game_get_speed(gamespeed_fps) : debug_adv_periodicity_in_sec*game_get_speed(gamespeed_fps))
 		
 		if (is_callable(inter_callback))
 		{
@@ -67,8 +67,6 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) and (async_load[? "request_id"]
 			audio_master_gain(1)
 			if (reward_received)
 			{
-				reward_received = false
-				
 				if (is_callable(reward_callback)) 
 				{
 					reward_callback()
@@ -87,6 +85,7 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) and (async_load[? "request_id"]
 					reward_callback_without_reward = undefined
 				}
 			}
+			reward_received = false
 			reward_state = E_REWARD_STATE.NOT_SHOW
 	    break;
 	    case YaGames_CallRewardError:

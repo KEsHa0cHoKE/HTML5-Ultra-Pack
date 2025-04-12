@@ -1,0 +1,1 @@
+YG.data.clicks = ++clicks

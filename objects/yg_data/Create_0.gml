@@ -132,7 +132,7 @@ met_delete_all_stats = function()
 ///@param {Function} _callback Коллбек при успешном получении сейвов
 ///@param {Function} _callbackFailed Коллбек при неудаче
 ///@param {Struct} _structToSaveIn Структура, в которую будет сохранен полученный с сервера json, путём перезаписи
-met_get_all_data = function(_callback = undefined, _callbackFailed = undefined, _structToSaveIn = YG.data) 
+met_get_all_data = function(_callback = undefined, _callbackFailed = undefined, _structToSaveIn = YG.data /* пока работает сохранение ТОЛЬКО в YG.data */) 
 {
 	if (YG.is_release_build && YG_SAVING_ACTIVE) 
 	{
@@ -146,7 +146,17 @@ met_get_all_data = function(_callback = undefined, _callbackFailed = undefined, 
 		with {_callback, _callbackFailed, _structToSaveIn} call_later(YG_SAVING_DEBUG_PERIOD, time_source_units_seconds, function(){
 			if (!YG_SAVING_DEBUG_GENERATE_ERROR_GET)
 			{
-				_structToSaveIn = struct_get_from_file(YG_DATA_FILENAME)
+				if (!file_exists(YG_DATA_FILENAME))
+				{
+					//struct_save_to_file(_structToSaveIn, YG_DATA_FILENAME)
+					struct_save_to_file(YG.data, YG_DATA_FILENAME)
+				}
+				else
+				{
+					//_structToSaveIn = struct_get_from_file(YG_DATA_FILENAME)
+					YG.data = struct_get_from_file(YG_DATA_FILENAME)
+				}
+
 				if (is_callable(_callback)) then _callback()
 			}
 			else
@@ -166,7 +176,7 @@ met_get_all_data = function(_callback = undefined, _callbackFailed = undefined, 
 ///@param {Function} _callback Коллбек при успешном получении сейвов
 ///@param {Function} _callbackFailed Коллбек при неудаче
 ///@param {Struct} _structToSaveIn Структура, в которую будет сохранена полученный с сервера json, путём перезаписи
-met_get_all_stats = function(_callback = undefined, _callbackFailed = undefined, _structToSaveIn = YG.stats) 
+met_get_all_stats = function(_callback = undefined, _callbackFailed = undefined, _structToSaveIn = YG.stats /* пока работает сохранение ТОЛЬКО в YG.stats */) 
 {
 	if (YG.is_release_build && YG_SAVING_ACTIVE)
 	{
@@ -180,7 +190,17 @@ met_get_all_stats = function(_callback = undefined, _callbackFailed = undefined,
 		with {_callback, _callbackFailed, _structToSaveIn} call_later(YG_SAVING_DEBUG_PERIOD, time_source_units_seconds, function(){
 			if (!YG_SAVING_DEBUG_GENERATE_ERROR_GET)
 			{
-				_structToSaveIn = struct_get_from_file(YG_STATS_FILENAME)
+				if (!file_exists(YG_STATS_FILENAME))
+				{
+					//struct_save_to_file(_structToSaveIn, YG_STATS_FILENAME)
+					struct_save_to_file(YG.stats, YG_STATS_FILENAME)
+				}
+				else
+				{
+					//_structToSaveIn = struct_get_from_file(YG_STATS_FILENAME)
+					YG.stats = struct_get_from_file(YG_STATS_FILENAME)
+				}
+				
 				if (is_callable(_callback)) then _callback()
 			}
 			else

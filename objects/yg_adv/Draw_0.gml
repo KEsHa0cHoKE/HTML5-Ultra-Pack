@@ -1,3 +1,12 @@
+if (is_struct(str_inter))
+{
+	str_inter.event_draw()
+}
+if (is_struct(str_reward))
+{
+	str_reward.event_draw()
+}
+
 if (fullscreen) then exit;
 
 if (adv_state == E_ADV_STATE.SHOWING_WARNING)

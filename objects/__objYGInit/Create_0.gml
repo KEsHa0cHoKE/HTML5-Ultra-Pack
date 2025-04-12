@@ -63,36 +63,6 @@ reqId_flags = undefined
 
 
 
-#region Девайс
-
-switch (os_type)
-{
-	case os_windows:
-	case os_linux:
-	case os_macosx:
-		YG.device_type = E_DEVICE_TYPE.PC
-	break;
-	
-	default:
-		YG.device_type = E_DEVICE_TYPE.MOBILE
-	break;
-}
-
-#endregion
-
-
-#region Переход в дебаг мод для виндовс и тестового билда
-
-if (!YG.is_release_build)
-{
-	YG.lang = YG_DEBUG_LANGUAGE
-	
-	state = E_INIT_STATE.FLAGS_GETTED
-}
-
-#endregion
-
-
 met_loading_failed = function(_failedInfoString = "undefined_reason")
 {
 	room_goto(__rmLoadingFailed)
