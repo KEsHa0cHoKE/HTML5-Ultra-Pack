@@ -17,6 +17,7 @@
     {"name":"__objWdt","order":7,"path":"objects/__objWdt/__objWdt.yy",},
     {"name":"__objYGInit","order":5,"path":"objects/__objYGInit/__objYGInit.yy",},
     {"name":"obj_click","order":3,"path":"objects/obj_click/obj_click.yy",},
+    {"name":"obj_controller","order":5,"path":"objects/obj_controller/obj_controller.yy",},
     {"name":"yg_audio","order":9,"path":"objects/yg_audio/yg_audio.yy",},
     {"name":"yg_autocast","order":1,"path":"objects/yg_autocast/yg_autocast.yy",},
     {"name":"yg_cam","order":2,"path":"objects/yg_cam/yg_cam.yy",},

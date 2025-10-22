@@ -5,29 +5,29 @@ __settings()
 
 #region Настройки
 
-	///@func met_dataGetted(_struct)
-	///@desc Метод, который выполняется при получении data с сервера
-	met_dataGetted = function()
-	{
-		// place here some code
-		if (struct_names_count(YG.data) > 0) {
-			global.data = variable_clone(YG.data)
-		}
-	}
+///@func met_dataGetted(_struct)
+///@desc Метод, который выполняется при получении data с сервера
+///@deprecated
+met_dataGetted = function()
+{
+	// place here some code
+}
 	
-	///@func met_statsGetted(_struct)
-	///@desc Метод, который выполняется при получении stats с сервера
-	met_statsGetted = function()
-	{
-		// place here some code
-	}
+///@func met_statsGetted(_struct)
+///@desc Метод, который выполняется при получении stats с сервера
+///@deprecated
+met_statsGetted = function()
+{
+	// place here some code
+}
 	
-	///@func met_flagsGetted(_struct)
-	///@desc Метод, который выполняется при получении flags с сервера
-	met_flagsGetted = function(_struct)
-	{
-		// place here some code
-	}
+///@func met_flagsGetted(_struct)
+///@desc Метод, который выполняется при получении flags с сервера
+///@deprecated
+met_flagsGetted = function(_struct)
+{
+	// place here some code
+}
 
 #endregion
 

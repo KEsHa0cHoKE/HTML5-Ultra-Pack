@@ -1,10 +1,10 @@
-if (is_struct(str_inter))
+if (is_struct(struct_inter))
 {
-	str_inter.event_draw()
+	struct_inter.event_draw()
 }
-if (is_struct(str_reward))
+if (is_struct(struct_reward))
 {
-	str_reward.event_draw()
+	struct_reward.event_draw()
 }
 
 if (fullscreen) then exit;

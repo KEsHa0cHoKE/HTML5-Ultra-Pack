@@ -37,6 +37,7 @@
     {"id":{"name":"__objWdt","path":"objects/__objWdt/__objWdt.yy",},},
     {"id":{"name":"__objYGInit","path":"objects/__objYGInit/__objYGInit.yy",},},
     {"id":{"name":"obj_click","path":"objects/obj_click/obj_click.yy",},},
+    {"id":{"name":"obj_controller","path":"objects/obj_controller/obj_controller.yy",},},
     {"id":{"name":"obj_reward","path":"objects/obj_reward/obj_reward.yy",},},
     {"id":{"name":"yg_adv","path":"objects/yg_adv/yg_adv.yy",},},
     {"id":{"name":"yg_audio","path":"objects/yg_audio/yg_audio.yy",},},

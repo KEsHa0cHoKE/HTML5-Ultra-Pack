@@ -1,15 +1,21 @@
+///@desc
+
+
 #region Настройки
+//TODO : редактировать draw gui и эвенты draw у конструкторов
+fullscreen = true // FALSE ПОКА НЕ ПОДДЕРЖИВАЕТСЯ, НЕ МЕНЯТЬ ИНАЧЕ СЛЕТЯТ ФЕЙК ИНТЕРЫ/РЕВАРДЫ
+
+#endregion
+
 
 debug_adv_periodicity_in_sec = YG_INTER_PERIOD_DEBUG
 adv_periodicity_in_sec = YG_INTER_PERIOD
 
-fullscreen = true
-
-#endregion
 
 #region Конструкторы для имитации рекламы в тестовом билде
 
 ///@func CloseButton
+///@ignore
 CloseButton = function(_parId, _x, _y) constructor
 {
 	x = _x
@@ -46,6 +52,7 @@ CloseButton = function(_parId, _x, _y) constructor
 }
 
 ///@func Inter
+///@ignore
 Inter = function(_x, _y, _parId) constructor 
 {
 	par_id = _parId
@@ -98,11 +105,12 @@ Inter = function(_x, _y, _parId) constructor
 		
 		delete close_button
 		close_button = undefined
-		par_id.str_inter = undefined
+		par_id.struct_inter = undefined
 	}
 }
 
 ///@func Reward
+///@ignore
 Reward = function(_x, _y, _parId) constructor 
 {
 	par_id = _parId
@@ -177,12 +185,12 @@ Reward = function(_x, _y, _parId) constructor
 		
 		delete close_button
 		close_button = undefined
-		par_id.str_reward = undefined
+		par_id.struct_reward = undefined
 	}
 }
 
-str_inter = undefined //new Inter(room_width/2, room_height/2, self)
-str_reward = undefined //new Reward(room_width/2, room_height/2, self)
+struct_inter = undefined //new Inter(room_width/2, room_height/2, self)
+struct_reward = undefined //new Reward(room_width/2, room_height/2, self)
 
 ///@ignore
 ///@func __met_create_fakeInter
@@ -197,9 +205,9 @@ __met_create_fakeInter = function()
 	//var _y = (fullscreen ? display_get_gui_height()/2 : _camY+_camH/2)
 	var _x = _camX+_camW/2
 	var _y =  _camY+_camH/2
-	str_inter = new Inter(_x, _y, self)
+	struct_inter = new Inter(_x, _y, self)
 	
-	return -100 // Ничего не значит, на всякий случай :)
+	return -100 // id для req_id
 }
 ///@ignore
 ///@func __met_create_fakeReward
@@ -214,9 +222,9 @@ __met_create_fakeReward = function()
 	//var _y = (fullscreen ? display_get_gui_height()/2 : _camY+_camH/2)
 	var _x = _camX+_camW/2
 	var _y =  _camY+_camH/2
-	str_reward = new Reward(_x, _y, self)
+	struct_reward = new Reward(_x, _y, self)
 	
-	return -101 // Ничего не значит, на всякий случай :)
+	return -101 // id для req_id
 }
 
 #endregion
@@ -258,9 +266,10 @@ met_is_inter_showable = function()
 	return (adv_state == E_ADV_STATE.CAN_SHOW && reward_state == E_REWARD_STATE.NOT_SHOW)
 }
 
-///@func met_show_inter([_showWarning], [_callback])
-///@desc Если true в аргументе то запускает предупреждение о скором показе рекламы, а через 3 секунды саму рекламу.
-///Если указать в аргументе false, то запускает рекламу без предупреждения
+///@func met_show_inter
+///@desc Показать полноэкранную рекламу
+///@param {Bool} _showWarning если true - запускает предупреждение о скором показе рекламы, а через 3 секунды саму рекламу.
+///@param {Function} _callback коллбек, выполнится когда игрок закроет рекламу
 met_show_inter = function(_showWarning = true, _callback = undefined)
 {
 	if (!met_is_inter_showable()) then exit;
@@ -282,15 +291,17 @@ met_show_inter = function(_showWarning = true, _callback = undefined)
 	}
 }
 
-///@func met_is_adv_active()
+///@func met_is_adv_active
 ///@desc Возвращает, показывается ли сейчас реклама или предупреждение о скором показе рекламы или ревард или ожидается ответ сервера на запрос показать ревард
 met_is_adv_active = function()
 {
 	return (adv_state >= E_ADV_STATE.SHOWING_WARNING || reward_state > E_REWARD_STATE.NOT_SHOW)
 }
 
-///@func met_show_reward(_callBack, _callBackWithoutReward)
+///@func met_show_reward()
 ///@desc Запускает ревард. В аргументе указывается метод/функция, которая выполнится при успешном просмотре реварда
+///@param {Function} _callBack коллбек, если игрок досмотрел рекламу
+///@param {Function} _callBackWithoutReward коллбек, если игрок закрыл рекламу прежде чем она закончилась
 met_show_reward = function(_callBack, _callBackWithoutReward = undefined)
 {
 	reward_state = E_REWARD_STATE.SENDED_REQUEST

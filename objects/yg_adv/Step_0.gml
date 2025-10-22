@@ -1,8 +1,8 @@
-if (is_struct(str_inter))
+if (is_struct(struct_inter))
 {
-	str_inter.event_step()
+	struct_inter.event_step()
 }
-if (is_struct(str_reward))
+if (is_struct(struct_reward))
 {
-	str_reward.event_step()
+	struct_reward.event_step()
 }
