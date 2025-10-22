@@ -24,6 +24,7 @@
     {"name":"__rmLoadingFailed","order":1,"path":"rooms/__rmLoadingFailed/__rmLoadingFailed.yy",},
     {"name":"r_test","order":1,"path":"rooms/r_test/r_test.yy",},
     {"name":"__settings","order":5,"path":"scripts/__settings/__settings.yy",},
+    {"name":"data","order":4,"path":"scripts/data/data.yy",},
     {"name":"display_autocast","order":1,"path":"scripts/display_autocast/display_autocast.yy",},
     {"name":"struct_operations","order":3,"path":"scripts/struct_operations/struct_operations.yy",},
     {"name":"time_scripts","order":4,"path":"scripts/time_scripts/time_scripts.yy",},

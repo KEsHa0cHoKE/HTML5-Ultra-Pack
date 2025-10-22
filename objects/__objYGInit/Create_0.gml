@@ -7,19 +7,18 @@ __settings()
 
 	///@func met_dataGetted(_struct)
 	///@desc Метод, который выполняется при получении data с сервера
-	met_dataGetted = function(_struct)
+	met_dataGetted = function()
 	{
-		YG.data = _struct
-		
 		// place here some code
+		if (struct_names_count(YG.data) > 0) {
+			global.data = variable_clone(YG.data)
+		}
 	}
 	
 	///@func met_statsGetted(_struct)
 	///@desc Метод, который выполняется при получении stats с сервера
-	met_statsGetted = function(_struct)
+	met_statsGetted = function()
 	{
-		YG.stats = _struct
-		
 		// place here some code
 	}
 	
@@ -27,8 +26,6 @@ __settings()
 	///@desc Метод, который выполняется при получении flags с сервера
 	met_flagsGetted = function(_struct)
 	{
-		YG.flags = _struct
-		
 		// place here some code
 	}
 

@@ -1,4 +1,4 @@
 image_blend = c_aqua
-clicks = YG.data.clicks
+clicks = global.data.clicks
 
-alarm[0] = 600
+alarm[0] = 300

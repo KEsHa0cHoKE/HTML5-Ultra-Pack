@@ -53,6 +53,7 @@ met_send_data = function(_struct, _callback = undefined, _callbackFailed = undef
 	}
 	else
 	{
+		if (is_callable(_callback)) then _callback()
 		show_debug_message("yg_data -> met_send_data : Saves Inactive")
 	}
 }
@@ -89,6 +90,7 @@ met_send_stats = function(_struct, _callback = undefined, _callbackFailed = unde
 	}
 	else
 	{
+		if (is_callable(_callback)) then _callback()
 		show_debug_message("yg_data -> met_send_stats : Saves Inactive")
 	}
 }
@@ -143,7 +145,6 @@ met_delete_all_stats = function()
 ///@desc Асинхронно получает данные сохранений data с сервера яндекса. Результат запишется в структуру YG.data. Можно указать коллбек, выполнится при получении
 ///@param {Function} _callback Коллбек при успешном получении сейвов
 ///@param {Function} _callbackFailed Коллбек при неудаче
-///@param {Struct} _structToSaveIn Структура, в которую будет сохранена полученный с сервера json, путём перезаписи
 met_get_all_data = function(_callback = undefined, _callbackFailed = undefined/*, _structToSaveIn = YG.data /* пока работает сохранение ТОЛЬКО в YG.data */) 
 {
 	if (YG.is_release_build && YG_SAVING_ACTIVE) 
@@ -171,6 +172,7 @@ met_get_all_data = function(_callback = undefined, _callbackFailed = undefined/*
 	}
 	else
 	{
+		if (is_callable(_callback)) then _callback()
 		show_debug_message("yg_data -> met_get_all_data : Saves Inactive")
 	}
 }
@@ -179,7 +181,6 @@ met_get_all_data = function(_callback = undefined, _callbackFailed = undefined/*
 ///@desc Асинхронно получает данные сохранений stats с сервера яндекса. Результат запишется в структуру YG.stats. Можно указать коллбек, выполнится при получении
 ///@param {Function} _callback Коллбек при успешном получении сейвов
 ///@param {Function} _callbackFailed Коллбек при неудаче
-///@param {Struct} _structToSaveIn Структура, в которую будет сохранена полученный с сервера json, путём перезаписи
 met_get_all_stats = function(_callback = undefined, _callbackFailed = undefined/*, _structToSaveIn = YG.stats /* пока работает сохранение ТОЛЬКО в YG.stats */) 
 {
 	if (YG.is_release_build && YG_SAVING_ACTIVE)
@@ -207,6 +208,7 @@ met_get_all_stats = function(_callback = undefined, _callbackFailed = undefined/
 	}
 	else
 	{
+		if (is_callable(_callback)) then _callback()
 		show_debug_message("yg_data -> met_get_all_stats : Saves Inactive")
 	}
 }

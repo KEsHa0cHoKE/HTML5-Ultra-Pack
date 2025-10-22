@@ -1,1 +1,1 @@
-YG.data.clicks = ++clicks
+global.data.clicks = ++clicks
