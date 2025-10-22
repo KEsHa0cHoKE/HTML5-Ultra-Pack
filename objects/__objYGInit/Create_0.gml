@@ -2,6 +2,7 @@
 
 __settings()
 
+
 #region Настройки
 
 	///@func met_dataGetted(_struct)
@@ -67,6 +68,6 @@ met_loading_failed = function(_failedInfoString = "undefined_reason")
 {
 	room_goto(__rmLoadingFailed)
 	
-	YMW_reachGoal("dataLoading_failed")
-	YMW_params(json_stringify({loading_failed : _failedInfoString}))
+	//YMW_reachGoal("dataLoading_failed")
+	//YMW_params(json_stringify({loading_failed : _failedInfoString}))
 }

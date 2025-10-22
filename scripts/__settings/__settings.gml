@@ -1,3 +1,4 @@
+///@ignore
 function __settings()
 {
 	#macro YG_FIRST_ROOM						r_test // Стартовая комната вашей игры
@@ -21,10 +22,6 @@ function __settings()
 	#macro YG_ACTIVE_CAMERA_ON					false // Использует ли игра активную камеру (!В РАЗРАБОТКЕ!)
 	
 	
-	// Инициализация сейвов
-	var _ygData = { clicks : 0/* Вставьте сюда дефолтные значения, которые будут помещены в YG.data, если сейвов на сервере нет */ }
-	var _ygStats = { /* Вставьте сюда дефолтные значения, которые будут помещены в YG.stats, если сейвов на сервере нет */ }
-	
 	// Дефолтные флаги
 	var _ygFlagsDefault = { /* Вставьте сюда дефолтные значения, которые будут использованы, если нужные флаги не пришли с сервера */ }
 	
@@ -37,12 +34,12 @@ function __settings()
 	
 	globalvar YG;
 	YG = {
-		data : _ygData,
-		stats : _ygStats,
-		flags : _ygFlagsDefault,
-		lang : YG_DEBUG_LANGUAGE,
-		device_type : E_DEVICE_TYPE.PC,
-		is_release_build : (os_browser != browser_not_a_browser && GM_build_type == "exe")
+		data				: {},
+		stats				: {},
+		flags				: _ygFlagsDefault,
+		lang				: YG_DEBUG_LANGUAGE,
+		device_type			: E_DEVICE_TYPE.PC,
+		is_release_build	: (os_browser != browser_not_a_browser && GM_build_type == "exe")
 	}
 	
 	enum E_DEVICE_TYPE

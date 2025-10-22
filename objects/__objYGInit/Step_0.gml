@@ -2,11 +2,9 @@ image_angle--
 
 if (waiting_answer) then exit;
 
-switch (state)
-{
+switch (state) {
 	case E_INIT_STATE.SDK_NOT_INIT :
-		if (!YG.is_release_build)
-		{
+		if (!YG.is_release_build) {
 			state++
 			exit;
 		}
@@ -16,8 +14,7 @@ switch (state)
 	break;
 		
 	case E_INIT_STATE.SDK_INITED :
-		if (!YG.is_release_build)
-		{
+		if (!YG.is_release_build) {
 			state++
 			exit;
 		}
@@ -27,8 +24,7 @@ switch (state)
 	break;
 		
 	case E_INIT_STATE.ENVIRONMENT_GETTED :
-		if (!YG.is_release_build)
-		{
+		if (!YG.is_release_build) {
 			state++
 			exit;
 		}
@@ -38,20 +34,16 @@ switch (state)
 	break;
 			
 	case E_INIT_STATE.PLAYER_INITED :
-		if (!YG.is_release_build)
-		{
-			if (YG_SAVING_DEBUG_ACTIVE)
-			{
+		if (!YG.is_release_build) {
+			if (YG_SAVING_DEBUG_ACTIVE) {
 				waiting_answer = true
 				
-				if (!file_exists(YG_STATS_FILENAME) || struct_names_count(struct_get_from_file(YG_STATS_FILENAME)) <= 0)
-				{
+				if (!file_exists(YG_STATS_FILENAME) || struct_names_count(struct_get_from_file(YG_STATS_FILENAME)) <= 0) {
 					struct_save_to_file(YG.stats, YG_STATS_FILENAME)
 					waiting_answer = false
 					state++
 				}
-				else
-				{
+				else {
 					YG.stats = struct_get_from_file(YG_STATS_FILENAME)
 					call_later(YG_SAVING_DEBUG_PERIOD, time_source_units_seconds, function(){
 						__objYGInit.state++
@@ -64,8 +56,7 @@ switch (state)
 				//	__objYGInit.waiting_answer = false
 				//})
 			}
-			else
-			{
+			else {
 				state++
 			}
 			
@@ -77,20 +68,16 @@ switch (state)
 	break;
 			
 	case E_INIT_STATE.STATS_GETTED :
-		if (!YG.is_release_build)
-		{
-			if (YG_SAVING_DEBUG_ACTIVE)
-			{
+		if (!YG.is_release_build) {
+			if (YG_SAVING_DEBUG_ACTIVE) {
 				waiting_answer = true
 				
-				if (!file_exists(YG_DATA_FILENAME) || struct_names_count(struct_get_from_file(YG_DATA_FILENAME)) <= 0)
-				{
-					struct_save_to_file(YG.data, YG_DATA_FILENAME)
+				if (!file_exists(YG_DATA_FILENAME) || struct_names_count(struct_get_from_file(YG_DATA_FILENAME)) <= 0) {
+					struct_save_to_file({}, YG_DATA_FILENAME)
 					waiting_answer = false
 					state++
 				}
-				else
-				{
+				else {
 					YG.data = struct_get_from_file(YG_DATA_FILENAME)
 					call_later(YG_SAVING_DEBUG_PERIOD, time_source_units_seconds, function(){
 						__objYGInit.state++
@@ -103,8 +90,7 @@ switch (state)
 				//	__objYGInit.waiting_answer = false
 				//})
 			}
-			else
-			{
+			else {
 				state++
 			}
 			
@@ -116,8 +102,7 @@ switch (state)
 	break;
 		
 	case E_INIT_STATE.DATA_GETTED :
-		if (!YG.is_release_build)
-		{
+		if (!YG.is_release_build) {
 			state++
 			exit;
 		}
@@ -127,7 +112,7 @@ switch (state)
 	break;
 	
 	case E_INIT_STATE.FLAGS_GETTED :
-		call_later(0.1, time_source_units_seconds, function(){
+		call_later(0.1, time_source_units_seconds, function() {
 			YaGames_GameReadyOn()
 		})
 		
