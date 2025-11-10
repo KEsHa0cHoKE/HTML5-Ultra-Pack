@@ -1,16 +1,8 @@
 {
   "$GMExtensionConfigSet": "GMExtensionConfigSet",
   "configurables": {
-    "a9643f3b-a726-4e01-90ac-82fe3bc8087d": {
-      "Default": {
-        "value": "True"
-      }
-    },
-    "48a65c99-e602-42de-9692-71a2015114c6": {
-      "Default": {
-        "value": "Lossy WEBP"
-      }
-    },
+    "a9643f3b-a726-4e01-90ac-82fe3bc8087d": null,
+    "48a65c99-e602-42de-9692-71a2015114c6": null,
     "af100c81-b414-40a9-b9e9-c37219d04fc4": null,
     "07fc2aae-8982-4a02-bb75-d42bc817444c": null,
     "f57c847a-e40b-4e48-b476-1502829a0cf4": null,

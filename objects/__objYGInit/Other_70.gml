@@ -32,87 +32,6 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 
 #endregion
 
-#region STATS
-
-if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_getStats))
-{
-	switch (async_load[? "event"]) 
-	{
-        case YaGames_CallPlayerGetStats:
-			// Успех
-			
-			var _data = json_parse(async_load[? "data"])
-			// Если сохранение не пустое
-			if (struct_names_count(_data) > 0)
-			{
-				met_statsGetted(_data)
-			}
-        break;
-        case YaGames_CallPlayerGetStatsError:
-			show_debug_message("-- Stats request error")
-			met_loading_failed("stats request error")
-        break;
-			
-        case YaGames_CallNotPlayerInitSDK:
-			show_debug_message("-- Stats Player in SDK not initialized")
-			met_loading_failed("stats PLAYER not inited")
-        break;
-        case YaGames_CallNotInitSDK:
-			show_debug_message("-- Stats SDK not initialized")
-			met_loading_failed("stats SDK not inited")
-        break;
-        case YaGames_CallRuntimeError:
-			show_debug_message("-- Stats SDK runtime error")
-			met_loading_failed("stats SDK runtime error")
-        break;
-    }
-	
-	state++
-	waiting_answer = false
-}
-
-#endregion
-
-#region DATA
-
-if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] == reqId_getData))
-{
-	switch (async_load[? "event"]) 
-	{	
-        case YaGames_CallPlayerGetData:
-            // Успех
-			
-			var _data = json_parse(async_load[? "data"])
-			// Если сохранение не пустое
-			if (struct_names_count(_data) > 0)
-			{
-				met_dataGetted(_data)
-			}
-        break;
-        case YaGames_CallPlayerGetDataError:
-			show_debug_message("-- Data request error")
-			met_loading_failed("data request error")
-        break;
-			
-        case YaGames_CallNotPlayerInitSDK:
-			show_debug_message("-- Data Player in SDK not initialized")
-			met_loading_failed("data PLAYER not inited")
-        break;
-        case YaGames_CallNotInitSDK:
-			show_debug_message("-- Data SDK not initialized")
-			met_loading_failed("data SDK not inited")
-        break;
-        case YaGames_CallRuntimeError:
-			show_debug_message("-- Data SDK runtime error")
-			met_loading_failed("data SDK runtime error")
-        break;
-    }
-	
-	state++
-	waiting_answer = false
-}
-
-#endregion
 
 #region PLAYER INIT
 
@@ -143,6 +62,7 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 }
 
 #endregion
+
 
 #region FLAGS
 

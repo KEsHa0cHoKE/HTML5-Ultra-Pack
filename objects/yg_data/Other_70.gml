@@ -20,13 +20,13 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 			// Если сохранение не пустое
 			if (struct_names_count(_data) > 0)
 			{
-				target_stats_struct = _data
-				
-				if (is_callable(getStats_callback))
-				{
-					getStats_callback()
-					getStats_callback = undefined
-				}
+				YG.stats = _data
+			}
+			
+			if (is_callable(getStats_callback))
+			{
+				getStats_callback()
+				getStats_callback = undefined
 			}
         break;
 		
@@ -138,13 +138,13 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 			// Если сохранение не пустое
 			if (struct_names_count(_data) > 0)
 			{
-				target_data_struct = _data
-				
-				if (is_callable(getData_callback))
-				{
-					getData_callback()
-					getData_callback = undefined
-				}
+				YG.data = _data
+			}
+			
+			if (is_callable(getData_callback))
+			{
+				getData_callback()
+				getData_callback = undefined
 			}
         break;
 		
@@ -193,7 +193,7 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 	
 	switch (async_load[? "event"])
 	{
-        case YaGames_CallPlayerSetStats:
+        case YaGames_CallPlayerSetData:
 			// Успех
 			
 			if (is_callable(sendData_callback))
@@ -204,26 +204,26 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 			
         break;
 		
-        case YaGames_CallPlayerSetStatsError:
-			show_debug_message("-- Stats request error")
+        case YaGames_CallPlayerSetDataError:
+			show_debug_message("-- Data request error")
 			
 			_metFailed()
         break;
 			
         case YaGames_CallNotPlayerInitSDK:
-			show_debug_message("-- Stats Player in SDK not initialized")
+			show_debug_message("-- Data Player in SDK not initialized")
 			
 			_metFailed()
         break;
 		
         case YaGames_CallNotInitSDK:
-			show_debug_message("-- Stats SDK not initialized")
+			show_debug_message("-- Data SDK not initialized")
 			
 			_metFailed()
         break;
 		
         case YaGames_CallRuntimeError:
-			show_debug_message("-- Stats SDK runtime error")
+			show_debug_message("-- Data SDK runtime error")
 			
 			_metFailed()
         break;

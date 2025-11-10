@@ -3,7 +3,6 @@
 reqId_getData = undefined
 getData_callback = undefined
 getData_callback_failed = undefined
-target_data_struct = undefined
 
 reqId_sendData = undefined
 sendData_callback = undefined
@@ -12,7 +11,6 @@ sendData_callback_failed = undefined
 reqId_getStats = undefined
 getStats_callback = undefined
 getStats_callback_failed = undefined
-target_stats_struct = undefined
 
 reqId_sendStats = undefined
 sendStats_callback = undefined
@@ -30,12 +28,14 @@ met_send_data = function(_struct, _callback = undefined, _callbackFailed = undef
 {
 	var _structToSend = variable_clone(_struct)
 	
-	if (YG.is_release_build && YG_SAVING_ACTIVE) 
+	if (YG.is_release_build && YG_SAVING_ACTIVE)
 	{
 		reqId_sendData = YaGames_Player_SetData(json_stringify(_structToSend))
 		
 		sendData_callback = _callback
 		sendData_callback_failed = _callbackFailed
+		
+		//struct_save_to_file(_structToSend, YG_DATA_FILENAME)
 	}
 	else if (!YG.is_release_build && YG_SAVING_DEBUG_ACTIVE) 
 	{
@@ -73,6 +73,8 @@ met_send_stats = function(_struct, _callback = undefined, _callbackFailed = unde
 		
 		sendStats_callback = _callback
 		sendStats_callback_failed = _callbackFailed
+		
+		//struct_save_to_file(_structToSend, YG_DATA_FILENAME)
 	}
 	else if (!YG.is_release_build && YG_SAVING_DEBUG_ACTIVE) 
 	{
@@ -107,6 +109,7 @@ met_delete_all_data = function()
 	if (YG.is_release_build && YG_SAVING_ACTIVE)
 	{
 		YaGames_Player_SetData(json_stringify({}))
+		//struct_save_to_file({}, YG_DATA_FILENAME)
 	}
 	else if (!YG.is_release_build && YG_SAVING_DEBUG_ACTIVE) 
 	{
@@ -125,6 +128,7 @@ met_delete_all_stats = function()
 	if (YG.is_release_build && YG_SAVING_ACTIVE) 
 	{
 		YaGames_Player_SetStats(json_stringify({}))
+		//struct_save_to_file({}, YG_STATS_FILENAME)
 	}
 	else if (!YG.is_release_build && YG_SAVING_DEBUG_ACTIVE) 
 	{
@@ -145,15 +149,16 @@ met_delete_all_stats = function()
 ///@desc Асинхронно получает данные сохранений data с сервера яндекса. Результат запишется в структуру YG.data. Можно указать коллбек, выполнится при получении
 ///@param {Function} _callback Коллбек при успешном получении сейвов
 ///@param {Function} _callbackFailed Коллбек при неудаче
-met_get_all_data = function(_callback = undefined, _callbackFailed = undefined/*, _structToSaveIn = YG.data /* пока работает сохранение ТОЛЬКО в YG.data */) 
+met_get_all_data = function(_callback = undefined, _callbackFailed = undefined) 
 {
 	if (YG.is_release_build && YG_SAVING_ACTIVE) 
 	{
 		reqId_getData = YaGames_Player_GetAllData()
 		
-		target_data_struct = YG.data
 		getData_callback = _callback
 		getData_callback_failed = _callbackFailed
+		
+		//YG.data = struct_get_from_file(YG_DATA_FILENAME)
 	}
 	else if (!YG.is_release_build && YG_SAVING_DEBUG_ACTIVE) 
 	{
@@ -181,15 +186,16 @@ met_get_all_data = function(_callback = undefined, _callbackFailed = undefined/*
 ///@desc Асинхронно получает данные сохранений stats с сервера яндекса. Результат запишется в структуру YG.stats. Можно указать коллбек, выполнится при получении
 ///@param {Function} _callback Коллбек при успешном получении сейвов
 ///@param {Function} _callbackFailed Коллбек при неудаче
-met_get_all_stats = function(_callback = undefined, _callbackFailed = undefined/*, _structToSaveIn = YG.stats /* пока работает сохранение ТОЛЬКО в YG.stats */) 
+met_get_all_stats = function(_callback = undefined, _callbackFailed = undefined) 
 {
 	if (YG.is_release_build && YG_SAVING_ACTIVE)
 	{
 		reqId_getStats = YaGames_Player_GetAllStats()
 		
-		target_stats_struct = YG.stats
 		getStats_callback = _callback
 		getStats_callback_failed = _callbackFailed
+		
+		//YG.stats = struct_get_from_file(YG_STATS_FILENAME)
 	}
 	else if (!YG.is_release_build && YG_SAVING_DEBUG_ACTIVE)
 	{
