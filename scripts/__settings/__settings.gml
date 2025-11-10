@@ -25,7 +25,11 @@ function __settings()
 	// Дефолтные флаги
 	var _ygFlagsDefault = { /* Вставьте сюда дефолтные значения, которые будут использованы, если нужные флаги не пришли с сервера */ }
 	
+	// Дефолтная data-структура
+	var _ygData = { /* Вставьте сюда дефолтные значения data */ }
 	
+	// Дефолтная stats-структура
+	var _ygStats = { /* Вставьте сюда дефолтные значения stats */ }
 	
 	
 	
@@ -34,8 +38,8 @@ function __settings()
 	
 	globalvar YG;
 	YG = {
-		data				: {},
-		stats				: {},
+		data				: _ygData,
+		stats				: _ygStats,
 		flags				: _ygFlagsDefault,
 		lang				: YG_DEBUG_LANGUAGE,
 		device_type			: E_DEVICE_TYPE.PC,
