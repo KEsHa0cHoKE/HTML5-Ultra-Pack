@@ -1,1 +1,0 @@
-wdt_autoload_textures()
