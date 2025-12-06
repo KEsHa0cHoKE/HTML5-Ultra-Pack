@@ -1,8 +1,3 @@
----
-layout: page
-title: Реклама (Advertising)
----
-
 # Реклама (Advertising)
 
 YG предоставляет функции для работы с рекламой на платформах Яндекс Игр и PlayGama.
