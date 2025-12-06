@@ -181,20 +181,20 @@
 </head>
 <body>
     <div class="header">
-        <h1><a href="{{ site.baseurl }}/">HTML5 Ultra Pack Documentation</a></h1>
+        <h1><a href="{{ "/" | relative_url }}">HTML5 Ultra Pack Documentation</a></h1>
     </div>
     
     <div class="container">
         <nav class="sidebar">
             <ul class="sidebar-nav">
-                <li><a href="{{ site.baseurl }}/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
-                <li><a href="{{ site.baseurl }}/yg_object.html" {% if page.url == '/yg_object.html' %}class="active"{% endif %}>YG Object</a></li>
-                <li><a href="{{ site.baseurl }}/ygsettings_config.html" {% if page.url == '/ygsettings_config.html' %}class="active"{% endif %}>YG Settings</a></li>
-                <li><a href="{{ site.baseurl }}/storage.html" {% if page.url == '/storage.html' %}class="active"{% endif %}>Storage</a></li>
-                <li><a href="{{ site.baseurl }}/advertising.html" {% if page.url == '/advertising.html' %}class="active"{% endif %}>Advertising</a></li>
-                <li><a href="{{ site.baseurl }}/audio.html" {% if page.url == '/audio.html' %}class="active"{% endif %}>Audio</a></li>
-                <li><a href="{{ site.baseurl }}/platform.html" {% if page.url == '/platform.html' %}class="active"{% endif %}>Platform</a></li>
-                <li><a href="{{ site.baseurl }}/examples.html" {% if page == '/examples.html' %}class="active"{% endif %}>Examples</a></li>
+                <li><a href="{{ "/" | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="{{ "/yg_object.html" | relative_url }}" {% if page.url == '/yg_object.html' %}class="active"{% endif %}>YG Object</a></li>
+                <li><a href="{{ "/ygsettings_config.html" | relative_url }}" {% if page.url == '/ygsettings_config.html' %}class="active"{% endif %}>YG Settings</a></li>
+                <li><a href="{{ "/storage.html" | relative_url }}" {% if page.url == '/storage.html' %}class="active"{% endif %}>Storage</a></li>
+                <li><a href="{{ "/advertising.html" | relative_url }}" {% if page.url == '/advertising.html' %}class="active"{% endif %}>Advertising</a></li>
+                <li><a href="{{ "/audio.html" | relative_url }}" {% if page.url == '/audio.html' %}class="active"{% endif %}>Audio</a></li>
+                <li><a href="{{ "/platform.html" | relative_url }}" {% if page.url == '/platform.html' %}class="active"{% endif %}>Platform</a></li>
+                <li><a href="{{ "/examples.html" | relative_url }}" {% if page.url == '/examples.html' %}class="active"{% endif %}>Examples</a></li>
             </ul>
         </nav>
         

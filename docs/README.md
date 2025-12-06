@@ -35,7 +35,7 @@ To run this documentation site locally:
 
 This site is configured to be deployed directly to GitHub Pages from the `docs` folder. When you push changes to the `main` branch, GitHub Pages will automatically build and deploy the site.
 
-The site will be available at: `https://<username>.github.io/<repository>/docs/`
+The site will be available at: `https://<username>.github.io/HTML5-Ultra-Pack/`
 
 ## Adding New Documentation
 

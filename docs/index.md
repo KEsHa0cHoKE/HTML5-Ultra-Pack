@@ -9,16 +9,16 @@ HTML5 Ultra Pack - это проект GameMaker Studio, предназначе�
 
 ## Содержание документации
 
-- [Документация по объекту YG](yg_object.html)
+- [Документация по объекту YG]({{ "/yg_object.html" | relative_url }})
 
-- [Настройка конфигурации в файле YGsettings](ygsettings_config.html)
+- [Настройка конфигурации в файле YGsettings]({{ "/ygsettings_config.html" | relative_url }})
 
-- [Хранилище (Storage)](storage.html)
+- [Хранилище (Storage)]({{ "/storage.html" | relative_url }})
 
-- [Реклама (Advertising)](advertising.html)
+- [Реклама (Advertising)]({{ "/advertising.html" | relative_url }})
 
-- [Аудио](audio.html)
+- [Аудио]({{ "/audio.html" | relative_url }})
 
-- [Платформа](platform.html)
+- [Платформа]({{ "/platform.html" | relative_url }})
 
-- [Примеры использования](examples.html)
+- [Примеры использования]({{ "/examples.html" | relative_url }})
