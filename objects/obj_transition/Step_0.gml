@@ -1,1 +1,0 @@
-anim_transition.anim_time_overall([anim_target_alpha], anim_time)
