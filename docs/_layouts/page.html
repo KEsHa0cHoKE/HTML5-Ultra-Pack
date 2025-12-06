@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - HTML5 Ultra Pack Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #33;
+            --background-color: #fff;
+            --border-color: #ddd;
+            --sidebar-width: 250px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            padding: 20px 0;
+            border-right: 1px solid var(--border-color);
+            margin-right: 30px;
+            height: calc(100vh - 40px);
+            position: sticky;
+            top: 20px;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 5px;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 8px 15px;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .sidebar-nav a:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .sidebar-nav a.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 20px 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        
+        h1 {
+            font-size: 2em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.3em;
+        }
+        
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.3em;
+        }
+        
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        code {
+            background-color: #f8f8f8;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+        
+        pre {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f5f5f5;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--secondary-color);
+            padding: 0 15px;
+            margin: 20px 0;
+            color: #666;
+        }
+        
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            border: none;
+            color: white;
+        }
+        
+        .header a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><a href="{{ site.baseurl }}/">HTML5 Ultra Pack Documentation</a></h1>
+    </div>
+    
+    <div class="container">
+        <nav class="sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="{{ site.baseurl }}/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="{{ site.baseurl }}/yg_object.html" {% if page.url == '/yg_object.html' %}class="active"{% endif %}>YG Object</a></li>
+                <li><a href="{{ site.baseurl }}/ygsettings_config.html" {% if page.url == '/ygsettings_config.html' %}class="active"{% endif %}>YG Settings</a></li>
+                <li><a href="{{ site.baseurl }}/storage.html" {% if page.url == '/storage.html' %}class="active"{% endif %}>Storage</a></li>
+                <li><a href="{{ site.baseurl }}/advertising.html" {% if page.url == '/advertising.html' %}class="active"{% endif %}>Advertising</a></li>
+                <li><a href="{{ site.baseurl }}/audio.html" {% if page.url == '/audio.html' %}class="active"{% endif %}>Audio</a></li>
+                <li><a href="{{ site.baseurl }}/platform.html" {% if page.url == '/platform.html' %}class="active"{% endif %}>Platform</a></li>
+                <li><a href="{{ site.baseurl }}/examples.html" {% if page == '/examples.html' %}class="active"{% endif %}>Examples</a></li>
+            </ul>
+        </nav>
+        
+        <main class="content">
+            {{ content }}
+        </main>
+    </div>
+</body>
+</html>

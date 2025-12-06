@@ -1,3 +1,8 @@
+---
+layout: page
+title: Настройка конфигурации в файле YGsettings
+---
+
 # Настройка конфигурации в файле YGsettings
 
 Файл `YGsettings.gml` содержит глобальные настройки для интеграции с Yandex Games SDK и PlayGama Bridge. Все настройки определяются как макросы в функции `__YGsettings()`.

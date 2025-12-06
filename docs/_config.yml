@@ -1,0 +1,55 @@
+# Site settings
+title: HTML5 Ultra Pack Documentation
+description: Documentation for HTML5 Ultra Pack - GameMaker Studio extension for Yandex Games SDK and PlayGama Bridge integration
+email: your-email@example.com
+author: Your Name
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Theme settings - using a GitHub Pages compatible theme
+remote_theme: pages-themes/minimal@v0.2.0  # GitHub Pages compatible theme
+plugins:
+  - jekyll-remote-theme  # Enable remote themes
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Base URL for GitHub Pages
+baseurl: ""  # the subpath of your site, e.g. /blog
+url: ""  # the base hostname & protocol for your site, e.g. http://example.com
+
+# Collections for documentation
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Defaults for documents
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
