@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"__YGmacros",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Extensions/HTML5/Scripts.yy",
+    "name":"HTML5",
+    "path":"folders/Extensions/HTML5.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
