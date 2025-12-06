@@ -77,7 +77,7 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 			// Если флаги не пустые
 			if (struct_names_count(_data) > 0)
 			{
-				met_flagsGetted(_data)
+				YG.flags = _data
 			}
         break;
         case YaGames_CallGetFlagsError:	

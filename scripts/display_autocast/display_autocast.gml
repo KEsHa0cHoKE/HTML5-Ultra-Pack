@@ -141,14 +141,14 @@ function display_center(_width = room_width,_height = room_height)
 {
 	var _camPosX = (_width - camera_get_view_width(view_camera[0])) / 2
 	var _camPosY = (_height - camera_get_view_height(view_camera[0])) / 2
-	if (!yg_autocast.active_camera_on)
+	if (!__ygAutocast.active_camera_on)
 	{
 		camera_set_view_pos(view_camera[0], _camPosX, _camPosY)
 	}
-	else if (instance_exists(yg_cam))
+	else if (instance_exists(__ygCamera))
 	{
-		yg_cam.autocast_base_x = _camPosX
-		yg_cam.autocast_base_y = _camPosY
+		__ygCamera.autocast_base_x = _camPosX
+		__ygCamera.autocast_base_y = _camPosY
 	}
 	else
 	{

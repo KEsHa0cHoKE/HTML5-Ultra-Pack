@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__YGmacros",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__YGmacros",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Extensions/HTML5/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
