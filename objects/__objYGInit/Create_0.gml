@@ -1,37 +1,6 @@
 ///@desc
 
-__settings()
-
-
-#region Настройки
-
-///@func met_dataGetted(_struct)
-///@desc Метод, который выполняется при получении data с сервера
-///@deprecated
-met_dataGetted = function()
-{
-	// place here some code
-}
-	
-///@func met_statsGetted(_struct)
-///@desc Метод, который выполняется при получении stats с сервера
-///@deprecated
-met_statsGetted = function()
-{
-	// place here some code
-}
-	
-///@func met_flagsGetted(_struct)
-///@desc Метод, который выполняется при получении flags с сервера
-///@deprecated
-met_flagsGetted = function(_struct)
-{
-	// place here some code
-}
-
-#endregion
-
-
+__YGsettings()
 
 enum E_INIT_STATE
 {
@@ -49,9 +18,11 @@ state = E_INIT_STATE.SDK_NOT_INIT
 
 #region Прелоад
 
-sdk_is_ready = YaGames_getInitStatus()
+sdk_is_ready = (YG_MODE == E_YG_MODE.YANDEX_GAMES ? bool(YaGames_getInitStatus()) : true) 
 
 waiting_answer = false
+
+reqId_environment = undefined
 reqId_getStats = undefined
 reqId_getData = undefined
 reqId_playerInit = undefined
@@ -65,6 +36,6 @@ met_loading_failed = function(_failedInfoString = "undefined_reason")
 {
 	room_goto(__rmLoadingFailed)
 	
-	//YMW_reachGoal("dataLoading_failed")
-	//YMW_params(json_stringify({loading_failed : _failedInfoString}))
+	YMW_reachGoal("dataLoading_failed")
+	YMW_params(json_stringify({loading_failed : _failedInfoString}))
 }

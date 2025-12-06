@@ -1,1 +1,0 @@
-global.data.clicks = ++clicks
