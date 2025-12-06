@@ -1,10 +1,12 @@
 {
   "FolderOrderSettings":[
+    {"name":"Extensions","order":1,"path":"folders/Extensions.yy",},
     {"name":"HTML5","order":1,"path":"folders/Extensions/HTML5.yy",},
-    {"name":"Fonts","order":1,"path":"folders/Extensions/HTML5/Fonts.yy",},
-    {"name":"Objects","order":2,"path":"folders/Extensions/HTML5/Objects.yy",},
-    {"name":"Rooms","order":3,"path":"folders/Extensions/HTML5/Rooms.yy",},
-    {"name":"Scripts","order":4,"path":"folders/Extensions/HTML5/Scripts.yy",},
+    {"name":"Extensions","order":1,"path":"folders/Extensions/HTML5/Extensions.yy",},
+    {"name":"Fonts","order":2,"path":"folders/Extensions/HTML5/Fonts.yy",},
+    {"name":"Objects","order":3,"path":"folders/Extensions/HTML5/Objects.yy",},
+    {"name":"Rooms","order":4,"path":"folders/Extensions/HTML5/Rooms.yy",},
+    {"name":"Scripts","order":5,"path":"folders/Extensions/HTML5/Scripts.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"HTML5_Loading_Spinner","order":1,"path":"extensions/HTML5_Loading_Spinner/HTML5_Loading_Spinner.yy",},
@@ -21,11 +23,10 @@
     {"name":"__ygData","order":8,"path":"objects/__ygData/__ygData.yy",},
     {"name":"__ygEventListener","order":9,"path":"objects/__ygEventListener/__ygEventListener.yy",},
     {"name":"__rmLoadingFailed","order":1,"path":"rooms/__rmLoadingFailed/__rmLoadingFailed.yy",},
-    {"name":"__YGmacros","order":6,"path":"scripts/__YGmacros/__YGmacros.yy",},
     {"name":"display_autocast","order":1,"path":"scripts/display_autocast/display_autocast.yy",},
     {"name":"struct_operations","order":2,"path":"scripts/struct_operations/struct_operations.yy",},
     {"name":"time_scripts","order":3,"path":"scripts/time_scripts/time_scripts.yy",},
-    {"name":"YGsettings","order":5,"path":"scripts/YGsettings/YGsettings.yy",},
+    {"name":"YGsettings","order":6,"path":"scripts/YGsettings/YGsettings.yy",},
     {"name":"__sprPreloader","order":3,"path":"sprites/__sprPreloader/__sprPreloader.yy",},
   ],
 }
