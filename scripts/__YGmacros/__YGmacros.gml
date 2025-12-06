@@ -32,7 +32,7 @@ global.__YG = {
 		},
 		
 		stats : {
-			is_supported : true,
+			is_supported : true, // Для Yandex Games SDK всегда true, для PlayGama всегда false
 			
 			///@func send
 			///@desc Сохраняет данные stats на сервер яндекса, либо в локальные файлы при тесте
@@ -61,7 +61,7 @@ global.__YG = {
 		is_active : function() { return __ygAdv.met_is_adv_active() },
 		
 		interstitial : {
-			is_supported : true,
+			is_supported : true, // Для Yandex Games SDK всегда true
 			
 			///@func is_showable
 			///@desc Возвращает, прошло ли достаточно времени, чтобы можно было показать рекламу
@@ -76,7 +76,7 @@ global.__YG = {
 		},
 		
 		reward : {
-			is_supported : true,
+			is_supported : true, // Для Yandex Games SDK всегда true
 			
 			///@func show
 			///@desc Запускает ревард. В аргументе указывается метод/функция, которая выполнится при успешном просмотре реварда
@@ -101,11 +101,11 @@ global.__YG = {
 	},
 	
 	platform : {
-		id : PG_PLATFORM_YANDEX,
+		id : PG_PLATFORM_YANDEX, // type : PG_PLATFORM_*
 		
-		is_audio_enabled : true,
+		is_audio_enabled : true, // Всегда true для Yandex Games SDK
 		is_paused : false,
-		is_visible : true
+		is_visible : true // Всегда true для Yandex Games SDK
 	},
 }
 
