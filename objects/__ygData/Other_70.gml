@@ -17,11 +17,9 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 			// Успех
 			
 			var _data = json_parse(async_load[? "data"])
-			// Если сохранение не пустое
+			
 			if (struct_names_count(_data) > 0)
-			{
-				YG.stats = _data
-			}
+				__met_append_getted_data(_data, YG.stats)
 			
 			if (is_callable(getStats_callback))
 			{
@@ -135,11 +133,9 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
             // Успех
 			
 			var _data = json_parse(async_load[? "data"])
-			// Если сохранение не пустое
+			
 			if (struct_names_count(_data) > 0)
-			{
-				YG.data = _data
-			}
+				__met_append_getted_data(_data, YG.data)
 			
 			if (is_callable(getData_callback))
 			{

@@ -20,7 +20,7 @@
     {"name":"__ygAudio","order":5,"path":"objects/__ygAudio/__ygAudio.yy",},
     {"name":"__ygAutocast","order":6,"path":"objects/__ygAutocast/__ygAutocast.yy",},
     {"name":"__ygCamera","order":7,"path":"objects/__ygCamera/__ygCamera.yy",},
-    {"name":"__ygData","order":8,"path":"objects/__ygData/__ygData.yy",},
+    {"name":"__ygData","order":10,"path":"objects/__ygData/__ygData.yy",},
     {"name":"__ygEventListener","order":9,"path":"objects/__ygEventListener/__ygEventListener.yy",},
     {"name":"__rmLoadingFailed","order":1,"path":"rooms/__rmLoadingFailed/__rmLoadingFailed.yy",},
     {"name":"display_autocast","order":1,"path":"scripts/display_autocast/display_autocast.yy",},
