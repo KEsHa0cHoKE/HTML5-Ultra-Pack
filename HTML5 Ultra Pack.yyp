@@ -18,7 +18,11 @@
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Extensions/HTML5/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Extensions/HTML5/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"playgama-bridge-config.json","CopyToMask":-1,"filePath":"datafiles","name":"playgama-bridge-config.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"playgama-bridge-index.html","CopyToMask":-1,"filePath":"datafiles","name":"playgama-bridge-index.html","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"playgama-bridge.js","CopyToMask":-1,"filePath":"datafiles","name":"playgama-bridge.js","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{

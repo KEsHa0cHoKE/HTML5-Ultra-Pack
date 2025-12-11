@@ -46,13 +46,19 @@ __met_send_data_pg = function(_struct, _callback = undefined, _callbackFailed = 
 	var _keys = struct_get_names(_struct)
 	var _values = []
 	for (var i=0; i<array_length(_keys); i++) {
-		var _value = _struct[$ _keys[i]]
+		var _key = _keys[i]
+		var _value = _struct[$ _key]
+		
 		if (is_array(_value) || is_struct(_value))
 			_value = json_stringify(_value)
+		//else if (is_bool(_value))
+		//	_value = real(_value)
 		
+		//show_message($"{_key}: {_value}")
 		array_push(_values, _value)
 	}
 	
+	//show_message(json_stringify(_values))
 	playgama_bridge_storage_set(json_stringify(_keys), json_stringify(_values))
 }
 
@@ -216,6 +222,19 @@ met_delete_all_stats = function()
 
 #region Методы получения данных
 
+///@func __met_append_getted_data
+///@ignore
+__met_append_getted_data = function(_gettedStruct, _targetStruct) {
+	var _dataKeys = struct_get_names(_gettedStruct)
+	
+	for (var i=0; i<array_length(_dataKeys); i++) {
+		var _key = _dataKeys[i]
+		var _value = _gettedStruct[$ _key]
+				
+		_targetStruct[$ _key] = _value
+	}
+}
+
 ///@func met_get_all_data
 ///@desc Асинхронно получает данные сохранений data с сервера яндекса. Результат запишется в структуру YG.data. Можно указать коллбек, выполнится при получении
 ///@param {Function} _callback Коллбек при успешном получении сейвов
@@ -241,7 +260,7 @@ met_get_all_data = function(_callback = undefined, _callbackFailed = undefined)
 				var _struct = struct_get_from_file(YG_DATA_FILENAME)
 				
 				if (struct_names_count(_struct) > 0)
-					YG.data = struct_get_from_file(YG_DATA_FILENAME)
+					__ygData.__met_append_getted_data(_struct, YG.data)
 				
 				if (is_callable(_callback)) then _callback()
 			}
@@ -283,7 +302,7 @@ met_get_all_stats = function(_callback = undefined, _callbackFailed = undefined)
 				var _struct = struct_get_from_file(YG_STATS_FILENAME)
 				
 				if (struct_names_count(_struct) > 0)
-					YG.stats = struct_get_from_file(YG_STATS_FILENAME)
+					__ygData.__met_append_getted_data(_struct, YG.stats)
 				
 				if (is_callable(_callback)) then _callback()
 			}
