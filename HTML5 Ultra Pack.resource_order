@@ -7,7 +7,7 @@
     {"name":"Objects","order":3,"path":"folders/Extensions/HTML5/Objects.yy",},
     {"name":"Rooms","order":4,"path":"folders/Extensions/HTML5/Rooms.yy",},
     {"name":"Scripts","order":5,"path":"folders/Extensions/HTML5/Scripts.yy",},
-    {"name":"Playgama","order":2,"path":"folders/Playgama.yy",},
+    {"name":"Test","order":2,"path":"folders/Test.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"HTML5_Loading_Spinner","order":1,"path":"extensions/HTML5_Loading_Spinner/HTML5_Loading_Spinner.yy",},
@@ -23,11 +23,14 @@
     {"name":"__ygCamera","order":7,"path":"objects/__ygCamera/__ygCamera.yy",},
     {"name":"__ygData","order":10,"path":"objects/__ygData/__ygData.yy",},
     {"name":"__ygEventListener","order":9,"path":"objects/__ygEventListener/__ygEventListener.yy",},
+    {"name":"obj_test","order":3,"path":"objects/obj_test/obj_test.yy",},
     {"name":"__rmLoadingFailed","order":1,"path":"rooms/__rmLoadingFailed/__rmLoadingFailed.yy",},
+    {"name":"r_test","order":1,"path":"rooms/r_test/r_test.yy",},
     {"name":"display_autocast","order":1,"path":"scripts/display_autocast/display_autocast.yy",},
     {"name":"struct_operations","order":2,"path":"scripts/struct_operations/struct_operations.yy",},
     {"name":"time_scripts","order":3,"path":"scripts/time_scripts/time_scripts.yy",},
     {"name":"YGsettings","order":6,"path":"scripts/YGsettings/YGsettings.yy",},
     {"name":"__sprPreloader","order":3,"path":"sprites/__sprPreloader/__sprPreloader.yy",},
+    {"name":"spr_test","order":2,"path":"sprites/spr_test/spr_test.yy",},
   ],
 }

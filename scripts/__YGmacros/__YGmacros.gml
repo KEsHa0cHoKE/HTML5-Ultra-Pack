@@ -84,6 +84,28 @@ global.__YG = {
 			///@param {Function} _callbackWithoutReward коллбек, если игрок закрыл рекламу прежде чем она закончилась
 			show : function(_callback, _callbackWithoutReward = undefined) 
 			{ return __ygAdv.met_show_reward(_callback, _callbackWithoutReward) }
+		},
+		
+		banner : {
+			is_supported : true,
+			is_active : false,
+			position : E_BANNER_PG_POS.BOTTOM,
+			
+			///@func show
+			///@desc Показывает стики баннер
+			///@param {Constant.E_BANNER_PG_POS} _pgBannerPosEnum позиция (E_BANNER_PG_POS.BOTTOM по умолчанию)
+			show : function(_pgBannerPosEnum = E_BANNER_PG_POS.BOTTOM)
+			{ return __ygAdv.met_show_banner(_pgBannerPosEnum) },
+			
+			///@func hide
+			///@desc Скрывает стики баннер
+			hide : function()
+			{ return __ygAdv.met_hide_banner() },
+			
+			///@func get_height_playgama
+			///@desc Возвращает высоту баннера с учётом размера экрана с игрой
+			get_height_playgama : function()
+			{ if (!instance_exists(__ygAdv)) return 0; return __ygAdv.met_banner_get_height_playgama() }
 		}
 	},
 	
@@ -121,6 +143,8 @@ enum E_DEVICE_TYPE
 	MOBILE
 }
 
+
+
 #macro PG_PLATFORM_PLAYGAMA				"playgama"
 #macro PG_PLATFORM_VK					"vk"
 #macro PG_PLATFORM_OK					"ok"
@@ -147,12 +171,13 @@ enum E_DEVICE_TYPE
 
 
 #region Остаточная инициализация
-	
+
 if (YG_MODE == E_YG_MODE.PLAYGAMA && YG.is_release_build) {
 	YG.lang								= playgama_bridge_platform_language()
 	
 	YG.adv.interstitial.is_supported	= bool(playgama_bridge_advertisement_is_interstitial_supported())
 	YG.adv.reward.is_supported			= bool(playgama_bridge_advertisement_is_rewarded_supported())
+	YG.adv.banner.is_supported			= bool(playgama_bridge_advertisement_is_banner_supported())
 	
 	YG.storage.stats.is_supported		= false
 	

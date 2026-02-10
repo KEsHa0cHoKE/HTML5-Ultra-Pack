@@ -1,54 +1,11 @@
-// Автор : Game Maker Boost
-// boosty автора : https://boosty.to/gamemakerboost
+// Основано на "Aвто - масштабирование" от GMLab
+// ссылка на оригинал : https://boosty.to/gamemakerboost/posts/950c20a3-1143-453d-a06c-09629daabb61
 
-function display_set(_center = true,_width = room_width,_height = room_height)
+
+function display_autocast(_width = room_width, _height = room_height)
 {
-	//var _first = instance_find(obj_resize,0);
-	//if (id != _first)
-	//{
-	//	instance_destroy();
-	//	exit;
-	//}
-
-	display_autocast(_center,_width,_height);
-
-	if (os_browser == browser_not_a_browser)
-	{
-		current_width  = window_get_width();
-		current_height = window_get_height();
-	}
-	else
-	{
-		current_width  = browser_width;
-		current_height = browser_height;
-	}	
-}
-
-function display_refresh(_center = true,_width = room_width,_height = room_height)
-{
-	var tmp_width, tmp_height
+	_height += (YG.adv.banner.is_active ? YG.adv.banner.get_height_playgama() : 0)
 	
-	if (os_browser == browser_not_a_browser)
-	{
-		tmp_width  = window_get_width();
-		tmp_height = window_get_height();
-	}
-	else
-	{
-		tmp_width  = browser_width;
-		tmp_height = browser_height;
-	}
-	
-	if (os_is_paused() || window_has_focus() == false) || (tmp_width != current_width || tmp_width != current_height)
-	{
-		display_autocast(_center,_width,_height);
-
-		current_width  = tmp_width;
-		current_height = tmp_height;
-	}	
-}
-function display_autocast(_center = true,_width = room_width,_height = room_height)
-{	
 	if (!view_enabled)
 	{
 	    view_visible[0] = true;
@@ -80,9 +37,6 @@ function display_autocast(_center = true,_width = room_width,_height = room_heig
 		var _x = _width * coeff_w;
 		var coeff_h = (browser_height / browser_width) / (_height/_width);
 		var _y = _height * coeff_h;
-		
-		
-		var _camXPos, _camYPos, _camW, _camH
 		
 		if (_x <= _width)
 		{
@@ -116,27 +70,6 @@ function display_autocast(_center = true,_width = room_width,_height = room_heig
 	}
 }
 
-function display_instance_repose(_x = xstart,_y = ystart)
-{
-	var bw = browser_width;
-	var bh = browser_height;
-	
-	if (os_browser == browser_not_a_browser)
-	{
-		bw = window_get_width();
-		bh = window_get_height();
-	}
-
-	var _kw = (room_width + camera_get_view_width(view_camera[0])) / bw;
-	var _kh = (room_height + camera_get_view_height(view_camera[0])) / bh;
-	var k = max(_kw, _kh);
-	_kw /= k;
-	_kh /= k;
-
-	x = room_width * 0.5 + (_x - room_width * 0.5) / _kw;
-	y = room_height * 0.5 + (_y - room_height * 0.5) / _kh;		
-}
-
 function display_center(_width = room_width,_height = room_height)
 {
 	var _camPosX = (_width - camera_get_view_width(view_camera[0])) / 2
@@ -154,4 +87,35 @@ function display_center(_width = room_width,_height = room_height)
 	{
 		show_error("Активная камера включена, но объект камеры не существует", true)
 	}
+}
+
+/// @desc Центрирует камеру с учётом смещения под баннер
+/// @param _width {real} Ширина комнаты (по умолчанию room_width)
+/// @param _height {real} Высота комнаты (по умолчанию room_height)
+function display_center_with_playgama_banner(_width = room_width, _height = room_height, _yPosFromScreenStart = false) {
+	var _camPosX = (_width - camera_get_view_width(view_camera[0])) / 2
+	
+	if (_yPosFromScreenStart) {
+		if (YG.adv.banner.position == E_BANNER_PG_POS.BOTTOM) 
+			camera_set_view_pos(view_camera[0], _camPosX, 0)
+		else
+			camera_set_view_pos(view_camera[0], _camPosX, -YG.adv.banner.get_height_playgama())
+		
+		exit;
+	}
+	
+	
+	var _freeHeight = camera_get_view_height(view_camera[0]) - _height
+	
+	var _camPosY
+	if (_freeHeight/2 > YG.adv.banner.get_height_playgama()) {
+		_camPosY = (_height - camera_get_view_height(view_camera[0])) / 2
+	}
+	else {
+		_camPosY = YG.adv.banner.position == E_BANNER_PG_POS.BOTTOM ? 
+		(_height - camera_get_view_height(view_camera[0]) + YG.adv.banner.get_height_playgama()) :
+		(-YG.adv.banner.get_height_playgama())
+	}
+
+	camera_set_view_pos(view_camera[0], round(_camPosX), round(_camPosY))
 }

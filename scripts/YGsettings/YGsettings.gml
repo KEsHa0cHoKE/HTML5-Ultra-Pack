@@ -1,9 +1,9 @@
 ///@ignore
 function __YGsettings()
 {
-	#macro YG_MODE								E_YG_MODE.YANDEX_GAMES // Используемый SKD. Яндекс либо Плейгама
+	#macro YG_MODE								E_YG_MODE.PLAYGAMA // Используемый SKD. Яндекс либо Плейгама
 	
-	#macro YG_FIRST_ROOM						rm_your_first_room // Стартовая комната вашей игры
+	#macro YG_FIRST_ROOM						r_test // Стартовая комната вашей игры
 	#macro YG_DEBUG_LANGUAGE					"ru" // Язык, который будет использован для тестовых билдов и помещён в YG.lang
 	
 	#macro YG_SAVING_ACTIVE						true // Сохранять данные на сервер в релизном билде (если false то не сохраняется прогресс в принципе)
