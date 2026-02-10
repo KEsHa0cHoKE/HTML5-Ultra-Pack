@@ -13,10 +13,11 @@ global.__YG = {
 		data : {
 			///@func send
 			///@desc Сохраняет данные data на сервер яндекса, либо в локальные файлы при тесте
+			///@param {Struct} _dataStruct Структура для сохранения
 			///@param {Function} _callback Коллбек при успешном получении сейвов
 			///@param {Function} _callbackFailed Коллбек при неудаче
-			send : function(_callback = undefined, _callbackFailed = undefined) 
-			{ return __ygData.met_send_data(YG.data, _callback, _callbackFailed) },
+			send : function(_dataStruct = YG.data, _callback = undefined, _callbackFailed = undefined) 
+			{ return __ygData.met_send_data(_dataStruct, _callback, _callbackFailed) },
 			
 			///@func get
 			///@desc Асинхронно получает данные сохранений data с сервера яндекса. Результат запишется в структуру YG.data. Можно указать коллбек, выполнится при получении
@@ -36,10 +37,11 @@ global.__YG = {
 			
 			///@func send
 			///@desc Сохраняет данные stats на сервер яндекса, либо в локальные файлы при тесте
+			///@param {Struct} _statsStruct Коллбек при успешном получении сейвов
 			///@param {Function} _callback Коллбек при успешном получении сейвов
 			///@param {Function} _callbackFailed Коллбек при неудаче
-			send : function(_callback = undefined, _callbackFailed = undefined) 
-			{ return __ygData.met_send_stats(YG.stats, _callback, _callbackFailed) },
+			send : function(_statsStruct = YG.stats, _callback = undefined, _callbackFailed = undefined) 
+			{ return __ygData.met_send_stats(_statsStruct, _callback, _callbackFailed) },
 			
 			///@func get
 			///@desc Асинхронно получает данные сохранений stats с сервера яндекса. Результат запишется в структуру YG.stats. Можно указать коллбек, выполнится при получении
