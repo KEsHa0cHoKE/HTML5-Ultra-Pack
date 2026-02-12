@@ -1,0 +1,50 @@
+site_name: HTML5 Ultra Pack документация
+nav:
+  - Главная: index.md
+  - Быстрый старт: Быстрый_старт.md
+  - Настройки: YGsettings.md
+  - Поддерживаемые платформы: Поддерживаемые.md
+  - YG:
+      - Обзор: YG/YG.md
+      - storage:
+          - Обзор: YG/storage/storage.md
+          - data: YG/storage/data.md
+          - stats: YG/storage/stats.md
+      - adv:
+          - Обзор: YG/adv/adv.md
+          - interstitial: YG/adv/interstitial.md
+          - reward: YG/adv/reward.md
+          - banner: YG/adv/banner.md
+      - audio: YG/audio.md
+      - platform: YG/platform.md
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Переключить в тёмный режим
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Переключить в светлый режим
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+watch:
+  - docs
+  - mkdocs.yml

@@ -133,6 +133,8 @@ global.__YG = {
 	},
 }
 
+
+
 enum E_YG_MODE
 {
 	YANDEX_GAMES,
