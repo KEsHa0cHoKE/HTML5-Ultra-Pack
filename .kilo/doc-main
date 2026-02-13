@@ -1,0 +1,196 @@
+# HTML5 Ultra Pack - Интеграция с Yandex Games и PlayGama Bridge Документация
+
+## Обзор
+
+Этот проект представляет собой HTML5 игровой пакет с интеграцией для платформ Yandex Games и PlayGama Bridge. Он предоставляет унифицированный API для обработки общих игровых функций, таких как хранение данных, реклама, управление аудио и платформенно-специфичные функции.
+
+## Основные возможности
+
+### 1. Глобальный объект YG
+
+Основная точка входа - глобальный объект `YG`, который содержит всю функциональность, организованную в различные модули:
+
+- `YG.data` - Хранение постоянных данных
+- `YG.stats` - Отслеживание статистики (только для Yandex Games)
+- `YG.flags` - Флаги функций (только для Yandex Games)
+- `YG.adv` - Система рекламы
+- `YG.audio` - Управление аудио
+- `YG.platform` - Информация о платформе
+
+### 2. Система хранения данных (`YG.storage`)
+
+#### Модуль данных (`YG.storage.data`)
+
+- **send(dataStruct, callback, callbackFailed)** - Сохранить данные на сервера или в локальные файлы во время тестирования
+- **get(callback, callbackFailed)** - Асинхронно получить сохраненные данные с серверов
+- **deleteAll()** - Очистить все сохраненные данные, отправив пустую структуру
+
+#### Модуль статистики (`YG.storage.stats`)
+
+- **send(statsStruct, callback, callbackFailed)** - Сохранить статистику на сервера
+- **get(callback, callbackFailed)** - Получить статистику с серверов
+- **deleteAll()** - Очистить все данные статистики
+- **is_supported** - Булевый флаг, указывающий, поддерживается ли статистика
+
+### 3. Система рекламы (`YG.adv`)
+
+#### Общие функции
+
+- **is_active()** - Проверить, показывается ли сейчас реклама или предупреждение о предстоящей рекламе
+- **is_showable()** - Проверить, прошло ли достаточно времени для показа рекламы
+
+#### Прерывные объявления (`YG.adv.interstitial`)
+
+- **is_supported** - Проверить, поддерживаются ли прерывные объявления
+- **is_showable()** - Проверить, прошло ли достаточно времени для показа прерывного объявления
+- **show(callback, showWarning)** - Показать полноэкранное прерывное объявление
+  - `_callback`: функция, выполнится когда игрок закроет рекламу
+  - `_showWarning`: bool, если true - запускает предупреждение о скором показе рекламы, а через 2 секунды саму рекламу
+
+#### Вознаграждаемая реклама (`YG.adv.reward`)
+
+- **is_supported** - Проверить, поддерживается ли вознаграждаемая реклама
+- **show(callback, callbackWithoutReward)** - Показать видео с вознаграждением
+  - `_callback`: функция, выполнится когда игрок закроет рекламу при условии что он досмотрел её до конца
+  - `_callbackWithoutReward`: функция, выполнится если игрок закрыл рекламу прежде чем она закончилась
+
+#### Баннерная реклама (`YG.adv.banner`)
+
+- **is_supported** - Проверить, поддерживается ли баннерная реклама
+- **is_active** - Отслеживать, отображается ли баннер в настоящее время
+- **position** - Настройка положения баннера (влияет только на PlayGama Bridge)
+- **show(position)** - Отобразить стационарный баннер
+- **hide()** - Скрыть баннер
+- **get_height_playgama()** - Получить высоту баннера с учетом размера экрана (только для PlayGama Bridge)
+
+### 4. Управление аудио (`YG.audio`)
+
+- **getVolume()** - Получить уровень громкости основного аудиоканала
+- **setVolume(value)** - Установить уровень громкости основного аудиоканала (0.0 - 1.0)
+
+### 5. Информация о платформе (`YG.platform`)
+
+- **id** - Идентификатор текущей платформы (например, PG_PLATFORM_YANDEX)
+- **is_audio_enabled** - Состояние доступности аудио
+- **is_paused** - Состояние паузы игры
+- **is_visible** - Состояние видимости игры
+
+## Конфигурационный файл YGsettings
+
+В скрипте `YGsettings` можно изменять параметры работы инструментов:
+
+### Основные настройки
+- **YG_MODE** - Выбор используемого SDK (E_YG_MODE.YANDEX_GAMES или E_YG_MODE.PLAYGAMA_BRIDGE)
+- **YG_FIRST_ROOM** - Стартовая комната вашей игры
+- **YG_DEBUG_LANGUAGE** - Язык для тестовых билдов
+
+### Настройки сохранений
+- **YG_SAVING_ACTIVE** - Активировать сохранения
+- **YG_SAVING_DEBUG_ACTIVE** - Активировать отладочные сохранения
+- **YG_SAVING_DEBUG_PERIOD** - Период отладочных сохранений
+- **YG_SAVING_DEBUG_GENERATE_ERROR_SEND** - Имитировать ошибку сохранения
+- **YG_SAVING_DEBUG_GENERATE_ERROR_GET** - Имитировать ошибку получения данных
+
+### Настройки рекламы
+- **YG_INTER_PERIOD** - Периодичность показа полноэкранной рекламы в секундах (минимум 61)
+- **YG_INTER_PERIOD_DEBUG** - Периодичность показа фейковой рекламы в тестовом билде
+- **YG_REWARD_DEBUG_TIMER** - Таймер для фейкового реварда
+
+### Настройка названий файлов
+- **YG_DATA_FILENAME** - Имя файла для сохранения данных в тестовых билдах
+- **YG_STATS_FILENAME** - Имя файла для сохранения статистики в тестовых билдах
+
+## Области хранения
+
+- `YG.data` — основные игровые данные
+- `YG.stats` — статистика (только для Yandex Games, только Real значения)
+- `YG.flags` — флаги (только для Yandex Games)
+
+Использование:
+```
+YG.data.last_completed_lvl = 0
+YG.data.player_level = 0
+YG.data.player_skin = "cat"
+```
+
+## Поддерживаемые платформы
+
+- Yandex Games (`PG_PLATFORM_YANDEX`)
+- PlayGama (`PG_PLATFORM_PLAYGAMA`)
+- VK (`PG_PLATFORM_VK`)
+- OK (`PG_PLATFORM_OK`)
+- Facebook (`PG_PLATFORM_FACEBOOK`)
+- Crazy Games (`PG_PLATFORM_CRAZY_GAMES`)
+- Game Distribution (`PG_PLATFORM_GAME_DISTRIBUTION`)
+- PlayDeck (`PG_PLATFORM_PLAYDECK`)
+- Telegram (`PG_PLATFORM_TELEGRAM`)
+- Y8 (`PG_PLATFORM_Y8`)
+- Lagged (`PG_PLATFORM_LAGGED`)
+- MSN (`PG_PLATFORM_MSN`)
+- Poki (`PG_PLATFORM_POKI`)
+- QA Tool (`PG_PLATFORM_QA_TOOL`)
+- Discord (`PG_PLATFORM_DISCORD`)
+- GamePush (`PG_PLATFORM_GAMEPUSH`)
+- BitQuest (`PG_PLATFORM_BITQUEST`)
+- Huawei (`PG_PLATFORM_HUAWEI`)
+- Jio Games (`PG_PLATFORM_JIO_GAMES`)
+- Reddit (`PG_PLATFORM_REDDIT`)
+- YouTube (`PG_PLATFORM_YOUTUBE`)
+- Mock (`PG_PLATFORM_MOCK`)
+
+## Перечисления
+
+- **E_YG_MODE**: YANDEX_GAMES, PLAYGAMA_BRIDGE
+- **E_DEVICE_TYPE**: PC, MOBILE
+- **E_BANNER_PG_POS**: Перечисление позиций баннера (для PlayGama Bridge)
+
+## Инициализация
+
+1. Добавьте объект `__objYGInit` в начальную комнату вашей игры
+2. Убедитесь, что он добавлен до всех других объектов, которые будут использовать SDK
+3. Настройте файл `YGsettings.gml` с необходимыми параметрами
+
+## Примеры использования
+
+### Работа с данными
+```js
+// Обновление игровых данных
+YG.data.level = 1;
+YG.data.score = 0;
+YG.data.coins = 100;
+
+// Сохранение данных на сервер
+YG.storage.data.send(
+    function() { show_debug_message("Данные успешно сохранены"); },
+    function() { show_debug_message("Ошибка сохранения"); }
+);
+```
+
+### Работа с рекламой
+```js
+// Проверка возможности показа рекламы
+if (YG.adv.interstitial.is_showable()) {
+    YG.adv.interstitial.show();
+}
+
+// Показ ревард-рекламы
+YG.adv.reward.show(
+    function() {
+        // Игрок досмотрел рекламу до конца
+        obj_player.coins += 100;
+    },
+    function() {
+        // Игрок закрыл рекламу раньше времени
+        show_debug_message("Реклама закрыта преждевременно");
+    }
+);
+```
+
+### Управление аудио
+```js
+// Установка громкости
+YG.audio.setVolume(0.5);
+
+// Получение текущей громкости
+var current_volume = YG.audio.getVolume();
+```

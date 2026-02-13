@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"LICENSE",
+  "name":"LICENSE",
+  "parent":{
+    "name":"HTML5",
+    "path":"folders/Extensions/HTML5.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

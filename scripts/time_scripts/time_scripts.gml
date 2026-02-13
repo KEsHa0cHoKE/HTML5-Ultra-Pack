@@ -1,3 +1,5 @@
+// Автор - Максим Шишков (Trumdu)
+
 /// @func   time_convert_datetime_to_iso8601(double datetime)
 /// @desc   Returns ISO 8601 datetime string.
 function time_convert_datetime_to_iso8601(_dt){

@@ -133,6 +133,8 @@ global.__YG = {
 	},
 }
 
+
+
 enum E_YG_MODE
 {
 	YANDEX_GAMES,
@@ -169,6 +171,7 @@ enum E_DEVICE_TYPE
 #macro PG_PLATFORM_REDDIT				"reddit"
 #macro PG_PLATFORM_YOUTUBE				"youtube"
 #macro PG_PLATFORM_MOCK					"mock"
+#macro PG_PLATFORM_XIAOMI				"xiaomi"
 
 
 
