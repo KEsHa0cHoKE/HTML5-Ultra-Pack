@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"NOTICE",
+  "name":"NOTICE",
+  "parent":{
+    "name":"HTML5",
+    "path":"folders/Extensions/HTML5.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}
