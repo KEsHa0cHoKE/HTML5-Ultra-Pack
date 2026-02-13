@@ -24,7 +24,7 @@
   "hasConvertedCodeInjection":true,
   "helpfile":"",
   "HTML5CodeInjection":"",
-  "html5Props":true,
+  "html5Props":false,
   "IncludedResources":[],
   "installdir":"",
   "iosCocoaPodDependencies":"",
