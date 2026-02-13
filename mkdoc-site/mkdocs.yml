@@ -2,8 +2,9 @@ site_name: HTML5 Ultra Pack документация
 nav:
   - Главная: index.md
   - Быстрый старт: Быстрый_старт.md
-  - Настройки: YGsettings.md
   - Поддерживаемые платформы: Поддерживаемые.md
+  - Настройки HTML5 цели: Additional_settings.md
+  - YGsettings: YGsettings.md
   - YG:
       - Обзор: YG/YG.md
       - storage:

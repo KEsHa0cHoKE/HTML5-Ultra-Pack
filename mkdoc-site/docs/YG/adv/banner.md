@@ -14,9 +14,9 @@
 
 | Метод               | Возвращаемый тип | Описание                                                                                             |
 | ------------------- | ---------------- | ---------------------------------------------------------------------------------------------------- |
-| show                | `Undefined`      | Отображает баннер                                                                                    |
-| hide                | `Undefined`      | Скрывает баннер                                                                                      |
-| get_height_playgama | `Real`           | Возвращает высоту баннера (таким, каким он был бы в playgama bridge) с учётом размеров игрового окна |
+| [show](#show-undefined)                | `Undefined`      | Отображает баннер                                                                                    |
+| [hide](#hide-undefined)                | `Undefined`      | Скрывает баннер                                                                                      |
+| [get_height_playgama](#get_height_playgama-real) | `Real`           | Возвращает высоту баннера (таким, каким он был бы в playgama bridge) с учётом размеров игрового окна |
 
 ---
 
@@ -31,7 +31,6 @@
 **Пример:**
 
 ```js
-// Показать sticky-banner
 YG.adv.banner.show();
 ```
 
@@ -44,8 +43,7 @@ YG.adv.banner.show();
 **Пример:**
 
 ```js
-// Скрыть sticky-banner
-YG.adv.banner.show();
+YG.adv.banner.hide();
 ```
 
 ---
@@ -57,7 +55,6 @@ YG.adv.banner.show();
 **Пример:**
 
 ```js
-// Получить высоту sticky-banner
 var _bannerHeight = YG.adv.banner.get_height_playgama();
 ```
 
