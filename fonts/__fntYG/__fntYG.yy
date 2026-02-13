@@ -80,6 +80,8 @@
   },
   "pointRounding":0,
   "ranges":[
+    {"lower":10,"upper":10,},
+    {"lower":13,"upper":13,},
     {"lower":32,"upper":32,},
     {"lower":46,"upper":46,},
     {"lower":48,"upper":57,},

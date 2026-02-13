@@ -13,10 +13,11 @@ global.__YG = {
 		data : {
 			///@func send
 			///@desc Сохраняет данные data на сервер яндекса, либо в локальные файлы при тесте
+			///@param {Struct} _dataStruct Структура для сохранения
 			///@param {Function} _callback Коллбек при успешном получении сейвов
 			///@param {Function} _callbackFailed Коллбек при неудаче
-			send : function(_callback = undefined, _callbackFailed = undefined) 
-			{ return __ygData.met_send_data(YG.data, _callback, _callbackFailed) },
+			send : function(_dataStruct = YG.data, _callback = undefined, _callbackFailed = undefined) 
+			{ return __ygData.met_send_data(_dataStruct, _callback, _callbackFailed) },
 			
 			///@func get
 			///@desc Асинхронно получает данные сохранений data с сервера яндекса. Результат запишется в структуру YG.data. Можно указать коллбек, выполнится при получении
@@ -36,10 +37,11 @@ global.__YG = {
 			
 			///@func send
 			///@desc Сохраняет данные stats на сервер яндекса, либо в локальные файлы при тесте
+			///@param {Struct} _statsStruct Коллбек при успешном получении сейвов
 			///@param {Function} _callback Коллбек при успешном получении сейвов
 			///@param {Function} _callbackFailed Коллбек при неудаче
-			send : function(_callback = undefined, _callbackFailed = undefined) 
-			{ return __ygData.met_send_stats(YG.stats, _callback, _callbackFailed) },
+			send : function(_statsStruct = YG.stats, _callback = undefined, _callbackFailed = undefined) 
+			{ return __ygData.met_send_stats(_statsStruct, _callback, _callbackFailed) },
 			
 			///@func get
 			///@desc Асинхронно получает данные сохранений stats с сервера яндекса. Результат запишется в структуру YG.stats. Можно указать коллбек, выполнится при получении
@@ -84,6 +86,28 @@ global.__YG = {
 			///@param {Function} _callbackWithoutReward коллбек, если игрок закрыл рекламу прежде чем она закончилась
 			show : function(_callback, _callbackWithoutReward = undefined) 
 			{ return __ygAdv.met_show_reward(_callback, _callbackWithoutReward) }
+		},
+		
+		banner : {
+			is_supported : true,
+			is_active : false,
+			position : E_BANNER_PG_POS.BOTTOM,
+			
+			///@func show
+			///@desc Показывает стики баннер
+			///@param {Constant.E_BANNER_PG_POS} _pgBannerPosEnum позиция (E_BANNER_PG_POS.BOTTOM по умолчанию)
+			show : function(_pgBannerPosEnum = E_BANNER_PG_POS.BOTTOM)
+			{ return __ygAdv.met_show_banner(_pgBannerPosEnum) },
+			
+			///@func hide
+			///@desc Скрывает стики баннер
+			hide : function()
+			{ return __ygAdv.met_hide_banner() },
+			
+			///@func get_height_playgama
+			///@desc Возвращает высоту баннера с учётом размера экрана с игрой
+			get_height_playgama : function()
+			{ if (!instance_exists(__ygAdv)) return 0; return __ygAdv.met_banner_get_height_playgama() }
 		}
 	},
 	
@@ -109,6 +133,8 @@ global.__YG = {
 	},
 }
 
+
+
 enum E_YG_MODE
 {
 	YANDEX_GAMES,
@@ -120,6 +146,8 @@ enum E_DEVICE_TYPE
 	PC,
 	MOBILE
 }
+
+
 
 #macro PG_PLATFORM_PLAYGAMA				"playgama"
 #macro PG_PLATFORM_VK					"vk"
@@ -143,16 +171,18 @@ enum E_DEVICE_TYPE
 #macro PG_PLATFORM_REDDIT				"reddit"
 #macro PG_PLATFORM_YOUTUBE				"youtube"
 #macro PG_PLATFORM_MOCK					"mock"
+#macro PG_PLATFORM_XIAOMI				"xiaomi"
 
 
 
 #region Остаточная инициализация
-	
+
 if (YG_MODE == E_YG_MODE.PLAYGAMA && YG.is_release_build) {
 	YG.lang								= playgama_bridge_platform_language()
 	
 	YG.adv.interstitial.is_supported	= bool(playgama_bridge_advertisement_is_interstitial_supported())
 	YG.adv.reward.is_supported			= bool(playgama_bridge_advertisement_is_rewarded_supported())
+	YG.adv.banner.is_supported			= bool(playgama_bridge_advertisement_is_banner_supported())
 	
 	YG.storage.stats.is_supported		= false
 	

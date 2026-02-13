@@ -11,7 +11,6 @@ fullscreen = true // FALSE ПОКА НЕ ПОДДЕРЖИВАЕТСЯ, НЕ МЕ
 debug_adv_periodicity_in_sec = YG_INTER_PERIOD_DEBUG
 adv_periodicity_in_sec = YG_INTER_PERIOD
 
-
 #region Конструкторы для имитации рекламы в тестовом билде
 
 ///@func CloseButton
@@ -369,4 +368,72 @@ met_show_reward = function(_callBack, _callBackWithoutReward = undefined)
 	{
 		reward_callback_without_reward = _callBackWithoutReward
 	}
+}
+
+enum E_BANNER_PG_POS {
+	BOTTOM,
+	TOP
+}
+
+///@func met_show_banner
+///@desc Показывает стики баннер
+///@param {Constant.E_BANNER_PG_POS} _pgBannerPosEnum позиция
+met_show_banner = function(_pgBannerPosEnum = E_BANNER_PG_POS.BOTTOM)
+{
+	if (!YG.adv.banner.is_supported) then exit;
+	
+	
+	YG.adv.banner.is_active = true
+	
+	if (YG_MODE == E_YG_MODE.YANDEX_GAMES) {
+		YaGames_Banner_ShowAdv()
+	}
+	else {
+		if (!YG.is_release_build) {
+			//draw_banner = true
+			YG.adv.banner.position = _pgBannerPosEnum
+			exit;
+		}
+		
+		var _position = ["bottom", "top"][_pgBannerPosEnum]
+		playgama_bridge_advertisement_show_banner(_position)
+	}
+}
+
+///@func met_hide_banner
+///@desc Скрывает стики баннер
+met_hide_banner = function() 
+{
+	if (!YG.adv.banner.is_supported) then exit;
+	
+	
+	YG.adv.banner.is_active = false
+	
+	if (YG_MODE == E_YG_MODE.YANDEX_GAMES) {
+		YaGames_Banner_HideAdv()
+	}
+	else {
+		if (!YG.is_release_build) {
+			//draw_banner = false
+			exit;
+		}
+		
+		playgama_bridge_advertisement_show_banner()
+	}
+}
+
+///@func met_banner_get_height_playgama
+///@desc Возвращает высоту баннера с учётом размера экрана с игрой
+met_banner_get_height_playgama = function() 
+{
+	var _bannerBaseH	= 90
+
+    var _viewW			= camera_get_view_width(view_camera[0])
+    var _winW			= (os_browser == browser_not_a_browser ?
+	window_get_width() :
+	browser_width)
+	
+    var _scale			= _winW / _viewW
+
+    return _bannerBaseH / _scale
 }

@@ -14,7 +14,7 @@
   "copyToTargets":17179869216,
   "description":"",
   "exportToGame":true,
-  "extensionVersion":"1.26.1",
+  "extensionVersion":"1.27.0",
   "files":[
     {"$GMExtensionFile":"","%Name":"","constants":[],"copyToTargets":17179869216,"filename":"playgama-bridge-gm.js","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_advertisement_show_interstitial","argCount":0,"args":[1,],"documentation":"","externalName":"playgamaBridgeAdvertisementShowInterstitial","help":"playgama_bridge_advertisement_show_interstitial(placement)","hidden":false,"kind":5,"name":"playgama_bridge_advertisement_show_interstitial","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
@@ -74,7 +74,7 @@
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_achievements_get_list","argCount":0,"args":[1,],"documentation":"","externalName":"playgamaBridgeAchievementsGetList","help":"playgama_bridge_achievements_get_list(options)","hidden":false,"kind":5,"name":"playgama_bridge_achievements_get_list","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_achievements_show_native_popup","argCount":0,"args":[1,],"documentation":"","externalName":"playgamaBridgeAchievementsShowNativePopup","help":"playgama_bridge_achievements_show_native_popup(options)","hidden":false,"kind":5,"name":"playgama_bridge_achievements_show_native_popup","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_payments_is_supported","argCount":0,"args":[],"documentation":"","externalName":"playgamaBridgePaymentsIsSupported","help":"playgama_bridge_payments_is_supported()","hidden":false,"kind":5,"name":"playgama_bridge_payments_is_supported","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
-        {"$GMExtensionFunction":"","%Name":"playgama_bridge_payments_purchase","argCount":0,"args":[1,],"documentation":"","externalName":"playgamaBridgePaymentsPurchase","help":"playgama_bridge_payments_purchase(id)","hidden":false,"kind":5,"name":"playgama_bridge_payments_purchase","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
+        {"$GMExtensionFunction":"","%Name":"playgama_bridge_payments_purchase","argCount":0,"args":[1,1,],"documentation":"","externalName":"playgamaBridgePaymentsPurchase","help":"playgama_bridge_payments_purchase(id, options)","hidden":false,"kind":5,"name":"playgama_bridge_payments_purchase","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_payments_consume_purchase","argCount":0,"args":[1,],"documentation":"","externalName":"playgamaBridgePaymentsConsumePurchase","help":"playgama_bridge_payments_consume_purchase(id)","hidden":false,"kind":5,"name":"playgama_bridge_payments_consume_purchase","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_payments_get_catalog","argCount":0,"args":[],"documentation":"","externalName":"playgamaBridgePaymentsGetCatalog","help":"playgama_bridge_payments_get_catalog()","hidden":false,"kind":5,"name":"playgama_bridge_payments_get_catalog","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_payments_get_purchases","argCount":0,"args":[],"documentation":"","externalName":"playgamaBridgePaymentsGetPurchases","help":"playgama_bridge_payments_get_purchases()","hidden":false,"kind":5,"name":"playgama_bridge_payments_get_purchases","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
@@ -95,8 +95,8 @@
   "gradleinject":"",
   "hasConvertedCodeInjection":true,
   "helpfile":"",
-  "HTML5CodeInjection":"<GM_HTML5_PostStyle>\n<style>\n\t\t\tbody\n\t\t\t{\n\t\t\t\toverflow:hidden;\n\t\t\t}\n\t\t</style>\n</GM_HTML5_PostStyle>",
-  "html5Props":true,
+  "HTML5CodeInjection":"<GM_HTML5_PostStyle>\r\n<style>\r\n\t\t\tbody\r\n\t\t\t{\r\n\t\t\t\toverflow:hidden;\r\n\t\t\t}\r\n\t\t</style>\r\n</GM_HTML5_PostStyle>",
+  "html5Props":false,
   "IncludedResources":[],
   "installdir":"",
   "iosCocoaPodDependencies":"",
