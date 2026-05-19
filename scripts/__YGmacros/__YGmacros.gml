@@ -95,7 +95,7 @@ global.__YG = {
 			
 			///@func show
 			///@desc Показывает стики баннер
-			///@param {Constant.E_BANNER_PG_POS} _pgBannerPosEnum позиция (E_BANNER_PG_POS.BOTTOM по умолчанию)
+			///@param {Enum.E_BANNER_PG_POS} _pgBannerPosEnum позиция (E_BANNER_PG_POS.BOTTOM по умолчанию)
 			show : function(_pgBannerPosEnum = E_BANNER_PG_POS.BOTTOM)
 			{ return __ygAdv.met_show_banner(_pgBannerPosEnum) },
 			
@@ -133,16 +133,12 @@ global.__YG = {
 	},
 }
 
-
-
-enum E_YG_MODE
-{
+enum E_YG_MODE {
 	YANDEX_GAMES,
 	PLAYGAMA
 }
 
-enum E_DEVICE_TYPE
-{
+enum E_DEVICE_TYPE {
 	PC,
 	MOBILE
 }
@@ -171,7 +167,6 @@ enum E_DEVICE_TYPE
 #macro PG_PLATFORM_REDDIT				"reddit"
 #macro PG_PLATFORM_YOUTUBE				"youtube"
 #macro PG_PLATFORM_MOCK					"mock"
-#macro PG_PLATFORM_XIAOMI				"xiaomi"
 
 
 
@@ -191,17 +186,23 @@ if (YG_MODE == E_YG_MODE.PLAYGAMA && YG.is_release_build) {
 	YG.platform.is_visible				= (playgama_bridge_game_visibility_state() == "visible")
 }
 
-switch (os_type)
-{
-	case os_windows:
-	case os_linux:
-	case os_macosx:
-		YG.device_type = E_DEVICE_TYPE.PC
-	break;
-	
-	default:
-		YG.device_type = E_DEVICE_TYPE.MOBILE
-	break;
+
+if (!YG_DEBUG_FORCE_MOBILE_MODE || YG.is_release_build) {
+	switch (os_type) {
+		case os_windows:
+		case os_linux:
+		case os_macosx:
+			YG.device_type = E_DEVICE_TYPE.PC
+		break;
+		
+		default:
+			YG.device_type = E_DEVICE_TYPE.MOBILE
+		break;
+	}
 }
-	
+else {
+	YG.device_type = E_DEVICE_TYPE.MOBILE
+}
+
+
 #endregion

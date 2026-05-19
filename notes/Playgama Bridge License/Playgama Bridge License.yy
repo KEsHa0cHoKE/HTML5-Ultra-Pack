@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"Playgama Bridge License",
   "name":"Playgama Bridge License",
   "parent":{

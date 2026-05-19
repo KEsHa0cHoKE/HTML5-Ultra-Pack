@@ -2,7 +2,7 @@
 
 
 #region Настройки
-//TODO : редактировать draw gui и эвенты draw у конструкторов
+// TODO : редактировать draw gui и эвенты draw у конструкторов
 fullscreen = true // FALSE ПОКА НЕ ПОДДЕРЖИВАЕТСЯ, НЕ МЕНЯТЬ ИНАЧЕ СЛЕТЯТ ФЕЙК ИНТЕРЫ/РЕВАРДЫ
 
 #endregion
@@ -95,6 +95,9 @@ Inter = function(_x, _y, _parId) constructor
 		draw_text(x, y, YG.lang == "ru" ? "Реклама" : "Advertisement")
 		
 		close_button.event_draw()
+		
+		draw_set_valign(fa_top)
+		draw_set_halign(fa_center)
 	}
 	
 	met_destroy = function()
@@ -173,6 +176,9 @@ Reward = function(_x, _y, _parId) constructor
 		draw_text(x, y+self.height/2-font_get_size(__fntYG)/1.5, (_watched ? (YG.lang == "ru" ? "Просмотрено" : "Watched") : $"{ceil(timer)}"))
 		
 		close_button.event_draw()
+		
+		draw_set_valign(fa_top)
+		draw_set_halign(fa_left)
 	}
 	
 	met_destroy = function()
@@ -377,7 +383,7 @@ enum E_BANNER_PG_POS {
 
 ///@func met_show_banner
 ///@desc Показывает стики баннер
-///@param {Constant.E_BANNER_PG_POS} _pgBannerPosEnum позиция
+///@param {Enum.E_BANNER_PG_POS} _pgBannerPosEnum позиция
 met_show_banner = function(_pgBannerPosEnum = E_BANNER_PG_POS.BOTTOM)
 {
 	if (!YG.adv.banner.is_supported) then exit;

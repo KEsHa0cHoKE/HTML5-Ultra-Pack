@@ -16,7 +16,7 @@
   "exportToGame":true,
   "extensionVersion":"0.0.1",
   "files":[
-    {"$GMExtensionFile":"","%Name":"","constants":[],"copyToTargets":17179869216,"filename":"web_dyn_textures.js","final":"","functions":[
+    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":17179869216,"filename":"web_dyn_textures.js","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"wdt_change_ext","argCount":2,"args":[2,2,],"documentation":"","externalName":"wdt_change_ext","help":"","hidden":true,"kind":11,"name":"wdt_change_ext","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_load_texture_raw","argCount":2,"args":[2,2,],"documentation":"","externalName":"wdt_load_texture_raw","help":"","hidden":true,"kind":11,"name":"wdt_load_texture_raw","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_is_null","argCount":1,"args":[2,],"documentation":"","externalName":"wdt_is_null","help":"","hidden":true,"kind":11,"name":"wdt_is_null","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
@@ -29,8 +29,8 @@
         {"$GMExtensionFunction":"","%Name":"wdt_assign_raw","argCount":2,"args":[2,2,],"documentation":"","externalName":"wdt_assign_raw","help":"","hidden":true,"kind":11,"name":"wdt_assign_raw","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_preinit_raw","argCount":0,"args":[],"documentation":"","externalName":"wdt_preinit_raw","help":"","hidden":true,"kind":11,"name":"wdt_preinit_raw","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_magic_false","argCount":-1,"args":[],"documentation":"","externalName":"wdt_magic_false","help":"","hidden":true,"kind":11,"name":"wdt_magic_false","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
-      ],"init":"","kind":5,"name":"","order":[],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
-    {"$GMExtensionFile":"","%Name":"","constants":[
+      ],"init":"","kind":5,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+    {"$GMExtensionFile":"v1","%Name":"","constants":[
         {"$GMExtensionConstant":"","%Name":"wdt_status_ready","hidden":false,"name":"wdt_status_ready","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"1",},
         {"$GMExtensionConstant":"","%Name":"wdt_status_loading","hidden":false,"name":"wdt_status_loading","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"0",},
         {"$GMExtensionConstant":"","%Name":"wdt_status_fallback","hidden":false,"name":"wdt_status_fallback","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"-1",},
@@ -46,8 +46,8 @@
         {"$GMExtensionFunction":"","%Name":"wdt_get_texture_status","argCount":1,"args":[2,],"documentation":"","externalName":"wdt_get_texture_status","help":"wdt_get_texture_status(texture)->","hidden":false,"kind":2,"name":"wdt_get_texture_status","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_assign_all","argCount":2,"args":[2,2,],"documentation":"","externalName":"wdt_assign_all","help":"","hidden":true,"kind":11,"name":"wdt_assign_all","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_autoload_textures","argCount":0,"args":[],"documentation":"","externalName":"wdt_autoload_textures","help":"wdt_autoload_textures()","hidden":false,"kind":2,"name":"wdt_autoload_textures","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
-      ],"init":"wdt_preinit","kind":2,"name":"","order":[],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
-    {"$GMExtensionFile":"","%Name":"","constants":[],"copyToTargets":-1,"filename":"wdt_assets.gml","final":"","functions":[
+      ],"init":"wdt_preinit","kind":2,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":-1,"filename":"wdt_assets.gml","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"wdt_load_sprite","argCount":-1,"args":[],"documentation":"","externalName":"wdt_load_sprite","help":"wdt_load_sprite(sprite, ?subimg)->","hidden":false,"kind":2,"name":"wdt_load_sprite","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_load_sprites","argCount":-1,"args":[],"documentation":"","externalName":"wdt_load_sprites","help":"wdt_load_sprites(...sprites)->","hidden":false,"kind":2,"name":"wdt_load_sprites","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_get_sprite_status","argCount":-1,"args":[],"documentation":"","externalName":"wdt_get_sprite_status","help":"wdt_get_sprite_status(sprite, ?subimg)->","hidden":false,"kind":2,"name":"wdt_get_sprite_status","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
@@ -56,12 +56,12 @@
         {"$GMExtensionFunction":"","%Name":"wdt_get_font_status","argCount":1,"args":[2,],"documentation":"","externalName":"wdt_get_font_status","help":"wdt_get_font_status(font)->","hidden":false,"kind":2,"name":"wdt_get_font_status","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_load_tileset","argCount":1,"args":[2,],"documentation":"","externalName":"wdt_load_tileset","help":"wdt_load_tileset(tileset)->","hidden":false,"kind":2,"name":"wdt_load_tileset","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_get_tileset_status","argCount":1,"args":[2,],"documentation":"","externalName":"wdt_get_tileset_status","help":"wdt_get_tileset_status(font)->","hidden":false,"kind":2,"name":"wdt_get_tileset_status","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
-      ],"init":"","kind":2,"name":"","order":[],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
-    {"$GMExtensionFile":"","%Name":"","constants":[],"copyToTargets":-1,"filename":"wdt_texture_groups.gml","final":"","functions":[
+      ],"init":"","kind":2,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":-1,"filename":"wdt_texture_groups.gml","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"wdt_load_texture_group","argCount":1,"args":[2,],"documentation":"","externalName":"wdt_load_texture_group","help":"wdt_load_texture_group(texturegroup_name)->","hidden":false,"kind":2,"name":"wdt_load_texture_group","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_get_texture_group_status","argCount":1,"args":[2,],"documentation":"","externalName":"wdt_get_texture_group_status","help":"wdt_get_texture_group_status(texturegroup_name)->","hidden":false,"kind":2,"name":"wdt_get_texture_group_status","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"wdt_get_texture_group_image_pairs","argCount":1,"args":[2,],"documentation":"","externalName":"wdt_get_texture_group_image_pairs","help":"wdt_get_texture_group_image_pairs(name)->array<[string,texture]>","hidden":false,"kind":2,"name":"wdt_get_texture_group_image_pairs","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
-      ],"init":"","kind":2,"name":"","order":[],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+      ],"init":"","kind":2,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject":"",
   "hasConvertedCodeInjection":true,

@@ -284,7 +284,7 @@ met_get_all_data = function(_callback = undefined, _callbackFailed = undefined)
 met_get_all_stats = function(_callback = undefined, _callbackFailed = undefined) 
 {
 	if (!YG.storage.stats.is_supported)
-		show_error("yg_data : met_send_stats() -> Stats недоступны на этой платформе", true)
+		show_debug_message("yg_data : met_get_all_stats -> Stats недоступны на этой платформе", true)
 	
 	
 	if (YG.is_release_build && YG_SAVING_ACTIVE)

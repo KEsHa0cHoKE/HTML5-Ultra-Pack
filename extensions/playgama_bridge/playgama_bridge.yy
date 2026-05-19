@@ -16,7 +16,7 @@
   "exportToGame":true,
   "extensionVersion":"1.27.0",
   "files":[
-    {"$GMExtensionFile":"","%Name":"","constants":[],"copyToTargets":17179869216,"filename":"playgama-bridge-gm.js","final":"","functions":[
+    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":17179869216,"filename":"playgama-bridge-gm.js","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_advertisement_show_interstitial","argCount":0,"args":[1,],"documentation":"","externalName":"playgamaBridgeAdvertisementShowInterstitial","help":"playgama_bridge_advertisement_show_interstitial(placement)","hidden":false,"kind":5,"name":"playgama_bridge_advertisement_show_interstitial","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_advertisement_show_rewarded","argCount":0,"args":[1,],"documentation":"","externalName":"playgamaBridgeAdvertisementShowRewarded","help":"playgama_bridge_advertisement_show_rewarded(placement)","hidden":false,"kind":5,"name":"playgama_bridge_advertisement_show_rewarded","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_advertisement_interstitial_state","argCount":0,"args":[],"documentation":"","externalName":"playgamaBridgeAdvertisementInterstitialState","help":"playgama_bridge_advertisement_interstitial_state()","hidden":false,"kind":5,"name":"playgama_bridge_advertisement_interstitial_state","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
@@ -90,7 +90,7 @@
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_platform_is_audio_enabled","argCount":0,"args":[],"documentation":"","externalName":"playgamaBridgePlatformIsAudioEnabled","help":"playgama_bridge_platform_is_audio_enabled()","hidden":false,"kind":5,"name":"playgama_bridge_platform_is_audio_enabled","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_platform_is_paused","argCount":0,"args":[],"documentation":"","externalName":"playgamaBridgePlatformIsPaused","help":"playgama_bridge_platform_is_paused()","hidden":false,"kind":5,"name":"playgama_bridge_platform_is_paused","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"playgama_bridge_player_extra","argCount":0,"args":[],"documentation":"","externalName":"playgamaBridgePlayerExtra","help":"playgama_bridge_player_extra()","hidden":false,"kind":5,"name":"playgama_bridge_player_extra","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
-      ],"init":"","kind":5,"name":"","order":[],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+      ],"init":"","kind":5,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject":"",
   "hasConvertedCodeInjection":true,

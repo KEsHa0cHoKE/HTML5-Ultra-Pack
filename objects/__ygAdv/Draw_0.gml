@@ -32,7 +32,8 @@ if (YG_MODE == E_YG_MODE.PLAYGAMA && !YG.is_release_build && YG.adv.banner.is_ac
 	
 	draw_text(_bannerX+_bannerW/2, _bannerY+_bannerH/2, "banner")
 	
-	draw_set_color(c_white)
+	draw_set_valign(fa_top)
+	draw_set_halign(fa_left)
 }
 
 if (fullscreen) then exit;
@@ -60,4 +61,8 @@ if (adv_state == E_ADV_STATE.SHOWING_WARNING)
 	var _fntSize = font_get_size(fnt)
 	var _sep = _fntSize+(_fntSize/2)
 	draw_text_ext(_x, _y, _text, _sep, _dw)
+	
+	draw_set_valign(fa_top)
+	draw_set_halign(fa_left)
+	draw_set_color(c_black)
 }

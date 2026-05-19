@@ -1,5 +1,5 @@
 {
-  "$GMNotes":"",
+  "$GMNotes":"v1",
   "%Name":"YaGames License",
   "name":"YaGames License",
   "parent":{

@@ -16,24 +16,20 @@
   "exportToGame":true,
   "extensionVersion":"0.0.1",
   "files":[
-    {"$GMExtensionFile":"","%Name":"browser_hdpi.js","constants":[],"copyToTargets":-1,"filename":"browser_hdpi.js","final":"","functions":[
+    {"$GMExtensionFile":"v1","%Name":"browser_hdpi.js","constants":[],"copyToTargets":-1,"filename":"browser_hdpi.js","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"browser_get_device_pixel_ratio","argCount":0,"args":[],"documentation":"","externalName":"browser_get_device_pixel_ratio","help":"browser_get_device_pixel_ratio()","hidden":false,"kind":5,"name":"browser_get_device_pixel_ratio","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"browser_stretch_canvas_ext","argCount":3,"args":[2,2,2,],"documentation":"","externalName":"browser_stretch_canvas_ext","help":"browser_stretch_canvas_ext(canvas_id, w, h)","hidden":false,"kind":5,"name":"browser_stretch_canvas_ext","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
         {"$GMExtensionFunction":"","%Name":"browser_scrollbars_enable","argCount":1,"args":[2,],"documentation":"","externalName":"browser_scrollbars_enable","help":"browser_scrollbars_enable(z)","hidden":false,"kind":5,"name":"browser_scrollbars_enable","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
-      ],"init":"","kind":5,"name":"browser_hdpi.js","order":[
-        {"name":"browser_get_device_pixel_ratio","path":"extensions/browser_hdpi/browser_hdpi.yy",},
-        {"name":"browser_stretch_canvas_ext","path":"extensions/browser_hdpi/browser_hdpi.yy",},
-        {"name":"browser_scrollbars_enable","path":"extensions/browser_hdpi/browser_hdpi.yy",},
-      ],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
-    {"$GMExtensionFile":"","%Name":"browser_hdpi.gml","constants":[],"copyToTargets":-1,"filename":"browser_hdpi.gml","final":"","functions":[
+      ],"init":"","kind":5,"name":"browser_hdpi.js","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+    {"$GMExtensionFile":"v1","%Name":"browser_hdpi.gml","constants":[],"copyToTargets":-1,"filename":"browser_hdpi.gml","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"browser_stretch_canvas","argCount":2,"args":[2,2,],"documentation":"","externalName":"browser_stretch_canvas","help":"browser_stretch_canvas(width, height)","hidden":false,"kind":2,"name":"browser_stretch_canvas","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
-      ],"init":"","kind":2,"name":"browser_hdpi.gml","order":[],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+      ],"init":"","kind":2,"name":"browser_hdpi.gml","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject":"",
   "hasConvertedCodeInjection":true,
   "helpfile":"",
   "HTML5CodeInjection":"",
-  "html5Props":false,
+  "html5Props":true,
   "IncludedResources":[],
   "installdir":"",
   "iosCocoaPodDependencies":"",

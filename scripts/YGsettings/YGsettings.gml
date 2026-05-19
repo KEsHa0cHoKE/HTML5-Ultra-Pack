@@ -1,10 +1,12 @@
 ///@ignore
 function __YGsettings()
 {
-	#macro YG_MODE								E_YG_MODE.PLAYGAMA // Используемый SKD. Яндекс либо Плейгама
+	#macro YG_MODE								E_YG_MODE.YANDEX_GAMES // Используемый SKD. Яндекс либо Плейгама
 	
-	#macro YG_FIRST_ROOM						r_test // Стартовая комната вашей игры
+	#macro YG_FIRST_ROOM						r_main // Стартовая комната вашей игры
 	#macro YG_DEBUG_LANGUAGE					"ru" // Язык, который будет использован для тестовых билдов и помещён в YG.lang
+	
+	#macro YG_DEBUG_FORCE_MOBILE_MODE			false // Принудительно выдавать в YG.device_type значение E_DEVICE_TYPE.MOBILE в тестовом билде 
 	
 	#macro YG_SAVING_ACTIVE						true // Сохранять данные на сервер в релизном билде (если false то не сохраняется прогресс в принципе)
 	
@@ -13,10 +15,10 @@ function __YGsettings()
 	#macro YG_SAVING_DEBUG_GENERATE_ERROR_SEND	false // Имитировать ошибку сохранения данных на сервер в режиме тестового билда
 	#macro YG_SAVING_DEBUG_GENERATE_ERROR_GET	false // Имитировать ошибку получения данных с сервера в режиме тестового билда
 	
-	#macro YG_INTER_PERIOD						90 // Периодичность, с которой может показываться реклама в секундах (минимум 61)
+	#macro YG_INTER_PERIOD						180 // Периодичность, с которой может показываться реклама в секундах (минимум 61)
 	#macro YG_INTER_PERIOD_DEBUG				10 // Периодичность, с которой может показываться фейковая реклама в секундах
 	
-	#macro YG_REWARD_DEBUG_TIMER				5 // Таймер для фейкового реварда, по истечению которого он будет считаться просмотренным
+	#macro YG_REWARD_DEBUG_TIMER				3 // Таймер для фейкового реварда, по истечению которого он будет считаться просмотренным
 	
 	#macro YG_DATA_FILENAME						"__data.json" // Имя файла data для дебаг сейвов
 	#macro YG_STATS_FILENAME					"__stats.json" // Имя файла stats для дебаг сейвов
@@ -26,11 +28,12 @@ function __YGsettings()
 	
 	
 	// Дефолтная data-структура (тут инициализируйте переменные data, сохраняемые на сервере)
-	// YG.data.something = 123...
+	YG.data.struct = {  }
 	
 	// Дефолтная stats-структура (тут инициализируйте переменные stats, сохраняемые на сервере)
 	// YG.stats.something = 123...
 	
 	// Дефолтные флаги (тут инициализируйте дефолтные переменные flags, используемые в случае, если флаги не пришли с сервера)
-	// YG.flags.something = 123...
+	YG.flags.balance_url = 
+		"https://storage.yandexcloud.net/choke-games/VeggieHarvest/balance_default.json"
 }

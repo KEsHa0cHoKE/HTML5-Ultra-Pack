@@ -16,15 +16,15 @@
   "exportToGame":true,
   "extensionVersion":"1.0.0",
   "files":[
-    {"$GMExtensionFile":"","%Name":"SpinnerLoading.js","constants":[],"copyToTargets":9223372036854775807,"filename":"SpinnerLoading.js","final":"","functions":[
+    {"$GMExtensionFile":"v1","%Name":"SpinnerLoading.js","constants":[],"copyToTargets":9223372036854775807,"filename":"SpinnerLoading.js","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"CustomLoadingSpinner","argCount":6,"args":[2,2,2,2,2,2,],"documentation":"","externalName":"CustomLoadingSpinner","help":"LoadingBarCallback(graphics,width,height,total,current,image)","hidden":false,"kind":11,"name":"CustomLoadingSpinner","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":2,},
-      ],"init":"","kind":0,"name":"SpinnerLoading.js","order":[],"origname":"extensions\\SpinnerLoading.js","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+      ],"init":"","kind":0,"name":"SpinnerLoading.js","origname":"extensions\\SpinnerLoading.js","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject":"",
   "hasConvertedCodeInjection":true,
   "helpfile":"",
   "HTML5CodeInjection":"",
-  "html5Props":false,
+  "html5Props":true,
   "IncludedResources":[],
   "installdir":"",
   "iosCocoaPodDependencies":"",

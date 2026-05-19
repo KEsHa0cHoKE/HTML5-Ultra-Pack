@@ -16,7 +16,7 @@
   "exportToGame":true,
   "extensionVersion":"0.9.0",
   "files":[
-    {"$GMExtensionFile":"","%Name":"","constants":[
+    {"$GMExtensionFile":"v1","%Name":"","constants":[
         {"$GMExtensionConstant":"","%Name":"YM_SENDTYPE_reachGoal","hidden":false,"name":"YM_SENDTYPE_reachGoal","resourceType":"GMExtensionConstant","resourceVersion":"2.0","value":"\"reachGoal\"",},
       ],"copyToTargets":-1,"filename":"YaMetricaWeb.js","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"YMW_notBounce","argCount":0,"args":[],"documentation":"","externalName":"YMW_notBounce","help":"YMW_notBounce()","hidden":false,"kind":5,"name":"YMW_notBounce","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
@@ -27,16 +27,7 @@
         {"$GMExtensionFunction":"","%Name":"YMW_userParams","argCount":0,"args":[1,],"documentation":"","externalName":"YMW_userParams","help":"YMW_userParams(params)","hidden":false,"kind":5,"name":"YMW_userParams","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"YMW_getClientID","argCount":0,"args":[],"documentation":"","externalName":"YMW_getClientID","help":"!Doesnt Work!","hidden":true,"kind":5,"name":"YMW_getClientID","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"YMW_extLink","argCount":0,"args":[1,],"documentation":"","externalName":"YMW_extLink","help":"YMW_extLink(url)","hidden":false,"kind":5,"name":"YMW_extLink","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
-      ],"init":"","kind":5,"name":"","order":[
-        {"name":"YMW_getClientID","path":"extensions/YaMetricaWeb/YaMetricaWeb.yy",},
-        {"name":"YMW_extLink","path":"extensions/YaMetricaWeb/YaMetricaWeb.yy",},
-        {"name":"YMW_notBounce","path":"extensions/YaMetricaWeb/YaMetricaWeb.yy",},
-        {"name":"YMW_params","path":"extensions/YaMetricaWeb/YaMetricaWeb.yy",},
-        {"name":"YMW_reachGoal","path":"extensions/YaMetricaWeb/YaMetricaWeb.yy",},
-        {"name":"YMW_reachGoal_ext","path":"extensions/YaMetricaWeb/YaMetricaWeb.yy",},
-        {"name":"YMW_setUserID","path":"extensions/YaMetricaWeb/YaMetricaWeb.yy",},
-        {"name":"YMW_userParams","path":"extensions/YaMetricaWeb/YaMetricaWeb.yy",},
-      ],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
+      ],"init":"","kind":5,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
   ],
   "gradleinject":"",
   "hasConvertedCodeInjection":true,
