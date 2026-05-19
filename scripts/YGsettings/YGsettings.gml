@@ -28,12 +28,11 @@ function __YGsettings()
 	
 	
 	// Дефолтная data-структура (тут инициализируйте переменные data, сохраняемые на сервере)
-	YG.data.struct = {  }
+	// YG.data.something = 123
 	
 	// Дефолтная stats-структура (тут инициализируйте переменные stats, сохраняемые на сервере)
-	// YG.stats.something = 123...
+	// YG.stats.something = 123
 	
 	// Дефолтные флаги (тут инициализируйте дефолтные переменные flags, используемые в случае, если флаги не пришли с сервера)
-	YG.flags.balance_url = 
-		"https://storage.yandexcloud.net/choke-games/VeggieHarvest/balance_default.json"
+	// YG.flags.something = "123"
 }
