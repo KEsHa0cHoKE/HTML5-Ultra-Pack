@@ -120,20 +120,22 @@
                 if (bridgeScript && bridgeScript.parentNode) {
                     bridgeScript.onload = null
                     bridgeScript.onerror = null
-                    bridgeScript.src = ''
                     bridgeScript.parentNode.removeChild(bridgeScript)
                 }
 
+                window.bridge = null
+                window.playgamaBridge = null
+
                 const scriptElement = document.createElement('script')
                 scriptElement.src = './html5game/playgama-bridge.js'
-                document.body.appendChild(scriptElement)
                 scriptElement.onload = function() {
                     initializeBridge()
                 }
+                document.body.appendChild(scriptElement)
             }
 
             bridgeScript = document.createElement('script')
-            bridgeScript.src = 'https://bridge.playgama.com/v1/stable/playgama-bridge.js'
+            bridgeScript.src = 'https://bridge.playgama.com/v2/stable/playgama-bridge.js'
             bridgeScript.onload = initializeBridge
             bridgeScript.onerror = addLocalBridge
 

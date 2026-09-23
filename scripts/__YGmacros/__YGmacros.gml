@@ -106,8 +106,8 @@ global.__YG = {
 			
 			///@func get_height_playgama
 			///@desc Возвращает высоту баннера с учётом размера экрана с игрой
-			get_height_playgama : function()
-			{ if (!instance_exists(__ygAdv)) return 0; return __ygAdv.met_banner_get_height_playgama() }
+			get_height_playgama : function(_contentHeight = room_height)
+			{ if (!instance_exists(__ygAdv)) return 0; return __ygAdv.met_banner_get_height_playgama(_contentHeight) }
 		}
 	},
 	
@@ -177,13 +177,14 @@ if (YG_MODE == E_YG_MODE.PLAYGAMA && YG.is_release_build) {
 	
 	YG.adv.interstitial.is_supported	= bool(playgama_bridge_advertisement_is_interstitial_supported())
 	YG.adv.reward.is_supported			= bool(playgama_bridge_advertisement_is_rewarded_supported())
-	YG.adv.banner.is_supported			= bool(playgama_bridge_advertisement_is_banner_supported())
+	YG.adv.banner.is_supported			= bool(YG_MODE == E_YG_MODE.PLAYGAMA ? playgama_bridge_advertisement_is_advanced_banners_supported() : playgama_bridge_advertisement_is_banner_supported())
 	
 	YG.storage.stats.is_supported		= false
 	
 	YG.platform.id						= playgama_bridge_platform_id() // type : PG_PLATFORM_*
 	YG.platform.is_audio_enabled		= playgama_bridge_platform_is_audio_enabled()
-	YG.platform.is_visible				= (playgama_bridge_game_visibility_state() == "visible")
+	YG.platform.is_paused				= playgama_bridge_platform_is_paused()
+	YG.platform.is_visible				= true // Bridge 2.x no longer exposes a separate visibility state
 }
 
 

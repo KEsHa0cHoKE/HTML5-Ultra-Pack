@@ -395,14 +395,12 @@ met_show_banner = function(_pgBannerPosEnum = E_BANNER_PG_POS.BOTTOM)
 		YaGames_Banner_ShowAdv()
 	}
 	else {
-		if (!YG.is_release_build) {
-			//draw_banner = true
-			YG.adv.banner.position = _pgBannerPosEnum
-			exit;
-		}
+		YG.adv.banner.position = _pgBannerPosEnum
 		
-		var _position = ["bottom", "top"][_pgBannerPosEnum]
-		playgama_bridge_advertisement_show_banner(_position)
+		if (!YG.is_release_build) exit;
+		
+		var _placement = ["sticky_bottom", "sticky_top"][_pgBannerPosEnum]
+		playgama_bridge_advertisement_show_advanced_banners(_placement)
 	}
 }
 
@@ -419,27 +417,23 @@ met_hide_banner = function()
 		YaGames_Banner_HideAdv()
 	}
 	else {
-		if (!YG.is_release_build) {
-			//draw_banner = false
-			exit;
-		}
+		if (!YG.is_release_build) exit;
 		
-		playgama_bridge_advertisement_show_banner()
+		playgama_bridge_advertisement_hide_advanced_banners()
 	}
 }
 
 ///@func met_banner_get_height_playgama
-///@desc Возвращает высоту баннера с учётом размера экрана с игрой
-met_banner_get_height_playgama = function() 
+///@desc Возвращает виртуальную высоту, которую нужно зарезервировать под Playgama Advanced Banner
+///@param {Real} _contentHeight Высота игровой области без баннера
+met_banner_get_height_playgama = function(_contentHeight = room_height) 
 {
-	var _bannerBaseH	= 90
-
-    var _viewW			= camera_get_view_width(view_camera[0])
-    var _winW			= (os_browser == browser_not_a_browser ?
-	window_get_width() :
-	browser_width)
+	// Должно совпадать с advertisement.advancedBanners sticky height
+	// в playgama-bridge-config.json.
+	var _bannerHeightPercent = 0.125
 	
-    var _scale			= _winW / _viewW
-
-    return _bannerBaseH / _scale
+	// Advanced Banner занимает процент от полного viewport.
+	// Возвращаем виртуальную высоту, нужную для сохранения всей
+	// _contentHeight над/под баннером.
+	return _contentHeight * _bannerHeightPercent / (1 - _bannerHeightPercent)
 }

@@ -1,6 +1,6 @@
 # Баннер
 
-Модуль для работы с баннерной рекламой (sticky-баннер, накладывается поверх игры)
+Модуль для работы с баннерной рекламой. На Playgama используется Advanced Banner: sticky получает отдельную область, а HTML5 canvas автоматически уменьшается, чтобы реклама не перекрывала игру.
 
 ## Свойства
 
@@ -48,14 +48,14 @@ YG.adv.banner.hide();
 
 ---
 
-### `get_height_playgama()` → `Real`
+### `get_height_playgama(_contentHeight)` → `Real`
 
-> Возвращает высоту баннера (таким, каким он был бы в playgama bridge) с учётом размеров игрового окна
+> Возвращает виртуальную высоту, которую нужно зарезервировать под Playgama Advanced Banner. По умолчанию расчёт выполняется для `room_height`.
 
 **Пример:**
 
 ```js
-var _bannerHeight = YG.adv.banner.get_height_playgama();
+var _bannerHeight = YG.adv.banner.get_height_playgama(room_height);
 ```
 
 ---

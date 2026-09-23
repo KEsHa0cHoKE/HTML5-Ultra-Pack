@@ -14,10 +14,11 @@ if (active_camera_on)
 
 b_w = browser_width
 b_h = browser_height
-past_banner_size = 0
 
 var _width = (active_camera_on ? __ygCamera.cam_width : room_width)
 var _height = (active_camera_on ? __ygCamera.cam_height : room_height)
+
+past_banner_size = (YG.adv.banner.is_active ? YG.adv.banner.get_height_playgama(_height) : 0)
 
 display_autocast(_width, _height)
 

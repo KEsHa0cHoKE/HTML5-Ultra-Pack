@@ -1,8 +1,11 @@
 {
-    "$schema": "https://bridge.playgama.com/v1.27.0/schema.json",
+    "$schema": "https://bridge.playgama.com/v2/stable/schema.json",
     "device": {
         "useBuiltInOrientationPopup": true,
-        "supportedOrientations": ["landscape", "portrait"]
+        "supportedOrientations": [
+            "landscape",
+            "portrait"
+        ]
     },
     "platforms": {
         "game_distribution": {
@@ -56,6 +59,7 @@
     },
     "advertisement": {
         "banner": {
+            "disable": false
         },
         "interstitial": {
             "preloadOnStart": true
@@ -64,9 +68,34 @@
             "preloadOnStart": true
         },
         "useBuiltInErrorPopup": true,
-        "backfillId": ""
+        "backfillId": "",
+        "advancedBanners": {
+            "disable": false,
+            "placementFallback": "sticky_bottom",
+            "sticky_bottom": {
+                "default": [
+                    {
+                        "width": "100%",
+                        "height": "12.5%",
+                        "bottom": "0%",
+                        "left": "0%"
+                    }
+                ]
+            },
+            "sticky_top": {
+                "default": [
+                    {
+                        "width": "100%",
+                        "height": "12.5%",
+                        "top": "0%",
+                        "left": "0%"
+                    }
+                ]
+            }
+        }
     },
     "payments": [],
     "leaderboards": [],
-    "sendAnalyticsEvents": true
+    "sendAnalyticsEvents": true,
+    "showFullLoadingLogo": false
 }

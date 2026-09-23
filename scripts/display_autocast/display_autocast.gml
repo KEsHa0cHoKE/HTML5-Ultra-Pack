@@ -4,8 +4,6 @@
 
 function display_autocast(_width = room_width, _height = room_height)
 {
-	_height += (YG.adv.banner.is_active ? YG.adv.banner.get_height_playgama() : 0)
-	
 	if (!view_enabled)
 	{
 	    view_visible[0] = true;
@@ -32,10 +30,25 @@ function display_autocast(_width = room_width, _height = room_height)
 		surface_resize(application_surface,camera_get_view_width(view_camera[0]),camera_get_view_height(view_camera[0]));
 	}
 	else
-	{		
-		var coeff_w = (browser_width / browser_height) / (_width/_height);
+	{
+		var _browserW = browser_width
+		var _browserH = browser_height
+		
+		// Advanced Banner is an overlay and does not reduce browser_height.
+		// Shrink the actual GameMaker canvas so the banner gets its own area,
+		// reproducing the old sticky-banner behaviour.
+		var _bannerCssH = 0
+		if (YG_MODE == E_YG_MODE.PLAYGAMA &&
+			YG.adv.banner.is_supported &&
+			YG.adv.banner.is_active) {
+			_bannerCssH = round(_browserH * 0.125)
+		}
+		
+		var _canvasH = max(1, _browserH - _bannerCssH)
+		
+		var coeff_w = (_browserW / _canvasH) / (_width/_height);
 		var _x = _width * coeff_w;
-		var coeff_h = (browser_height / browser_width) / (_height/_width);
+		var coeff_h = (_canvasH / _browserW) / (_height/_width);
 		var _y = _height * coeff_h;
 		
 		if (_x <= _width)
@@ -49,24 +62,21 @@ function display_autocast(_width = room_width, _height = room_height)
 		
 		window_set_position(0,0);
 		
-		var w = browser_width;
-		var h = browser_height;
-
-		var rz = browser_get_device_pixel_ratio();
-		var rw = w * rz;
-		var rh = h * rz;
-
-		view_wport[0] = rw;
-		view_hport[0] = rh;
+		var _pixelRatio = browser_get_device_pixel_ratio();
+		var _renderW = _browserW * _pixelRatio;
+		var _renderH = _canvasH * _pixelRatio;
+		
+		view_wport[0] = _renderW;
+		view_hport[0] = _renderH;
 	
 		if (application_surface_is_enabled()) 
 		{
-			surface_resize(application_surface, rw, rh);
+			surface_resize(application_surface, _renderW, _renderH);
 		}
 
-		window_set_size(rw, rh);
+		window_set_size(_renderW, _renderH);
 
-		browser_stretch_canvas(w, h);
+		browser_stretch_canvas(_browserW, _canvasH);
 	}
 }
 
@@ -94,28 +104,19 @@ function display_center(_width = room_width,_height = room_height)
 /// @param _height {real} Высота комнаты (по умолчанию room_height)
 function display_center_with_playgama_banner(_width = room_width, _height = room_height, _yPosFromScreenStart = false) {
 	var _camPosX = (_width - camera_get_view_width(view_camera[0])) / 2
+	var _camPosY = (_height - camera_get_view_height(view_camera[0])) / 2
 	
-	if (_yPosFromScreenStart) {
-		if (YG.adv.banner.position == E_BANNER_PG_POS.BOTTOM) 
-			camera_set_view_pos(view_camera[0], _camPosX, 0)
-		else
-			camera_set_view_pos(view_camera[0], _camPosX, -YG.adv.banner.get_height_playgama())
-		
-		exit;
+	// Bottom Advanced Banner has its own physical area below the canvas.
+	// For a top banner the canvas would need a CSS Y offset, so preserve
+	// the old top-placement compensation for now.
+	if (YG.adv.banner.position == E_BANNER_PG_POS.TOP) {
+		var _bannerH = YG.adv.banner.get_height_playgama(_height)
+		_camPosY -= _bannerH
 	}
 	
+	if (_yPosFromScreenStart && YG.adv.banner.position == E_BANNER_PG_POS.BOTTOM)
+		_camPosY = 0
 	
-	var _freeHeight = camera_get_view_height(view_camera[0]) - _height
-	
-	var _camPosY
-	if (_freeHeight/2 > YG.adv.banner.get_height_playgama()) {
-		_camPosY = (_height - camera_get_view_height(view_camera[0])) / 2
-	}
-	else {
-		_camPosY = YG.adv.banner.position == E_BANNER_PG_POS.BOTTOM ? 
-		(_height - camera_get_view_height(view_camera[0]) + YG.adv.banner.get_height_playgama()) :
-		(-YG.adv.banner.get_height_playgama())
-	}
-
 	camera_set_view_pos(view_camera[0], round(_camPosX), round(_camPosY))
 }
+

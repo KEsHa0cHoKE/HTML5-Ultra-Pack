@@ -203,3 +203,24 @@ if (async_load[? "type"] == "playgama_bridge_advertisement_rewarded_state_change
 #endregion
 
 #endregion
+
+#region PLAYGAMA ADVANCED BANNER
+
+if (async_load[? "type"] == "playgama_bridge_advertisement_advanced_banners_state_changed") {
+	switch (async_load[? "data"]) {
+		case "shown":
+			YG.adv.banner.is_active = true
+		break;
+		
+		case "hidden":
+			YG.adv.banner.is_active = false
+		break;
+		
+		case "failed":
+			YG.adv.banner.is_active = false
+			show_debug_message("-- PlayGama Advanced Banner error: failed")
+		break;
+	}
+}
+
+#endregion

@@ -21,31 +21,15 @@ if ((async_load[? "type"] == YaGames_AsyncEvent) && (async_load[? "request_id"] 
 
 // Audio state
 if (async_load[? "type"] == "playgama_bridge_platform_audio_state_changed") {
-    if (async_load[? "data"]) {
-        YG.platform.is_audio_enabled = true
-    } else {
-        YG.platform.is_audio_enabled = false
-    }
+	YG.platform.is_audio_enabled = (string(async_load[? "data"]) == "1")
 }
 
 // Pause
 if (async_load[? "type"] == "playgama_bridge_platform_pause_state_changed") {
-    if (async_load[? "data"]) {
-        __met_pause()
-    } else {
-        __met_resume()
-    }
-}
-
-// Tab visibility
-if (async_load[? "type"] == "playgama_bridge_game_visibility_state_changed") {
-    switch (async_load[? "data"]) {
-        case "visible":
-            YG.platform.is_visible = true
-        break;
-		
-        case "hidden":
-            YG.platform.is_visible = false
-        break;
-    }
+	var _isPaused = (string(async_load[? "data"]) == "1")
+	
+	if (_isPaused)
+		__met_pause()
+	else
+		__met_resume()
 }
